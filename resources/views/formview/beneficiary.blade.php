@@ -46,8 +46,8 @@
             <td><input type="number" id="postcode" name="postcode"></td>
             </tr>
             <tr>
-            <th><label for="location"> Location 地区 (eg: JB, Sepang, Butterworth, etc.) :</label></th>
-            <td><input type="text" id="location" name="location"></td>
+            <th><label for="location"> Location 地区 :</label></th>
+            <td><input type="text" id="location" name="location" placeholder="eg: JB, Sepang, Butterworth, etc."></td>
             </tr>
             <tr>
             <th><label for="contactperson"> Contact Person 联络人 :</label></th>
@@ -62,8 +62,8 @@
             <td><input type="text" id="website" name="website"></td>
             </tr>
             <tr>
-            <th><label for="fbpage"> Social media page 社交媒体链接 (eg.例： FB, Twitter, Instagram. etc.) :</label></th>
-            <td><input type="text" id="fbpage" name="fbpage"></td>
+            <th><label for="page"> Social media page 社交媒体链接 :</label></th>
+            <td><input type="text" id="page" name="page" placeholder="eg.例： FB, Twitter, Instagram. etc."></td>
             </tr>
 
             <tr>

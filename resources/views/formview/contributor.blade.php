@@ -67,7 +67,7 @@
             </tr>
 
             <tr>
-            <th>Contribution Preferences 物资资讯 <br> 
+            <th colspan="2">Contribution Preferences 物资资讯 <br> 
             <p>
                 Disclaimer: THIS IS ONLY A SURVEY FORM AND NOT MEANT FOR ANY DONATION OR WHATSOVER ACTION. Always do your own researh and due diligence when it comes to charitable or social work.
             </p>
@@ -77,8 +77,18 @@
             </th>
             </tr>
             <tr>
-            <th><label for="money"> Monetary Contribution 金钱捐赠 :</label></th>
-            <td><input type="radio" id="money0" name="money" value="0">No need 无需金钱资助 <br>
+            <th colspan="2">(1) Contribution - Monetary 金钱捐赠 <br> 
+            <p>
+                Disclaimer: ALL MONETARY CONTRIBUTION OR DONATION SHOULD DIRECT DEAL WITH BENEFICIARY IF ANY. This is just an intention info collection form and NOT MEANT FOR ANY MONETARY TRANSACTION.
+            </p>
+            <p>
+                注意：所有金钱捐赠需直接与收益方对接。这只是资料表格，不具转账功能。
+            </p>
+            </th>
+            </tr>
+            <tr>
+            <th><label for="money"> Budget for Monetary Contribution 捐赠预算 :</label></th>
+            <td>
                 <input type="radio" id="money1" name="money" value="<1000"><$1000 <br>
                 <input type="radio" id="money2" name="money" value="1001-5000">$1001-$5000 <br>
                 <input type="radio" id="money3" name="money" value="5001-10000">$5001-$10000 <br>
@@ -86,6 +96,18 @@
                 <input type="radio" id="otherAmount" name="money" value="other">Other: <input type="number" name="otherAmount"><br>
             </td>
             </tr>
+            <tr>
+            <th><label for="frequency"> Intended frequency of monetary contribution 捐赠次数 :</label></th>
+            <td>
+                <input type="radio" name="frequency" value="One Time">One Time 仅此一次<br>
+                <input type="radio" name="frequency" value="Monthly">Monthly 每个月<br>
+                <input type="radio" name="frequency" value="Annual">Annual 年度<br>
+             </td>
+            </tr>
+
+
+            <th colspan="2">(2) Contribution - Items 物资捐赠 <br> 
+            </th>
             <tr>
             <th><label for="goods"> Goods or products allocation 物资: </label></th>
             <td><input type="checkbox" name="goodsFoodGroceries" value="Essential foods or daily groceries">Essential foods or daily groceries 每日粮食<br>
@@ -96,6 +118,15 @@
                 <input type="checkbox" name="otherGoods" value="Other">Other: <input type="text" name="otherGoods"><br>
             </td>
             </tr>
+
+            <th colspan="2">(3) Contribution - Services/ Man Hour 奉献时间/ 服务 <br>
+            <p>
+                For volunteering in services/ manhour, you may want to further fill up Volunteer Profiling Form at ..
+            </p>
+            <p>
+                义工可在这个网页另行补充个人资料。
+            </p>
+            </th>
             <tr>
             <th><label for="services"> Services 服务: </label></th>
             <td><input type="checkbox" name="cleaning" value="Cleaning">Cleaning 清洗<br>
@@ -104,6 +135,16 @@
                 <input type="checkbox" name="otherServices" value="Other">Other: <input type="text" name="otherServices"><br>
             </td>
             </tr>
+            <tr>
+            <th><label for="preferredorganization"> Preferred organization to contribute to 希望捐赠予: </label></th>
+            <td><input type="checkbox" name="relazone2" value="Rela Zone 2 - JB">Rela Zone 2 - JB 新山人民自愿警察<br>
+                <input type="checkbox" name="lionsclubjb" value="Lions Club - JB">Lions Club - JB 狮子会<br>
+                <input type="checkbox" name="superpandateamklangvalley" value="Super Panda Team (Klang Valley)">Super Panda Team (Klang Valley) 熊猫侠团队<br>
+                <input type="checkbox" name="foodbank448" value="Foodbank 448 (JB)">Foodbank 448 (JB) 食物银行<br>
+                <input type="checkbox" name="otherOrganization" value="Other">Other: <input type="text" name="otherOrganization"><br>
+            </td>
+            </tr>
+
             <tr>
             <th><label for="message"> Comment/ Message 反馈/留言 :</label></th>
             <td><input type="textfield" id="message" name="message"></td>

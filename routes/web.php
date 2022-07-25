@@ -12,13 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//aaabbb
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/form/benificiary', function () {
-    return view('formview.benificiary');
+Route::get('/form/beneficiary', function () {
+    return view('formview.beneficiary');
 });
 
 Route::get('/form/contributor', function () {
@@ -28,3 +27,11 @@ Route::get('/form/contributor', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/form/volunteer', function () {
+    return view('formview.volunteer');
+});
+
+Route::get('/form/connector', function () {
+    return view('formview.connector');
+});
+
