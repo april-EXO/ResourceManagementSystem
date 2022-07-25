@@ -24,3 +24,7 @@ Route::get('/form/benificiary', function () {
 Route::get('/form/contributor', function () {
     return view('formview.contributor');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
