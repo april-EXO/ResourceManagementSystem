@@ -8,7 +8,8 @@
 </head>
 
 <body>
-<form>
+<form action="/form/beneficiary" method="POST" class="formContainer">
+        @csrf
     <table>
         <tr>
             <th><label for="name"> Individual/ Organization name 个人/组织/机构 名称 :</label></th>
@@ -80,21 +81,42 @@
             </td>
             </tr>
             <tr>
+
             <th><label for="goods"> Goods or products allocation 物资: </label></th>
-            <td><input type="checkbox" name="goodsFoodGroceries" value="Essential foods or daily groceries">Essential foods or daily groceries 每日粮食<br>
-                <input type="checkbox" name="goodsFurnitureFixing" value="Furniture and fixing">Furniture and fixing 家具配备<br>
-                <input type="checkbox" name="goodsElectricalItemsGadgets" value="Electrical items and gadgets"> Electrical items and gadgets 家电 (eg. TV, internet, computer, etc. 例: 电视，网络，电脑，等)<br>
-                <input type="checkbox" name="goodsTranspotation" value="Transportation">Transportation 运输 (eg. wheelchair, vehicle, trolley, etc. 例: 轮椅，车辆，手推车，等)<br>
-                <input type="checkbox" name="goodsEducationalMaterial" value="Educational materials">Educational materials 教育产品 (eg. books, magazine, etc. 例：书籍，杂志，等)<br>
-                <input type="checkbox" name="otherGoods" value="Other">Other: <input type="text" name="otherGoods"><br>
+            <td>
+				<input type="hidden" name="goodsFoodGroceries" value="0">
+				<input type="checkbox" name="goodsFoodGroceries" value="1">Essential foods or daily groceries 每日粮食<br>
+				
+				<input type="hidden" name="goodsFurnitureFixing" value="0">
+                <input type="checkbox" name="goodsFurnitureFixing" value="1">Furniture and fixing 家具配备<br>
+				
+				<input type="hidden" name="goodsElectricalItemsGadgets" value="0">
+                <input type="checkbox" name="goodsElectricalItemsGadgets" value="1"> Electrical items and gadgets 家电 (eg. TV, internet, computer, etc. 例: 电视，网络，电脑，等)<br>
+				
+				<input type="hidden" name="goodsTranspotation" value="0">
+                <input type="checkbox" name="goodsTranspotation" value="1">Transportation 运输 (eg. wheelchair, vehicle, trolley, etc. 例: 轮椅，车辆，手推车，等)<br>
+				
+				<input type="hidden" name="goodsEducationalMaterial" value="0">
+                <input type="checkbox" name="goodsEducationalMaterial" value="1">Educational materials 教育产品 (eg. books, magazine, etc. 例：书籍，杂志，等)<br>
+				
+                <input type="hidden" name="other1" value="0">
+				<input type="checkbox" name="other1" id="box" value="1">Other: <input type="text" name="otherGoods" id="content" disabled><br>
             </td>
             </tr>
             <tr>
             <th><label for="services"> Services 服务: </label></th>
-            <td><input type="checkbox" name="cleaning" value="Cleaning">Cleaning 清洗<br>
-                <input type="checkbox" name="moving" value="Moving">Moving 搬运<br>
-                <input type="checkbox" name="education" value="Education">Education 教育<br>
-                <input type="checkbox" name="otherServices" value="Other">Other: <input type="text" name="otherServices"><br>
+            <td>
+            <input type="hidden" name="cleaning" value="0">
+				<input type="checkbox" name="cleaning" value="1">Cleaning 清洗<br>
+				
+				<input type="hidden" name="moving" value="0">
+                <input type="checkbox" name="moving" value="1">Moving 搬运<br>
+				
+				<input type="hidden" name="education" value="0">
+                <input type="checkbox" name="education" value="1"> Education 教育<br>
+				
+                <input type="hidden" name="other2" value="0">
+				<input type="checkbox" name="other2" id="box" value="1">Other: <input type="text" name="otherServices" id="content" disabled><br>
             </td>
             </tr>
             <tr>
@@ -110,5 +132,9 @@
 </form>
 </body>
 
+<script>
+		document.getElementById('box').onchange = function() {
+		document.getElementById('content').disabled = !this.checked;};
+</script>
 
 </html>

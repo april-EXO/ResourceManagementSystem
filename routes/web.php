@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,22 +17,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/form/beneficiary', function () {
     return view('formview.beneficiary');
 });
+
+Route::post('/form/beneficiary', [FormController::class, 'addBeneficiary']);
 
 Route::get('/form/contributor', function () {
     return view('formview.contributor');
 });
 
-Auth::routes();
+Route::post('/form/contributor', [FormController::class, 'addContributor']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Route::get('/form/volunteer', function () {
     return view('formview.volunteer');
 });
 
+Route::post('/form/volunteer', [FormController::class, 'addVolunteer']);
+
+
 Route::get('/form/connector', function () {
     return view('formview.connector');
 });
+
+Route::post('/form/connector', [FormController::class, 'addConnector']);
 

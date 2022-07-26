@@ -8,7 +8,8 @@
 </head>
 
 <body>
-<form>
+<form action="/form/contributor" method="POST" class="formContainer">
+        @csrf
     <table>
         <tr>
             <th><label for="name"> Individual/ Organization name 个人/组织/机构 名称 :</label></th>
@@ -62,8 +63,8 @@
             <td><input type="text" id="website" name="website"></td>
             </tr>
             <tr>
-            <th><label for="fbpage">Social media page 社交媒体链接 (eg.例： FB, Twitter, Instagram. etc.) ::</label></th>
-            <td><input type="text" id="fbpage" name="fbpage"></td>
+            <th><label for="page">Social media page 社交媒体链接 (eg.例： FB, Twitter, Instagram. etc.) ::</label></th>
+            <td><input type="text" id="page" name="page"></td>
             </tr>
 
             <tr>
@@ -110,12 +111,23 @@
             </th>
             <tr>
             <th><label for="goods"> Goods or products allocation 物资: </label></th>
-            <td><input type="checkbox" name="goodsFoodGroceries" value="Essential foods or daily groceries">Essential foods or daily groceries 每日粮食<br>
-                <input type="checkbox" name="goodsFurnitureFixing" value="Furniture and fixing">Furniture and fixing 家具配备<br>
-                <input type="checkbox" name="goodsElectricalItemsGadgets" value="Electrical items and gadgets"> Electrical items and gadgets 家电 (eg. TV, internet, computer, etc. 例: 电视，网络，电脑，等)<br>
-                <input type="checkbox" name="goodsTranspotation" value="Transportation">Transportation 运输 (eg. wheelchair, vehicle, trolley, etc. 例: 轮椅，车辆，手推车，等)<br>
-                <input type="checkbox" name="goodsEducationalMaterial" value="Educational materials">Educational materials 教育产品 (eg. books, magazine, etc. 例：书籍，杂志，等)<br>
-                <input type="checkbox" name="otherGoods" value="Other">Other: <input type="text" name="otherGoods"><br>
+            <td><input type="hidden" name="goodsFoodGroceries" value="0">
+				<input type="checkbox" name="goodsFoodGroceries" value="1">Essential foods or daily groceries 每日粮食<br>
+				
+				<input type="hidden" name="goodsFurnitureFixing" value="0">
+                <input type="checkbox" name="goodsFurnitureFixing" value="1">Furniture and fixing 家具配备<br>
+				
+				<input type="hidden" name="goodsElectricalItemsGadgets" value="0">
+                <input type="checkbox" name="goodsElectricalItemsGadgets" value="1"> Electrical items and gadgets 家电 (eg. TV, internet, computer, etc. 例: 电视，网络，电脑，等)<br>
+				
+				<input type="hidden" name="goodsTranspotation" value="0">
+                <input type="checkbox" name="goodsTranspotation" value="1">Transportation 运输 (eg. wheelchair, vehicle, trolley, etc. 例: 轮椅，车辆，手推车，等)<br>
+				
+				<input type="hidden" name="goodsEducationalMaterial" value="0">
+                <input type="checkbox" name="goodsEducationalMaterial" value="1">Educational materials 教育产品 (eg. books, magazine, etc. 例：书籍，杂志，等)<br>
+				
+                <input type="hidden" name="other1" value="0">
+				<input type="checkbox" name="other1" id="box" value="1">Other: <input type="text" name="otherGoods" id="content" disabled><br>
             </td>
             </tr>
 
@@ -129,19 +141,37 @@
             </th>
             <tr>
             <th><label for="services"> Services 服务: </label></th>
-            <td><input type="checkbox" name="cleaning" value="Cleaning">Cleaning 清洗<br>
-                <input type="checkbox" name="moving" value="Moving">Moving 搬运<br>
-                <input type="checkbox" name="education" value="Education">Education 教育<br>
-                <input type="checkbox" name="otherServices" value="Other">Other: <input type="text" name="otherServices"><br>
+            <td><input type="hidden" name="cleaning" value="0">
+				<input type="checkbox" name="cleaning" value="1">Cleaning 清洗<br>
+				
+				<input type="hidden" name="moving" value="0">
+                <input type="checkbox" name="moving" value="1">Moving 搬运<br>
+				
+				<input type="hidden" name="education" value="0">
+                <input type="checkbox" name="education" value="1"> Education 教育<br>
+				
+                <input type="hidden" name="other2" value="0">
+				<input type="checkbox" name="other2" id="box" value="1">Other: <input type="text" name="otherServices" id="content" disabled><br>
             </td>
             </tr>
             <tr>
             <th><label for="preferredorganization"> Preferred organization to contribute to 希望捐赠予: </label></th>
-            <td><input type="checkbox" name="relazone2" value="Rela Zone 2 - JB">Rela Zone 2 - JB 新山人民自愿警察<br>
-                <input type="checkbox" name="lionsclubjb" value="Lions Club - JB">Lions Club - JB 狮子会<br>
-                <input type="checkbox" name="superpandateamklangvalley" value="Super Panda Team (Klang Valley)">Super Panda Team (Klang Valley) 熊猫侠团队<br>
-                <input type="checkbox" name="foodbank448" value="Foodbank 448 (JB)">Foodbank 448 (JB) 食物银行<br>
-                <input type="checkbox" name="otherOrganization" value="Other">Other: <input type="text" name="otherOrganization"><br>
+            <td>
+                
+                <input type="hidden" name="relazone2" value="0">
+				<input type="checkbox" name="relazone2" value="1">Rela Zone 2 - JB 新山人民自愿警察<br>
+				
+				<input type="hidden" name="lionsclubjb" value="0">
+                <input type="checkbox" name="lionsclubjb" value="1">Lions Club - JB 狮子会<br>
+				
+				<input type="hidden" name="superpandateamklangvalley" value="0">
+                <input type="checkbox" name="superpandateamklangvalley" value="1"> Super Panda Team (Klang Valley) 熊猫侠团队<br>
+				
+                <input type="hidden" name="foodbank448" value="0">
+                <input type="checkbox" name="foodbank448" value="1"> Foodbank 448 (JB) 食物银行<br>
+				
+                <input type="hidden" name="other3" value="0">
+				<input type="checkbox" name="other3" id="box" value="1">Other: <input type="text" name="otherOrganization" id="content" disabled><br>
             </td>
             </tr>
 
@@ -158,5 +188,9 @@
 </form>
 </body>
 
+<script>
+		document.getElementById('box').onchange = function() {
+		document.getElementById('content').disabled = !this.checked;};
+</script>
 
 </html>

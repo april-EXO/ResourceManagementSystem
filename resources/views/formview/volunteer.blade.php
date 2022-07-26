@@ -8,7 +8,8 @@
 </head>
 
 <body>
-<form>
+<form action="/form/volunteer" method="POST" class="formContainer">
+        @csrf
     <table>
         <tr>
             <th><label for="name"> Name 姓名 :</label></th>
@@ -68,80 +69,157 @@
             </tr>
             <tr>
             <th><label for="services"> Services 服务: </label></th>
-            <td><input type="checkbox" name="cleaning" value="Cleaning">Cleaning 清洗<br>
-                <input type="checkbox" name="moving" value="Moving">Moving 搬运<br>
-                <input type="checkbox" name="education" value="Education">Education 教育<br>
-                <input type="checkbox" name="otherServices" value="Other">Other: <input type="text" name="otherServices"><br>
+            <td><input type="hidden" name="cleaning" value="0">
+				<input type="checkbox" name="cleaning" value="1">Cleaning 清洗<br>
+				
+				<input type="hidden" name="moving" value="0">
+                <input type="checkbox" name="moving" value="1">Moving 搬运<br>
+				
+				<input type="hidden" name="education" value="0">
+                <input type="checkbox" name="education" value="1"> Education 教育<br>
+				
+                <input type="hidden" name="other1" value="0">
+				<input type="checkbox" name="other1" id="box" value="1">Other: <input type="text" name="otherServices" id="content" disabled><br>
             </td>
             </tr>
             
             <tr>
             <th><label for="day"> Saturday 星期六: </label></th>
-            <td><input type="checkbox" name="SATtime1" value="0000-0600">0000-0600<br>
-                <input type="checkbox" name="SATtime2" value="0600-1200">0600-1200<br>
-                <input type="checkbox" name="SATtime3" value="1200-1800">1200-1800<br>
-                <input type="checkbox" name="SATtime4" value="1800-2400">1800-2400<br>
-                <input type="checkbox" name="SATother" value="Other">Other: <input type="text" name="SATothertime"><br>
+            <td>
+                <input type="hidden" name="SATtime1" value="0">
+				<input type="checkbox" name="SATtime1" value="1">0000-0600<br>
+				
+				<input type="hidden" name="SATtime2" value="0">
+                <input type="checkbox" name="SATtime2" value="1">0600-1200<br>
+				
+				<input type="hidden" name="SATtime3" value="0">
+                <input type="checkbox" name="SATtime3" value="1">1200-1800<br>
+				
+                <input type="hidden" name="SATtime4" value="0">
+                <input type="checkbox" name="SATtime4" value="1">1800-2400<br>
+				
+                <input type="hidden" name="SATother" value="0">
+				<input type="checkbox" name="SATother" id="box" value="1">Other: <input type="text" name="SATothertime" id="content" disabled><br>
             </td>
             </tr>
 
             <tr>
             <th><label for="day"> Sunday 星期日: </label></th>
-            <td><input type="checkbox" name="SUNtime1" value="0000-0600">0000-0600<br>
-                <input type="checkbox" name="SUNtime2" value="0600-1200">0600-1200<br>
-                <input type="checkbox" name="SUNtime3" value="1200-1800">1200-1800<br>
-                <input type="checkbox" name="SUNtime4" value="1800-2400">1800-2400<br>
-                <input type="checkbox" name="SUNother" value="Other">Other: <input type="text" name="SUNotherTime"><br>
+            <td>
+                <input type="hidden" name="SUNtime1" value="0">
+				<input type="checkbox" name="SUNtime1" value="1">0000-0600<br>
+				
+				<input type="hidden" name="SUNtime2" value="0">
+                <input type="checkbox" name="SUNtime2" value="1">0600-1200<br>
+				
+				<input type="hidden" name="SUNtime3" value="0">
+                <input type="checkbox" name="SUNtime3" value="1">1200-1800<br>
+				
+                <input type="hidden" name="SUNtime4" value="0">
+                <input type="checkbox" name="SUNtime4" value="1">1800-2400<br>
+				
+                <input type="hidden" name="SUNother" value="0">
+				<input type="checkbox" name="SUNother" id="box" value="1">Other: <input type="text" name="SUNotherTime" id="content" disabled><br>
             </td>
             </tr>
 
             <tr>
             <th><label for="day"> Monday 星期一: </label></th>
-            <td><input type="checkbox" name="MONtime1" value="0000-0600">0000-0600<br>
-                <input type="checkbox" name="MONtime2" value="0600-1200">0600-1200<br>
-                <input type="checkbox" name="MONtime3" value="1200-1800">1200-1800<br>
-                <input type="checkbox" name="MONtime4" value="1800-2400">1800-2400<br>
-                <input type="checkbox" name="MONother" value="Other">Other: <input type="text" name="MONotherTime"><br>
+            <td>
+                <input type="hidden" name="MONtime1" value="0">
+				<input type="checkbox" name="MONtime1" value="1">0000-0600<br>
+				
+				<input type="hidden" name="MONtime2" value="0">
+                <input type="checkbox" name="MONtime2" value="1">0600-1200<br>
+				
+				<input type="hidden" name="MONtime3" value="0">
+                <input type="checkbox" name="MONtime3" value="1">1200-1800<br>
+				
+                <input type="hidden" name="MONtime4" value="0">
+                <input type="checkbox" name="MONtime4" value="1">1800-2400<br>
+				
+                <input type="hidden" name="MONother" value="0">
+				<input type="checkbox" name="MONother" id="box" value="1">Other: <input type="text" name="MONotherTime" id="content" disabled><br>
             </td>
             </tr>
 
             <tr>
             <th><label for="day"> Tuesday 星期二: </label></th>
-            <td><input type="checkbox" name="TUEStime1" value="0000-0600">0000-0600<br>
-                <input type="checkbox" name="TUEStime2" value="0600-1200">0600-1200<br>
-                <input type="checkbox" name="TUEStime3" value="1200-1800">1200-1800<br>
-                <input type="checkbox" name="TUEStime4" value="1800-2400">1800-2400<br>
-                <input type="checkbox" name="TUESother" value="Other">Other: <input type="text" name="TUESotherTime"><br>
+            <td>
+                <input type="hidden" name="TUEStime1" value="0">
+				<input type="checkbox" name="TUEStime1" value="1">0000-0600<br>
+				
+				<input type="hidden" name="TUEStime2" value="0">
+                <input type="checkbox" name="TUEStime2" value="1">0600-1200<br>
+				
+				<input type="hidden" name="TUEStime3" value="0">
+                <input type="checkbox" name="TUEStime3" value="1">1200-1800<br>
+				
+                <input type="hidden" name="TUEStime4" value="0">
+                <input type="checkbox" name="TUEStime4" value="1">1800-2400<br>
+				
+                <input type="hidden" name="TUESother" value="0">
+				<input type="checkbox" name="TUESother" id="box" value="1">Other: <input type="text" name="TUESotherTime" id="content" disabled><br>
             </td>
             </tr>
 
             <tr>
             <th><label for="day"> Wednesday 星期三: </label></th>
-            <td><input type="checkbox" name="WEDtime1" value="0000-0600">0000-0600<br>
-                <input type="checkbox" name="WEDtime2" value="0600-1200">0600-1200<br>
-                <input type="checkbox" name="WEDtime3" value="1200-1800">1200-1800<br>
-                <input type="checkbox" name="WEDtime4" value="1800-2400">1800-2400<br>
-                <input type="checkbox" name="WEDother" value="Other">Other: <input type="text" name="WEDotherTime"><br>
+            <td>
+                <input type="hidden" name="WEDtime1" value="0">
+				<input type="checkbox" name="WEDtime1" value="1">0000-0600<br>
+				
+				<input type="hidden" name="WEDtime2" value="0">
+                <input type="checkbox" name="WEDtime2" value="1">0600-1200<br>
+				
+				<input type="hidden" name="WEDtime3" value="0">
+                <input type="checkbox" name="WEDtime3" value="1">1200-1800<br>
+				
+                <input type="hidden" name="WEDtime4" value="0">
+                <input type="checkbox" name="WEDtime4" value="1">1800-2400<br>
+				
+                <input type="hidden" name="WEDother" value="0">
+				<input type="checkbox" name="WEDother" id="box" value="1">Other: <input type="text" name="WEDotherTime" id="content" disabled><br>
             </td>
             </tr>
 
             <tr>
             <th><label for="day"> Thursday 星期四: </label></th>
-            <td><input type="checkbox" name="THURtime1" value="0000-0600">0000-0600<br>
-                <input type="checkbox" name="THURtime2" value="0600-1200">0600-1200<br>
-                <input type="checkbox" name="THURtime3" value="1200-1800">1200-1800<br>
-                <input type="checkbox" name="THURtime4" value="1800-2400">1800-2400<br>
-                <input type="checkbox" name="THURother" value="Other">Other: <input type="text" name="THURotherTime"><br>
+            <td>
+                <input type="hidden" name="THURtime1" value="0">
+				<input type="checkbox" name="THURtime1" value="1">0000-0600<br>
+				
+				<input type="hidden" name="THURtime2" value="0">
+                <input type="checkbox" name="THURtime2" value="1">0600-1200<br>
+				
+				<input type="hidden" name="THURtime3" value="0">
+                <input type="checkbox" name="THURtime3" value="1">1200-1800<br>
+				
+                <input type="hidden" name="THURtime4" value="0">
+                <input type="checkbox" name="THURtime4" value="1">1800-2400<br>
+				
+                <input type="hidden" name="THURother" value="0">
+				<input type="checkbox" name="THURother" id="box" value="1">Other: <input type="text" name="THURotherTime" id="content" disabled><br>
             </td>
             </tr>
 
             <tr>
             <th><label for="day"> Friday 星期五: </label></th>
-            <td><input type="checkbox" name="FRItime1" value="0000-0600">0000-0600<br>
-                <input type="checkbox" name="FRItime2" value="0600-1200">0600-1200<br>
-                <input type="checkbox" name="FRItime3" value="1200-1800">1200-1800<br>
-                <input type="checkbox" name="FRItime4" value="1800-2400">1800-2400<br>
-                <input type="checkbox" name="FRIother" value="Other">Other: <input type="text" name="FRIotherTime"><br>
+            <td>
+                <input type="hidden" name="FRItime1" value="0">
+				<input type="checkbox" name="FRItime1" value="1">0000-0600<br>
+				
+				<input type="hidden" name="FRItime2" value="0">
+                <input type="checkbox" name="FRItime2" value="1">0600-1200<br>
+				
+				<input type="hidden" name="FRItime3" value="0">
+                <input type="checkbox" name="FRItime3" value="1">1200-1800<br>
+				
+                <input type="hidden" name="FRItime4" value="0">
+                <input type="checkbox" name="FRItime4" value="1">1800-2400<br>
+				
+                <input type="hidden" name="FRIother" value="0">
+				<input type="checkbox" name="FRIother" id="box" value="1">Other: <input type="text" name="FRIotherTime" id="content" disabled><br>
             </td>
             </tr>
             
@@ -158,5 +236,9 @@
 </form>
 </body>
 
+<script>
+		document.getElementById('box').onchange = function() {
+		document.getElementById('content').disabled = !this.checked;};
+</script>
 
 </html>
