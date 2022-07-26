@@ -12,23 +12,23 @@
         @csrf
     <table>
         <tr>
-            <th><label for="name"> Name 姓名 :</label></th>
+            <th scope="row"><label for="name"> Name 姓名 : </label></th>
             <td><input type="text" id="name" name="name"></td>
         </tr>
         <tr>
-            <th><label for="id"> IC number 身份证号码 :</label></th>
+            <th scope="row"><label for="id"> IC number 身份证号码 : </label></th>
             <td><input type="text" id="id" name="id"></td>
         </tr>
         <tr>
-            <th><label for="contactnumber"> Contact Number 联络号码 :</label></th>
+            <th><label for="contactnumber"> Contact Number 联络号码 : </label></th>
             <td><input type="phone" id="contactnumber" name="contactnumber"></td>
         </tr>
         <tr>
-            <th><label for="email"> Email 电子邮件 :</label></th>
+            <th><label for="email"> Email 电子邮件 : </label></th>
             <td><input type="email" id="email" name="email"></td>
         </tr>
         <tr>
-            <th><label for="state"> State 州属 :</label></th>
+            <th><label for="state"> State 州属 : </label></th>
             <td><select id="state" name="state">
             <option value="" disabled selected>Choose a State</option>
             <option value="Johor">Johor</option>
@@ -51,16 +51,16 @@
             </td>
             </tr>
             <tr>
-            <th><label for="postcode"> Postcode 邮区编号 :</label></th>
+            <th><label for="postcode"> Postcode 邮区编号 : </label></th>
             <td><input type="number" id="postcode" name="postcode"></td>
             </tr>
             <tr>
-            <th><label for="location"> Location 地区 :</label></th>
+            <th><label for="location"> Location 地区 : </label></th>
             <td><input type="text" id="location" name="location" placeholder="eg: JB, Sepang, Butterworth, etc."></td>
             </tr>
             
             <tr>
-            <th><label for="page"> Social media page 社交媒体链接 :</label></th>
+            <th><label for="page"> Social media page 社交媒体链接 : </label></th>
             <td><input type="text" id="page" name="page" placeholder="eg.例： FB, Twitter, Instagram. etc."></td>
             </tr>
 
@@ -79,7 +79,7 @@
                 <input type="checkbox" name="education" value="1"> Education 教育<br>
 				
                 <input type="hidden" name="other1" value="0">
-				<input type="checkbox" name="other1" id="box" value="1">Other: <input type="text" name="otherServices" id="content" disabled><br>
+				<input type="checkbox" name="other1" id="box1" value="1">Other: <input type="text" name="otherServices" id="content1" disabled><br>
             </td>
             </tr>
             
@@ -99,7 +99,7 @@
                 <input type="checkbox" name="SATtime4" value="1">1800-2400<br>
 				
                 <input type="hidden" name="SATother" value="0">
-				<input type="checkbox" name="SATother" id="box" value="1">Other: <input type="text" name="SATothertime" id="content" disabled><br>
+				<input type="checkbox" name="SATother" id="box2" value="1">Other: <input type="text" name="SATothertime" id="content2" disabled><br>
             </td>
             </tr>
 
@@ -119,7 +119,7 @@
                 <input type="checkbox" name="SUNtime4" value="1">1800-2400<br>
 				
                 <input type="hidden" name="SUNother" value="0">
-				<input type="checkbox" name="SUNother" id="box" value="1">Other: <input type="text" name="SUNotherTime" id="content" disabled><br>
+				<input type="checkbox" name="SUNother" id="box3" value="1">Other: <input type="text" name="SUNotherTime" id="content3" disabled><br>
             </td>
             </tr>
 
@@ -139,7 +139,7 @@
                 <input type="checkbox" name="MONtime4" value="1">1800-2400<br>
 				
                 <input type="hidden" name="MONother" value="0">
-				<input type="checkbox" name="MONother" id="box" value="1">Other: <input type="text" name="MONotherTime" id="content" disabled><br>
+				<input type="checkbox" name="MONother" id="box4" value="1">Other: <input type="text" name="MONotherTime" id="content4" disabled><br>
             </td>
             </tr>
 
@@ -159,7 +159,7 @@
                 <input type="checkbox" name="TUEStime4" value="1">1800-2400<br>
 				
                 <input type="hidden" name="TUESother" value="0">
-				<input type="checkbox" name="TUESother" id="box" value="1">Other: <input type="text" name="TUESotherTime" id="content" disabled><br>
+				<input type="checkbox" name="TUESother" id="box5" value="1">Other: <input type="text" name="TUESotherTime" id="content5" disabled><br>
             </td>
             </tr>
 
@@ -179,7 +179,7 @@
                 <input type="checkbox" name="WEDtime4" value="1">1800-2400<br>
 				
                 <input type="hidden" name="WEDother" value="0">
-				<input type="checkbox" name="WEDother" id="box" value="1">Other: <input type="text" name="WEDotherTime" id="content" disabled><br>
+				<input type="checkbox" name="WEDother" id="box6" value="1">Other: <input type="text" name="WEDotherTime" id="content6" disabled><br>
             </td>
             </tr>
 
@@ -199,7 +199,7 @@
                 <input type="checkbox" name="THURtime4" value="1">1800-2400<br>
 				
                 <input type="hidden" name="THURother" value="0">
-				<input type="checkbox" name="THURother" id="box" value="1">Other: <input type="text" name="THURotherTime" id="content" disabled><br>
+				<input type="checkbox" name="THURother" id="box7" value="1">Other: <input type="text" name="THURotherTime" id="content7" disabled><br>
             </td>
             </tr>
 
@@ -219,12 +219,12 @@
                 <input type="checkbox" name="FRItime4" value="1">1800-2400<br>
 				
                 <input type="hidden" name="FRIother" value="0">
-				<input type="checkbox" name="FRIother" id="box" value="1">Other: <input type="text" name="FRIotherTime" id="content" disabled><br>
+				<input type="checkbox" name="FRIother" id="box8" value="1">Other: <input type="text" name="FRIotherTime" id="content8" disabled><br>
             </td>
             </tr>
             
             <tr>
-            <th><label for="message"> Comment/ Message 反馈/留言 :</label></th>
+            <th><label for="message"> Comment/ Message 反馈/留言 : </label></th>
             <td><input type="textfield" id="message" name="message"></td>
             </tr>
             <tr>
@@ -237,8 +237,30 @@
 </body>
 
 <script>
-		document.getElementById('box').onchange = function() {
-		document.getElementById('content').disabled = !this.checked;};
+		document.getElementById('box1').onchange = function() {
+		document.getElementById('content1').disabled = !this.checked;};
+        
+		document.getElementById('box2').onchange = function() {
+		document.getElementById('content2').disabled = !this.checked;};
+        
+		document.getElementById('box3').onchange = function() {
+		document.getElementById('content3').disabled = !this.checked;};
+        
+		document.getElementById('box4').onchange = function() {
+		document.getElementById('content4').disabled = !this.checked;};
+        
+		document.getElementById('box5').onchange = function() {
+		document.getElementById('content5').disabled = !this.checked;};
+        
+		document.getElementById('box6').onchange = function() {
+		document.getElementById('content6').disabled = !this.checked;};
+        
+		document.getElementById('box7').onchange = function() {
+		document.getElementById('content7').disabled = !this.checked;};
+        
+		document.getElementById('box8').onchange = function() {
+		document.getElementById('content8').disabled = !this.checked;};
+
 </script>
 
 </html>
