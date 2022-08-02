@@ -14,12 +14,12 @@
                     </div>
                     @endif
                     @can('isAdmin')
-                    <div class="btn btn-primary btn-lg">
-                        You have Admin Access
+                    <div class="btn btn-primary btn-lg" onclick="location.href='{{ url('profile') }}'">
+                        Admin Access
                     </div>
                     @elsecan('isUser')
-                    <div class="btn btn-success btn-lg">
-                        You have User Access
+                    <div class="btn btn-success btn-lg" onclick="location.href='{{ url('profile') }}'">
+                         User Profile
                     </div>
                     @endcan
                 </div>
