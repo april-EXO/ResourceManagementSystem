@@ -5,6 +5,7 @@
 <h2>Basic Information 基本资料</h2>
 <p>To be filled up by potential organization or individual looking at contributing resources to the needy.</p>
 <p>有物资可以贡献的个人或组织/机构。</p>
+<a href={{ "application" }}>Form Main Page</a>
 </head>
 
 <body>

@@ -5,6 +5,7 @@
 <h2>Basic Infomation 基本资料</h2>
 <p>A project in need of volunteers.</p>
 <p>需要资源或义工的活动。</p>
+<a href={{ "application" }}>Form Main Page</a>
 </head>
 
 <body>

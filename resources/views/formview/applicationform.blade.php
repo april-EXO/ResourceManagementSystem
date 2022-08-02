@@ -13,9 +13,9 @@
     <a href="/form/volunteer">Join as volunteer 成为志愿者</a> <br><br><br><br>
 
 
-    <a href="/form/beneficiary-v">View beneficiary</a> <br>
-    <a href="/form/connector-v">View connector</a> <br>
-    <a href="/form/contributor-v">View contributor</a> <br>
-    <a href="/form/volunteer-v">View volunteer</a> <br>
+    <a href="/form/beneficiary-view">View beneficiary</a> <br>
+    <a href="/form/connector-view">View connector</a> <br>
+    <a href="/form/contributor-view">View contributor</a> <br>
+    <a href="/form/volunteer-view">View volunteer</a> <br>
     </body>
 </html>

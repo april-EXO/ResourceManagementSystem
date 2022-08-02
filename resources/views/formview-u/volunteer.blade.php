@@ -5,11 +5,10 @@
 <h2>Basic Infomation 基本资料</h2>
 <p>To be filled up by volunteer.</p>
 <p>由义工填写。</p>
-<a href={{ "application" }}>Form Main Page</a>
 </head>
 
 <body>
-<form action="/form/volunteer" method="POST" class="formContainer">
+<form action="" method="POST" class="formContainer">
         @csrf
     <table>
         <tr>
