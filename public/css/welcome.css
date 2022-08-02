@@ -71,3 +71,34 @@ h2{
     align-items: center;
     justify-content: center;
 }
+
+.volunteer-contributor {
+    margin: auto;
+    width:1100px;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.volunteer {
+    width: 50%;
+    height: 300px;
+    float: left;
+    background-color: #212529;
+    color: white;
+    border-radius: 25px;
+    padding: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}  
+
+.contributor {
+    width: 50%;
+    height: 300px;
+    float: left;
+    border-style: solid;
+    border-color:lightgray;
+    border-radius: 15px;
+    padding: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}  

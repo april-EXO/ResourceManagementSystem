@@ -50,6 +50,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Carousel Banner-->
     <div id="carouselMainPage" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -151,8 +152,23 @@
         </div>
         <div>
             <a href="..." class="d-grid gap-2" style="text-decoration:none">
-            <button type="button" class="btn btn-dark" style="padding:15px">View All >></button>
+                <button type="button" class="btn btn-dark" style="padding:15px">View All >></button>
             </a>
+        </div>
+    </div>
+
+    <!-- Be a Volunteer Section-->
+    <div class="volunteer-contributor">
+        <h2>Be a Part of Us</h2>
+        <div class="volunteer">
+            <h3>Be a Volunteer</h3>
+            <p>Volunteer today to join us as we move forward with our charitable causes.</p>
+            <button type="button" class="btn btn-outline-light">More Info</button>
+        </div>
+        <div class="contributor">
+            <h3>Be a Contributor</h3>
+            <p>Register as a contributor, sponsor and aid us in gathering resources to assist those in need.</p>
+            <button type="button" class="btn btn-outline-dark">More Info</button>
         </div>
     </div>
 
