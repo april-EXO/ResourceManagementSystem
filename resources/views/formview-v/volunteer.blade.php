@@ -1,5 +1,7 @@
 <html>
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <title>Volunteer Profiling</title>
 <h1>Volunteer 义工</h1>
 <h2>Basic Infomation 基本资料</h2>
@@ -7,7 +9,7 @@
 </head>
 
 <body>
-<table border="1">
+<table class="table table-striped">
         <tr>
             <th>Name 姓名</th>
             <th>IC number 身份证号码</th>

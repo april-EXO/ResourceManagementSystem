@@ -1,5 +1,7 @@
 <html>
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <title>Contributor's Basic Info</title>
 <h1>Contributor 贡献者</h1>
 <h2>Basic Information 基本资料</h2>
@@ -7,7 +9,7 @@
 </head>
 
 <body>
-    <table border="1">
+    <table class="table table-striped">
         <tr>
             <th>Individual/ Organization name 个人/组织/机构 名称</th>
             <th>ID(IC/ Entity registration number)  证件号码</th>

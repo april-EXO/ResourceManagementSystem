@@ -1,5 +1,7 @@
 <html>
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <title>Call for Volunteers</title>
 <h1>Call for Volunteers 活动号召</h1>
 <h2>Basic Infomation 基本资料</h2>
@@ -8,7 +10,7 @@
 </head>
 
 <body>
-<table border="1">
+<table class="table table-striped">
         <tr>
             <th>Project title 项目名称</th>
             <th>Initiated by organization/ Individual name 活动发起组织/发起人</th>
