@@ -47,53 +47,71 @@
                 <input type="text" class="form-control" name="id">
                 <label for="id">ID(IC/ Entity registration number) 证件号码 :</label>
             </div>
-            <div class="form-floating mb-3">
-                <select class="form-select" id="state" name="state" aria-label="state">
-                    <option selected disabled></option>
-                    <option value="Johor">Johor</option>
-                    <option value="Kedah">Kedah</option>
-                    <option value="Kelantan">Kelantan</option>
-                    <option value="Melaka">Melaka</option>
-                    <option value="Negeri Sembilan">Negeri Sembilan</option>
-                    <option value="Pahang">Pahang</option>
-                    <option value="Penang">Penang</option>
-                    <option value="Perak">Perak</option>
-                    <option value="Perlis">Perlis</option>
-                    <option value="Sabah">Sabah</option>
-                    <option value="Sarawak">Sarawak</option>
-                    <option value="Selangor">Selangor</option>
-                    <option value="Terangganu">Terangganu</option>
-                    <option value="KualaLumpur">Wilayah Persekutuan Kuala Lumpur</option>
-                    <option value="Putrajaya">Putrajaya</option>
-                </select>
-                <label for="state">State 州属 :</label>
-            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="state" name="state" aria-label="state">
+                            <option selected disabled></option>
+                            <option value="Johor">Johor</option>
+                            <option value="Kedah">Kedah</option>
+                            <option value="Kelantan">Kelantan</option>
+                            <option value="Melaka">Melaka</option>
+                            <option value="Negeri Sembilan">Negeri Sembilan</option>
+                            <option value="Pahang">Pahang</option>
+                            <option value="Penang">Penang</option>
+                            <option value="Perak">Perak</option>
+                            <option value="Perlis">Perlis</option>
+                            <option value="Sabah">Sabah</option>
+                            <option value="Sarawak">Sarawak</option>
+                            <option value="Selangor">Selangor</option>
+                            <option value="Terangganu">Terangganu</option>
+                            <option value="KualaLumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                            <option value="Putrajaya">Putrajaya</option>
+                        </select>
+                        <label for="state">State 州属 :</label>
+                    </div>
+                </div>
 
-            <div class="form-floating mb-3">
-                <input type="number" id="postcode" name="postcode" class="form-control">
-                <label for="postcode">Postcode 邮区编号 :</label>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="number" id="postcode" name="postcode" class="form-control">
+                        <label for="postcode">Postcode 邮区编号 :</label>
+                    </div>
+                </div>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" id="location" name="location" class="form-control">
                 <label for="location">Location 地区 : (eg: JB, Sepang, Butterworth, etc.)</label>
             </div>
 
-            <div class="form-floating mb-3">
-                <input type="text" id="contactperson" name="contactperson" class="form-control">
-                <label for="contactperson">Contact Person 联络人 :</label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="contactperson" name="contactperson" class="form-control">
+                        <label for="contactperson">Contact Person 联络人 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="phone" id="contactnumber" name="contactnumber" class="form-control">
+                        <label for="contactnumber">Contact Number 联络号码 :</label>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-floating mb-3">
-                <input type="phone" id="contactnumber" name="contactnumber" class="form-control">
-                <label for="contactnumber">Contact Number 联络号码 :</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" id="website" name="website" class="form-control">
-                <label for="website">Website 网站 :</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" id="page" name="page" class="form-control">
-                <label for="page">Social media page 社交媒体链接 : (eg. FB, Twitter, Instagram. etc.)</label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="website" name="website" class="form-control">
+                        <label for="website">Website 网站 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="contactperson" name="contactperson" class="form-control">
+                        <label for="contactperson">Social media page 社交媒体链接 : (eg. FB, Instagram. etc.)</label>
+                    </div>
+                </div>
             </div>
 
 

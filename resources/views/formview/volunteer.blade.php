@@ -40,48 +40,72 @@
         <form action="/form/volunteer" method="POST" class="formContainer">
             @csrf
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="name">
-                <label for="name">Name 姓名 :</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="id">
-                <label for="id">IC number 身份证号码 :</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="phone" class="form-control" name="contactnumber">
-                <label for="contactnumber">Contact Number 联络号码 :</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" name="email">
-                <label for="email">Email 电子邮件 :</label>
-            </div>
-            <div class="form-floating mb-3">
-                <select class="form-select" id="state" name="state" aria-label="state">
-                    <option selected disabled></option>
-                    <option value="Johor">Johor</option>
-                    <option value="Kedah">Kedah</option>
-                    <option value="Kelantan">Kelantan</option>
-                    <option value="Melaka">Melaka</option>
-                    <option value="Negeri Sembilan">Negeri Sembilan</option>
-                    <option value="Pahang">Pahang</option>
-                    <option value="Penang">Penang</option>
-                    <option value="Perak">Perak</option>
-                    <option value="Perlis">Perlis</option>
-                    <option value="Sabah">Sabah</option>
-                    <option value="Sarawak">Sarawak</option>
-                    <option value="Selangor">Selangor</option>
-                    <option value="Terangganu">Terangganu</option>
-                    <option value="KualaLumpur">Wilayah Persekutuan Kuala Lumpur</option>
-                    <option value="Putrajaya">Putrajaya</option>
-                </select>
-                <label for="state">State 州属 :</label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="name">
+                        <label for="name">Name 姓名 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="id">
+                        <label for="id">IC number 身份证号码 :</label>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-floating mb-3">
-                <input type="number" id="postcode" name="postcode" class="form-control">
-                <label for="postcode">Postcode 邮区编号 :</label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="phone" class="form-control" name="contactnumber">
+                        <label for="contactnumber">Contact Number 联络号码 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" name="email">
+                        <label for="email">Email 电子邮件 :</label>
+                    </div>
+                </div>
             </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="state" name="state" aria-label="state">
+                            <option selected disabled></option>
+                            <option value="Johor">Johor</option>
+                            <option value="Kedah">Kedah</option>
+                            <option value="Kelantan">Kelantan</option>
+                            <option value="Melaka">Melaka</option>
+                            <option value="Negeri Sembilan">Negeri Sembilan</option>
+                            <option value="Pahang">Pahang</option>
+                            <option value="Penang">Penang</option>
+                            <option value="Perak">Perak</option>
+                            <option value="Perlis">Perlis</option>
+                            <option value="Sabah">Sabah</option>
+                            <option value="Sarawak">Sarawak</option>
+                            <option value="Selangor">Selangor</option>
+                            <option value="Terangganu">Terangganu</option>
+                            <option value="KualaLumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                            <option value="Putrajaya">Putrajaya</option>
+                        </select>
+                        <label for="state">State 州属 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="number" id="postcode" name="postcode" class="form-control">
+                        <label for="postcode">Postcode 邮区编号 :</label>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
             <div class="form-floating mb-3">
                 <input type="text" id="location" name="location" class="form-control">
                 <label for="location">Location 地区 : (eg: JB, Sepang, Butterworth, etc.)</label>
@@ -463,7 +487,6 @@
 </body>
 
 <script>
-
     document.getElementById('servicebox').onchange = function() {
         document.getElementById('servicecontent').disabled = !this.checked;
         if (!servicecontent.disabled) {
@@ -527,4 +550,5 @@
         }
     };
 </script>
+
 </html>

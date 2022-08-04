@@ -40,31 +40,58 @@
         <form action="/form/connector" method="POST" class="formContainer">
             @csrf
 
+            <div class="row">
+                <div class="col">
+
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="projectTitle">
                 <label for="projectTitle">Project title 项目名称 (eg. old folks home cleaning, food distribution to orphanage, etc. 例：清理老人院，派送食物到孤儿院，等。)</label>
             </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="name">
-                <label for="name">Initiated by organization/ Individual name 活动发起组织/发起人 :</label>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="name">
+                        <label for="name">Initiated by organization/ Individual name 活动发起组织/发起人 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="id">
+                        <label for="id">Organization registration number/ Individual IC number 组织注册编号/个人身份证号码 :</label>
+                    </div>
+                </div>
             </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="id">
-                <label for="id">(Initiator/发起) Organization registration number/ Individual IC number 组织注册编号/个人身份证号码 :</label>
-            </div>
+
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="beneficiaryName">
                 <label for="beneficiaryName">Beneficiary organization/ Individual name 活动收益组织/收益人 :</label>
             </div>
-            <div class="form-floating mb-3">
+            
+            <div class="row">
+                <div class="col">
+                <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="beneficiaryContactperson">
                 <label for="beneficiaryContactperson">Beneficiary Contact Person 收益单位联络人 :</label>
             </div>
-            <div class="form-floating mb-3">
+                </div>
+                <div class="col">
+                <div class="form-floating mb-3">
                 <input type="phone" class="form-control" name="beneficiaryContactnumber">
                 <label for="beneficiaryContactnumber">Beneficiary Contact Number 收益单位联络号码 :</label>
             </div>
-            <div class="form-floating mb-3">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                <div class="form-floating mb-3">
                 <select class="form-select" id="state" name="state" aria-label="state">
                     <option selected disabled></option>
                     <option value="Johor">Johor</option>
@@ -85,25 +112,35 @@
                 </select>
                 <label for="state">State 州属 :</label>
             </div>
-            <div class="form-floating mb-3">
+                </div>
+                <div class="col">
+                <div class="form-floating mb-3">
                 <input type="number" id="postcode" name="postcode" class="form-control">
                 <label for="postcode">Postcode 邮区编号 :</label>
             </div>
+                </div>
+            </div>
+            
+            
+            
+           
             <div class="form-floating mb-3">
                 <input type="text" id="location" name="location" class="form-control">
                 <label for="location">Location 地区 : (eg: JB, Sepang, Butterworth, etc.)</label>
             </div>
-            <div class="form-floating mb-3">
-                <input type="text" id="beneficiaryWebsite" name="beneficiaryWebsite" class="form-control">
-                <label for="beneficiaryWebsite">Beneficiary website 收益单位网站 :</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" id="beneficiaryPage" name="beneficiaryPage" class="form-control">
-                <label for="beneficiaryPage">Beneficiary Social media page 收益单位社交媒体链接 : (eg.例： FB, Twitter, Instagram. etc.)</label>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">Social Project Info 项目资讯</h6>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="website" name="website" class="form-control">
+                        <label for="website">Beneficiary website 收益单位网站 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="contactperson" name="contactperson" class="form-control">
+                        <label for="contactperson">Beneficiary Social media page 收益单位社交媒体链接 : (eg. FB, Instagram. etc.)</label>
+                    </div>
                 </div>
             </div>
 
@@ -116,42 +153,43 @@
                     </div>
                 </div>
                 <div class="col">
-                <div class="form-floating mb-3">
+                    <div class="form-floating mb-3">
                         <input type="date" id="timeStart" name="timeStart" class="form-control">
                         <label for="timeStart">Time from 开始时间 :</label>
                     </div>
                 </div>
                 <div class="col">
-                <div class="form-floating mb-3">
+                    <div class="form-floating mb-3">
                         <input type="date" id="timeEnd" name="timeEnd" class="form-control">
                         <label for="timeEnd">Time to 结束时间 :</label>
                     </div>
                 </div>
             </div>
+            <br>
             <fieldset class="row mb-3">
                 <legend class="col-form-label col-sm-5 pt-0">Numbers of volunteers needed<br>所需义工人数</legend>
                 <div class="col-sm-5">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="volunteerNumber" value="0-5" checked>
                         <label class="form-check-label" for="volunteerNumber">
-                        0-5
+                            0-5
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="volunteerNumber" value="6-10">
                         <label class="form-check-label" for="volunteerNumber">
-                        6-10 </label>
+                            6-10 </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="volunteerNumber" value="11-15">
                         <label class="form-check-label" for="volunteerNumber">
-                        11-15
+                            11-15
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="volunteerNumber" value="16-20">
                         <label class="form-check-label" for="volunteerNumber">
-                        16-20
+                            16-20
                         </label>
                     </div>
                     <div class="form-check">
