@@ -1,3 +1,4 @@
+{{--
 @extends('layouts.app')
 
 @section('content')
@@ -23,10 +24,10 @@
                     </div>
                     @endcan
                 </div>
-                    {{-- {{ __('You are logged in!') }} --}}
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+-}}
