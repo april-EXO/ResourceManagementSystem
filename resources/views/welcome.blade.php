@@ -71,7 +71,7 @@
                 
                 @else
                 <a class="btn btn btn-dark btn-outline-light mx-2" href="/register" role="submit">Register</a>
-                <a class="btn btn btn-dark btn-outline-light mx-2" href="/login" role="submit">login</a>
+                <a class="btn btn btn-dark btn-outline-light mx-2" href="/login" role="submit">Login</a>
                 @endif
                
 
