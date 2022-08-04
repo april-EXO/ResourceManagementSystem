@@ -14,5 +14,10 @@
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
         "vite": "^2.9.11"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "reactstrap": "^9.1.2"
     }
 }

@@ -46,7 +46,7 @@
                         </ul>
                     </li>
                 </ul>
-                <a class="btn btn btn-dark btn-outline-light" href="#" role="submit">Login</a>
+                <a class="btn btn btn-dark btn-outline-light" href="/login" role="submit">Login</a>
             </div>
         </div>
     </nav>
