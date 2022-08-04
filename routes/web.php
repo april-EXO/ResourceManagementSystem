@@ -28,11 +28,6 @@ Route::get('profile',function() { return view('profile');} );
 //-----------------------------------------------------------------------------------------
 //c/r/u/d
 
-//application form menu
-Route::get('/form/application', function () {
-    return view('formview.applicationform');
-});
-
 //beneficiary
 //c
 Route::get('/form/beneficiary', function () {
