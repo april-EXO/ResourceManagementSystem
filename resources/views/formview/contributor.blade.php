@@ -359,7 +359,7 @@
     </div>
 
     <div class="col-12 mb-3">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="submitted(event)">Submit</button>
     </div>
     <table>
         </form>
@@ -393,6 +393,12 @@
             servicecontent.focus();
         }
     };
+
+    function submitted(e) {
+        if (!confirm('Confirm submission?')) {
+            e.preventDefault();
+        }
+    }
 </script>
 
 </html>

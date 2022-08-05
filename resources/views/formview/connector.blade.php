@@ -73,57 +73,57 @@
                 <input type="text" class="form-control" name="beneficiaryName">
                 <label for="beneficiaryName">Beneficiary organization/ Individual name 活动收益组织/收益人 :</label>
             </div>
-            
+
             <div class="row">
                 <div class="col">
-                <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="beneficiaryContactperson">
-                <label for="beneficiaryContactperson">Beneficiary Contact Person 收益单位联络人 :</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="beneficiaryContactperson">
+                        <label for="beneficiaryContactperson">Beneficiary Contact Person 收益单位联络人 :</label>
+                    </div>
                 </div>
                 <div class="col">
-                <div class="form-floating mb-3">
-                <input type="phone" class="form-control" name="beneficiaryContactnumber">
-                <label for="beneficiaryContactnumber">Beneficiary Contact Number 收益单位联络号码 :</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <input type="phone" class="form-control" name="beneficiaryContactnumber">
+                        <label for="beneficiaryContactnumber">Beneficiary Contact Number 收益单位联络号码 :</label>
+                    </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                <div class="form-floating mb-3">
-                <select class="form-select" id="state" name="state" aria-label="state">
-                    <option selected disabled></option>
-                    <option value="Johor">Johor</option>
-                    <option value="Kedah">Kedah</option>
-                    <option value="Kelantan">Kelantan</option>
-                    <option value="Melaka">Melaka</option>
-                    <option value="Negeri Sembilan">Negeri Sembilan</option>
-                    <option value="Pahang">Pahang</option>
-                    <option value="Penang">Penang</option>
-                    <option value="Perak">Perak</option>
-                    <option value="Perlis">Perlis</option>
-                    <option value="Sabah">Sabah</option>
-                    <option value="Sarawak">Sarawak</option>
-                    <option value="Selangor">Selangor</option>
-                    <option value="Terangganu">Terangganu</option>
-                    <option value="KualaLumpur">Wilayah Persekutuan Kuala Lumpur</option>
-                    <option value="Putrajaya">Putrajaya</option>
-                </select>
-                <label for="state">State 州属 :</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="state" name="state" aria-label="state">
+                            <option selected disabled></option>
+                            <option value="Johor">Johor</option>
+                            <option value="Kedah">Kedah</option>
+                            <option value="Kelantan">Kelantan</option>
+                            <option value="Melaka">Melaka</option>
+                            <option value="Negeri Sembilan">Negeri Sembilan</option>
+                            <option value="Pahang">Pahang</option>
+                            <option value="Penang">Penang</option>
+                            <option value="Perak">Perak</option>
+                            <option value="Perlis">Perlis</option>
+                            <option value="Sabah">Sabah</option>
+                            <option value="Sarawak">Sarawak</option>
+                            <option value="Selangor">Selangor</option>
+                            <option value="Terangganu">Terangganu</option>
+                            <option value="KualaLumpur">Wilayah Persekutuan Kuala Lumpur</option>
+                            <option value="Putrajaya">Putrajaya</option>
+                        </select>
+                        <label for="state">State 州属 :</label>
+                    </div>
                 </div>
                 <div class="col">
-                <div class="form-floating mb-3">
-                <input type="number" id="postcode" name="postcode" class="form-control">
-                <label for="postcode">Postcode 邮区编号 :</label>
-            </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" id="postcode" name="postcode" class="form-control">
+                        <label for="postcode">Postcode 邮区编号 :</label>
+                    </div>
                 </div>
             </div>
-            
-            
-            
-           
+
+
+
+
             <div class="form-floating mb-3">
                 <input type="text" id="location" name="location" class="form-control">
                 <label for="location">Location 地区 : (eg: JB, Sepang, Butterworth, etc.)</label>
@@ -339,7 +339,7 @@
             </div>
 
             <div class="col-12 mb-3">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" onclick="submitted(event)">Submit</button>
             </div>
         </form>
     </div>
@@ -374,6 +374,12 @@
             servicecontent.focus();
         }
     };
+
+    function submitted(e) {
+        if (!confirm('Confirm submission?')) {
+            e.preventDefault();
+        }
+    }
 </script>
 
 </html>

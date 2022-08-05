@@ -1,15 +1,60 @@
 <html>
 <head>
+    @include('layouts.nav-bar-all')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <title>Resource Request</title>
 <h1>Resource Request 寻求物资</h1>
 <h2>Basic Infomation 基本资料</h2>
-<a href={{ "application" }}>Form Main Page</a>
+<div class="p-5">
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/form/beneficiary" aria-disabled="true"> Resource Request<br>寻求物资 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form/contributor">Join as contributor<br>成为贡献者</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form/volunteer">Join as volunteer<br>成为志愿者</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form/connector">Apply for volunteers helps<br>召唤志愿者</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Resource Request 寻求物资</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Basic Infomation 基本资料</h6>
+                        <p class="card-text">To be filled up by potential beneficiary individual or organization looking for resources from the public.</p>
+                        <p class="card-text">需要物资协助的个人或组织/机构。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </head>
 
 <body>
+
+<div>
+    @foreach ($beneficiary as $b)
+<li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Individual/ Organization name 个人/组织/机构 名称</div>
+    </div>
+  </li>
+<ol class="list-group list-group-numbered">
+
+  <li class="list-group-item">{{$b['name']}}</li>
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Cras justo odio</li>
+</ol>
+</div>
+@endforeach
     <table class="table table-striped">
         <tr>
             <th>Individual/ Organization name 个人/组织/机构 名称</th>

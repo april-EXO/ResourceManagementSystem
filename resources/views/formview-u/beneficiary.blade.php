@@ -12,6 +12,9 @@
 <body>
 <form action="" method="POST" class="formContainer">
         @csrf
+
+        
+
     <table>
         <tr>
             <th><label for="name"> Individual/ Organization name 个人/组织/机构 名称 :</label></th>

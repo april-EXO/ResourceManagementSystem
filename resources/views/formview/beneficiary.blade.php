@@ -108,8 +108,8 @@
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" id="contactperson" name="contactperson" class="form-control">
-                        <label for="contactperson">Social media page 社交媒体链接 : (eg. FB, Instagram. etc.)</label>
+                        <input type="text" id="page" name="page" class="form-control">
+                        <label for="page">Social media page 社交媒体链接 : (eg. FB, Instagram. etc.)</label>
                     </div>
                 </div>
             </div>
@@ -259,7 +259,7 @@
             </div>
 
             <div class="col-12 mb-3">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" onclick="submitted(event)">Submit</button>
             </div>
         </form>
     </div>
@@ -287,6 +287,12 @@
             servicecontent.focus();
         }
     };
+
+    function submitted(e) {
+        if (!confirm('Confirm submission?')) {
+            e.preventDefault();
+        }
+    }
 </script>
 
 </html>
