@@ -37,8 +37,8 @@ Route::post('/form/beneficiary', [FormController::class, 'addBeneficiary']);
 //r
 Route::get('/form/beneficiary-view', [FormController::class, 'viewBeneficiary']);
 //u
-Route::get('/form/beneficiary-edit/{id}', [FormController::class, 'viewEditBeneficiary']);
-Route::post('/form/beneficiary-edit/{id}', [FormController::class, 'editBeneficiary']);
+Route::get('/form/beneficiary-view/{id}', [FormController::class, 'viewEditBeneficiary']);
+Route::post('/form/beneficiary-view/{id}', [FormController::class, 'editBeneficiary']);
 //d
 Route::get('/form/beneficiary-delete/{id}', [FormController::class, 'deleteBeneficiary']);
 
@@ -51,8 +51,8 @@ Route::post('/form/contributor', [FormController::class, 'addContributor']);
 //r
 Route::get('/form/contributor-view', [FormController::class, 'viewContributor']);
 //u
-Route::get('/form/contributor-edit/{id}', [FormController::class, 'viewEditContributor']);
-Route::post('/form/contributor-edit/{id}', [FormController::class, 'editContributor']);
+Route::get('/form/contributor-view/{id}', [FormController::class, 'viewEditContributor']);
+Route::post('/form/contributor-view/{id}', [FormController::class, 'editContributor']);
 //d
 Route::get('/form/contributor-delete/{id}', [FormController::class, 'deleteContributor']);
 
@@ -65,8 +65,8 @@ Route::post('/form/volunteer', [FormController::class, 'addVolunteer']);
 //r
 Route::get('/form/volunteer-view', [FormController::class, 'viewVolunteer']);
 //u
-Route::get('/form/volunteer-edit/{id}', [FormController::class, 'viewEditVolunteer']);
-Route::post('/form/volunteer-edit/{id}', [FormController::class, 'editVolunteer']);
+Route::get('/form/volunteer-view/{id}', [FormController::class, 'viewEditVolunteer']);
+Route::post('/form/volunteer-view/{id}', [FormController::class, 'editVolunteer']);
 //d
 Route::get('/form/volunteer-delete/{id}', [FormController::class, 'deleteVolunteer']);
 
@@ -79,8 +79,8 @@ Route::post('/form/connector', [FormController::class, 'addConnector']);
 //r
 Route::get('/form/connector-view', [FormController::class, 'viewConnector']);
 //u
-Route::get('/form/connector-edit/{id}', [FormController::class, 'viewEditConnector']);
-Route::post('/form/connector-edit/{id}', [FormController::class, 'editConnector']);
+Route::get('/form/connector-view/{id}', [FormController::class, 'viewEditConnector']);
+Route::post('/form/connector-view/{id}', [FormController::class, 'editConnector']);
 //d
 Route::get('/form/connector-delete/{id}', [FormController::class, 'deleteConnector']);
 
