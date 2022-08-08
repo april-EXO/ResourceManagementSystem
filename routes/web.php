@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Auth::routes();
@@ -23,7 +24,22 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //profile route
-Route::get('profile',function() { return view('profile');} );
+Route::get('profile', function () {
+	return view('profile');
+});
+
+//donate
+Route::get('donate', function () {
+	return view('donate.main');
+});
+
+Route::get('donate/self', function () {
+	return view('donate.self');
+});
+
+Route::get('donate/shop', function () {
+	return view('donate.shop');
+});
 
 //-----------------------------------------------------------------------------------------
 //c/r/u/d
@@ -31,7 +47,7 @@ Route::get('profile',function() { return view('profile');} );
 //beneficiary
 //c
 Route::get('/form/beneficiary', function () {
-    return view('formview.beneficiary');
+	return view('formview.beneficiary');
 });
 Route::post('/form/beneficiary', [FormController::class, 'addBeneficiary']);
 //r
@@ -45,7 +61,7 @@ Route::get('/form/beneficiary-delete/{id}', [FormController::class, 'deleteBenef
 //contributor
 //c
 Route::get('/form/contributor', function () {
-    return view('formview.contributor');
+	return view('formview.contributor');
 });
 Route::post('/form/contributor', [FormController::class, 'addContributor']);
 //r
@@ -59,7 +75,7 @@ Route::get('/form/contributor-delete/{id}', [FormController::class, 'deleteContr
 //volunteer
 //c
 Route::get('/form/volunteer', function () {
-    return view('formview.volunteer');
+	return view('formview.volunteer');
 });
 Route::post('/form/volunteer', [FormController::class, 'addVolunteer']);
 //r
@@ -73,7 +89,7 @@ Route::get('/form/volunteer-delete/{id}', [FormController::class, 'deleteVolunte
 //connector
 //c
 Route::get('/form/connector', function () {
-    return view('formview.connector');
+	return view('formview.connector');
 });
 Route::post('/form/connector', [FormController::class, 'addConnector']);
 //r
