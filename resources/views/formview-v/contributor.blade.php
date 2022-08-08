@@ -1,102 +1,110 @@
+@include('layouts.nav-bar-all')
 <html>
-<head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<title>Contributor's Basic Info</title>
-<h1>Contributor 贡献者</h1>
-<h2>Basic Information 基本资料</h2>
-<a href={{ "application" }}>Form Main Page</a>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>View Request - Contributor</title>
+    <div class="p-5">
+        <div class="card text-center">
+            <div class="card-header">
+                <h5 class="card-title">Check Request List</h5>
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form/beneficiary-view" aria-disabled="true"> Resource Request<br>寻求物资 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/form/contributor-view">Join as contributor<br>成为贡献者</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form/volunteer-view">Join as volunteer<br>成为志愿者</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form/connector-view">Apply for volunteers helps<br>召唤志愿者</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contributor 贡献者</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Basic Infomation 基本资料</h6>
+                    </div>
+                </div>
+            </div>
 </head>
 
 <body>
-    <table class="table table-striped">
-        <tr>
-            <th>Individual/ Organization name 个人/组织/机构 名称</th>
-            <th>ID(IC/ Entity registration number)  证件号码</th>
-            <th>State 州属</th>
-            <th>Postcode 邮区编号</th>
-            <th>Location 地区</th>
-            <th>Contact Person 联络人</th>
-            <th>Contact Number 联络号码</th>
-            <th>Website 网站</th>
-            <th>Social media page 社交媒体链接</th>
-            <th>Contribution Preferences 物资资讯</th>
-            <th>(1) Contribution - Monetary 金钱捐赠</th>
-            <th>Budget for Monetary Contribution 捐赠预算</th>
-            <th>Other amount</th>
-            <th>Intended frequency of monetary contribution 捐赠次数</th>
-            <th>(2) Contribution - Items 物资捐赠</th>
-            <th>Goods or products allocation 物资</th>
-            <th>Essential foods or daily groceries 每日粮食</th>
-            <th>Furniture and fixing 家具配备</th>
-            <th>Electrical items and gadgets 家电</th>
-            <th>Transportation 运输</th>
-            <th>Educational materials 教育产品</th>
-            <th>Other</th>
-            <th>Other notes</th>
-            <th>(3) Contribution - Services/ Man Hour 奉献时间/ 服务</th>
-            <th>Services 服务</th>
-            <th>Cleaning 清洗</th>
-            <th>Moving 搬运</th>
-            <th>Education 教育</th>
-            <th>Other</th>
-            <th>Other notes</th>
-            <th>Preferred organization to contribute to 希望捐赠予</th>
-            <th>Rela Zone 2 - JB 新山人民自愿警察</th>
-            <th>Lions Club - JB 狮子会</th>
-            <th>Super Panda Team (Klang Valley) 熊猫侠团队</th>
-            <th>Foodbank 448 (JB) 食物银行</th>
-            <th>Other</th>
-            <th>Other organization</th>
-            <th>Comment/ Message 反馈/留言</th>
-            <th></th>
-            <th></th>
-        </tr>
 
-        @foreach ($contributor as $c)
-        <tr>
-            <td>{{$c['name']}}</td>
-            <td>{{$c['regnum']}}</td>
-            <td>{{$c['state']}}</td>
-            <td>{{$c['postcode']}}</td>
-            <td>{{$c['location']}}</td>
-            <td>{{$c['contactperson']}}</td>
-            <td>{{$c['contactnumber']}}</td>
-            <td>{{$c['website']}}</td>
-            <td>{{$c['page']}}</td>
-            <td></td>
-            <td></td>
-            <td>{{$c['moneyamount']}}</td>
-            <td>{{$c['moneyother']}}</td>
-            <td>{{$c['frequency']}}</td>
-            <td></td>
-            <td></td>
-            <td>{{$c['goodsFoodGroceries']}}</td>
-            <td>{{$c['goodsFurnitureFixing']}}</td>
-            <td>{{$c['goodsElectricalItemsGadgets']}}</td>
-            <td>{{$c['goodsTranspotation']}}</td>
-            <td>{{$c['goodsEducationalMaterial']}}</td>
-            <td>{{$c['other1']}}</td>
-            <td>{{$c['otherGoods']}}</td>
-            <td></td>
-            <td></td>
-            <td>{{$c['cleaning']}}</td>
-            <td>{{$c['moving']}}</td>
-            <td>{{$c['education']}}</td>
-            <td>{{$c['other2']}}</td>
-            <td>{{$c['otherServices']}}</td>
-            <td>{{$c['relazone2']}}</td>
-            <td>{{$c['lionsclubjb']}}</td>
-            <td>{{$c['superpandateamklangvalley']}}</td>
-            <td>{{$c['foodbank448']}}</td>
-            <td>{{$c['other3']}}</td>
-            <td>{{$c['otherOrganization']}}</td>
-            <td>{{$c['message']}}</td>
-            <td> <a href={{ "contributor-edit/".$c['id'] }}>Edit</a></td>
-            <td> <a href={{ "contributor-delete/".$c['id'] }}>Delete</a></td>
-        </tr>
-        @endforeach
-    </table>
+    <div class="p-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Individual/ Organization name<br>个人/组织/机构</th>
+                    <th scope="col">State<br>州属</th>
+                    <th scope="col">Location<br>地区</th>
+                    <th scope="col">Monetary Contribution<br>金钱捐赠</th>
+                    <th scope="col">Goods or products allocation<br>物资</th>
+                    <th scope="col">Services<br>服务</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($contributor as $i => $b)
+                <tr>
+                    <td scope="col">{{$b['name']}}</td>
+                    <td scope="col">{{$b['state']}}</td>
+                    <td scope="col">{{$b['location']}}</td>
+                    <td scope="col">{{$b['moneyamount']}}</td>
+                    <td scope="col">
+                        <ul class="list-group list-group-flush">
+                            <?php if ($b['goodsFoodGroceries'] == "1") echo "<li class=\"list-group-item\">Essential foods or daily groceries 每日粮食</li>"; ?>
+                            <?php if ($b['goodsFurnitureFixing'] == "1") echo "<li class=\"list-group-item\">Furniture and fixing 家具配备</li>"; ?>
+                            <?php if ($b['goodsElectricalItemsGadgets'] == "1") echo "<li class=\"list-group-item\">Electrical items and gadgets 家电</li>"; ?>
+                            <?php if ($b['goodsTranspotation'] == "1") echo "<li class=\"list-group-item\">Transportation 运输</li>"; ?>
+                            <?php if ($b['goodsEducationalMaterial'] == "1") echo "<li class=\"list-group-item\">Educational materials 教育产品</li>"; ?>
+                            <?php if ($b['other1'] == "1") echo "<li class=\"list-group-item\">Other 其他</li>"; ?>
+                        </ul>
+                    </td>
+                    <td scope="col">
+                        <ul class="list-group list-group-flush">
+                            <?php if ($b['cleaning'] == "1") echo "<li class=\"list-group-item\">Cleaning 清洗</li>"; ?>
+                            <?php if ($b['moving'] == "1") echo "<li class=\"list-group-item\">Moving 搬运</li>"; ?>
+                            <?php if ($b['education'] == "1") echo "<li class=\"list-group-item\">Education 教育</li>"; ?>
+                            <?php if ($b['other2'] == "1") echo "<li class=\"list-group-item\">Other 其他</li>"; ?>
+                        </ul>
+                    </td>
+                    <td scope="col">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$i}}">
+                            View
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal-{{$i}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel-{{$i}}">Beneficiary details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        @include('/formview-u/contributor', ['contributor' => $b])
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+    </div>
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

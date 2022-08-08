@@ -233,7 +233,7 @@ class formController extends Controller
     function viewEditBeneficiary($id)
     {
         $data = beneficiary::find($id);
-        return view('formview-u/beneficiary',['beneficiary'=>$data]);
+        return view('formview-v/beneficiary',['beneficiary'=>$data]);
     }
 
     function editBeneficiary(Request $req)
@@ -304,6 +304,7 @@ class formController extends Controller
         $con->timeend = $req -> timeEnd;
 
         $con->volunteernumber = $req -> volunteerNumber;
+        $con->numberother = $req -> otherNumber;
 
         $con->moneyamount = $req -> money;
         $con->moneyother = $req -> otherAmount;
@@ -332,5 +333,51 @@ class formController extends Controller
         $data = connector::find($id);
         $data -> delete();
         return redirect("/form/connector-view");
+    }
+
+    function editContributor(Request $req){
+        $cont = contributor::find($req -> id);
+        $cont->name = $req -> name;
+        $cont->regnum = $req -> a;
+
+        $cont->state = $req -> state;
+        $cont->postcode = $req -> postcode;
+        $cont->location = $req -> location;
+
+        $cont->contactperson = $req -> contactperson;
+        $cont->contactnumber = $req -> contactnumber;
+        
+        $cont->website = $req -> website;
+        $cont->page = $req -> page;
+        
+        $cont->moneyamount = $req -> money;
+        $cont->moneyother = $req -> otherAmount;
+        $cont->frequency = $req -> frequency;
+
+        $cont->goodsFoodGroceries = $req -> goodsFoodGroceries;
+        $cont->goodsFurnitureFixing = $req -> goodsFurnitureFixing;
+        $cont->goodsElectricalItemsGadgets = $req -> goodsElectricalItemsGadgets;
+        $cont->goodsTranspotation = $req -> goodsTranspotation;
+        $cont->goodsEducationalMaterial = $req -> goodsEducationalMaterial;
+        $cont->other1 = $req -> other1;
+        $cont->otherGoods = $req -> otherGoods;
+
+        $cont->cleaning = $req -> cleaning;
+        $cont->moving = $req -> moving;
+        $cont->education = $req -> education;
+        $cont->other2 = $req -> other2;
+        $cont->otherServices = $req -> otherServices;
+
+        $cont->relazone2 = $req -> relazone2;
+        $cont->lionsclubjb = $req -> lionsclubjb;
+        $cont->superpandateamklangvalley = $req -> superpandateamklangvalley;
+        $cont->foodbank448 = $req -> foodbank448;
+        $cont->other3 = $req -> other3;
+        $cont->otherOrganization = $req -> otherOrganization;
+        
+
+        $cont->message = $req -> message;        
+        $cont->save();
+        return redirect("/form/contributor-view");
     }
 }

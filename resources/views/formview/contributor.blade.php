@@ -111,8 +111,8 @@
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" id="contactperson" name="contactperson" class="form-control">
-                        <label for="contactperson">Social media page 社交媒体链接 : (eg. FB, Instagram. etc.)</label>
+                        <input type="text" id="page" name="page" class="form-control">
+                        <label for="page">Social media page 社交媒体链接 : (eg. FB, Instagram. etc.)</label>
                     </div>
                 </div>
             </div>
@@ -328,16 +328,16 @@
                 </label>
             </div>
             <div class="form-check">
-                <input type="hidden" name="lionscsuperpandateamklangvalleylubjb" value="0">
+                <input type="hidden" name="superpandateamklangvalley" value="0">
                 <input type="checkbox" class="form-check-input" name="superpandateamklangvalley" value="1">
                 <label class="form-check-label" for="superpandateamklangvalley">
                     Super Panda Team (Klang Valley) 熊猫侠团队
                 </label>
             </div>
             <div class="form-check">
-                <input type="hidden" name="goodsTranspotation" value="0">
-                <input type="checkbox" class="form-check-input" name="goodsTranspotation" value="1">
-                <label class="form-check-label" for="goodsTranspotation">
+                <input type="hidden" name="foodbank448" value="0">
+                <input type="checkbox" class="form-check-input" name="foodbank448" value="1">
+                <label class="form-check-label" for="foodbank448">
                     Foodbank 448 (JB) 食物银行
                 </label>
             </div>

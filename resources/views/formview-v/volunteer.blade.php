@@ -147,8 +147,8 @@
             <td>{{$v['FRIother']}}</td>
             <td>{{$v['FRIotherTime']}}</td>
             <td>{{$v['message']}}</td>
-            <td> <a href={{ "volunteer-edit/".$c['id'] }}>Edit</a></td>
-            <td> <a href={{ "volunteer-delete/".$c['id'] }}>Delete</a></td>
+            <td> <a href={{ "volunteer-edit/".$v['id'] }}>Edit</a></td>
+            <td> <a href={{ "volunteer-delete/".$v['id'] }}>Delete</a></td>
         </tr>
         @endforeach
     </table>

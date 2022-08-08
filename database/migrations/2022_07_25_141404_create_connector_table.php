@@ -35,6 +35,7 @@ return new class extends Migration
             $table->time('timeend');
 
             $table->string('volunteernumber');
+            $table->string('numberother');
 
             $table->string('moneyamount');
             $table->string('moneyother');
