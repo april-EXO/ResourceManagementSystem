@@ -11,7 +11,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
 					<li class="nav-item">
-                        <a class="nav-link active" href="/form/application" aria-current="page" >Application</a>
+                        <a class="nav-link active" href="/form/beneficiary" aria-current="page" >Application</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://yastgroup.com.my/en/">About Us</a>
