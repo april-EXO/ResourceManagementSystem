@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,9 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //profile route
-Route::get('profile', function () {
-	return view('profile');
-});
+Route::get('profile', [UserController::class, 'viewProfile'] );
 
 //donate
 Route::get('donate', function () {
