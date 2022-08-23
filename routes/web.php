@@ -25,6 +25,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//adminpage
+Route::get('/admin', function() {
+	return view('adminpage');
+});
+
 //profile route
 Route::get('profile', [UserController::class, 'viewProfile']);
 
