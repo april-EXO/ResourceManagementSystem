@@ -148,7 +148,7 @@
                         <td class="fw-light">kg</td>
                     </tr>
                     <tr>
-                       <td></td>
+                        <td></td>
                         <td> 1 </td>
                         <td> <input type="text" name="item[]]" /> </td>
                         <td> <input type="text" name="quantity[]]" /> </td>

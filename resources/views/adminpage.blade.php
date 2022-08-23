@@ -53,152 +53,66 @@
             <div class="card" style="background-color:lightgrey">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-1">no.
+                        <div class="col-1">
                         </div>
-                        <div class="col-1">image
+                        <div class="col-1">
                         </div>
-                        <div class="col-6">name
+                        <div class="col-6">Name
                         </div>
-                        <div class="col-2">state
+                        <div class="col-2">Application Date
                         </div>
-                        <div class="col-1">date
+                        <div class="col-1">Status
                         </div>
-                        <div class="col-1">view
+                        <div class="col-1">
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div class="card mb-2">
+			@foreach ($application as $i => $b)
+			<div class="card mb-2">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-1">1
+                        <div class="col-1">{{$i+1}}
                         </div>
                         <div class="col-1">
 
-                            <img src="images/beneficiary.jpg" alt="Generic placeholder image" style="width:100px;height:100px">
+                            <img src="images/{{$b['photo']}}" alt="{{$b['photo']}}" style="width:100px;height:100px">
 
                         </div>
-                        <div class="col-6">Station Love and Caring.
+                        <div class="col-6">{{$b['name']}}
                         </div>
-                        <div class="col-2">Penang
+                        <div class="col-2">{{$b['created_at']}}
                         </div>
-                        <div class="col-1">23-8-2022 11:11:45
+                        <div class="col-1">{{$b['status']}}
                         </div>
-                        <div class="col-1"><button class="btn btn-primary">detail</button>
+                        <div class="col-1"><!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$i}}">
+							   Detail
+						   </button>
+						</div>
+						<!-- Modal -->
+                        <div class="modal fade" id="exampleModal-{{$i}}" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel-{{$i}}">Application details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{-- @include('/formview-u/beneficiary', ['beneficiary' => $b]) --}}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card mb-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-1">2
-                        </div>
-                        <div class="col-1">
-
-                            <img src="images/Volunteer.jpg" alt="Generic placeholder image" style="width:100px;height:100px">
-
-                        </div>
-                        <div class="col-6">Pusat Kasih Sayang.
-                        </div>
-                        <div class="col-2">Kuala Lunpur
-                        </div>
-                        <div class="col-1">23-8-2022 11:11:45
-                        </div>
-                        <div class="col-1"><button class="btn btn-primary">detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-1">3
-                        </div>
-                        <div class="col-1">
-
-                            <img src="images/Old-folks-home.jpg" alt="Generic placeholder image" style="width:100px;height:100px">
-
-                        </div>
-                        <div class="col-6">Sekolah Jenis Kebangsaan Jkk.
-                        </div>
-                        <div class="col-2">Kedah
-                        </div>
-                        <div class="col-1">23-8-2022 11:11:45
-                        </div>
-                        <div class="col-1"><button class="btn btn-primary">detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-1">4
-                        </div>
-                        <div class="col-1">
-
-                            <img src="images/Volunteer.jpg" alt="Generic placeholder image" style="width:100px;height:100px">
-
-                        </div>
-                        <div class="col-6">Pusat Kasih Sayang.
-                        </div>
-                        <div class="col-2">Kuala Lunpur
-                        </div>
-                        <div class="col-1">23-8-2022 11:11:45
-                        </div>
-                        <div class="col-1"><button class="btn btn-primary">detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-1">5
-                        </div>
-                        <div class="col-1">
-
-                            <img src="images/Volunteer.jpg" alt="Generic placeholder image" style="width:100px;height:100px">
-
-                        </div>
-                        <div class="col-6">Pusat Kasih Sayang.
-                        </div>
-                        <div class="col-2">Kuala Lunpur
-                        </div>
-                        <div class="col-1">23-8-2022 11:11:45
-                        </div>
-                        <div class="col-1"><button class="btn btn-primary">detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-1">6
-                        </div>
-                        <div class="col-1">
-
-                            <img src="images/beneficiary.jpg" alt="Generic placeholder image" style="width:100px;height:100px">
-
-                        </div>
-                        <div class="col-6">Station Love and Caring.
-                        </div>
-                        <div class="col-2">Penang
-                        </div>
-                        <div class="col-1">23-8-2022 11:11:45
-                        </div>
-                        <div class="col-1"><button class="btn btn-primary">detail</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			@endforeach
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

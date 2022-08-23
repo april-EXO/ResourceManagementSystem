@@ -61,4 +61,10 @@ class RequestController extends Controller
 			return redirect("/beneficiary-application");
 		}
 	}
+
+	function viewApplicationAdmin()
+    {
+        $data = Application::all();
+        return view('/adminpage',['application'=>$data]);
+    }
 }

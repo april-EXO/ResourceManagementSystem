@@ -26,9 +26,11 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //adminpage
-Route::get('/admin', function() {
-	return view('adminpage');
-});
+// Route::get('/admin', function() {
+// 	return view('adminpage');
+// });
+
+Route::get('/admin', [RequestController::class, 'viewApplicationAdmin']);
 
 //profile route
 Route::get('profile', [UserController::class, 'viewProfile']);
@@ -115,3 +117,4 @@ Route::get('/beneficiary-application', function () {
 });
 
 Route::post('/beneficiary-application', [RequestController::class, 'addApplication']);
+
