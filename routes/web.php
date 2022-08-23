@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\RequestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //profile route
-Route::get('profile', [UserController::class, 'viewProfile'] );
+Route::get('profile', [UserController::class, 'viewProfile']);
 
 //donate
 Route::get('donate', function () {
@@ -101,3 +102,11 @@ Route::get('/form/connector-delete/{id}', [FormController::class, 'deleteConnect
 
 
 //-----------------------------------------------------------------------------------------
+
+
+
+Route::get('/beneficiary-application', function () {
+	return view('beneficiary-application');
+});
+
+Route::post('/beneficiary-application', [RequestController::class, 'addApplication']);
