@@ -18,7 +18,7 @@
     @can('isAdmin')
         <script type="text/javascript">
 
-            window.location.href = '/admin';
+            window.location.href = '/admin/pending';
 
         </script>
     @elsecan('isUser')

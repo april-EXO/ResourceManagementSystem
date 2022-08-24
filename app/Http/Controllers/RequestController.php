@@ -62,9 +62,68 @@ class RequestController extends Controller
 		}
 	}
 
-	function viewApplicationAdmin()
+	function viewApplicationAdminPending()
     {
-        $data = Application::all();
-        return view('/adminpage',['application'=>$data]);
+        $data = Application::with( relations: 'getResourcesApplyRelation')->get();
+        return view('/adminpagePending',['application'=>$data]);
     }
+
+	function viewApplicationAdminRejected()
+    {
+        $data = Application::with( relations: 'getResourcesApplyRelation')->get();
+        return view('/adminpageRejected',['application'=>$data]);
+    }
+	
+	function viewApplicationAdminSuccess()
+    {
+        $data = Application::with( relations: 'getResourcesApplyRelation')->get();
+        return view('/adminpageSuccess',['application'=>$data]);
+    }
+
+	function approveApplication(Request $req)
+	{
+		$applicant = Application::find($req->id);
+		 $ben = new Approved;
+		 $ben->name = $applicant->name;
+		 $ben->description = $applicant->description;
+		 $ben->state = $applicant->state;
+		 $ben->postcode = $applicant->postcode;
+		 $ben->location = $applicant->location;
+		 $ben->contact_person = $applicant->contact_person;
+		 $ben->contact_num = $applicant->contact_num;
+		 $ben->website = $applicant->website;
+		 $ben->webpage = $applicant->webpage;
+		 $ben->photo = $applicant->name;
+		 $ben->date = $applicant->date;
+		 $ben->time = $applicant->time;
+		 $ben->user_id = $applicant->user_id;
+		 $ben->save();
+		 
+		 $applicant->status = "success";
+		 $applicant->save();
+
+		 $lastRecord = Approved::where('name', $ben->name)->latest()->first();
+		 $beneficiary_id = $lastRecord->id;
+		 
+		 $resources = ResourcesApply::where('beneficiary_applications_id',$applicant->id)
+		 ->get();
+
+		 foreach($resources as $resource){
+			$res = new Resources;
+			$res->detail = $resource->detail;
+			$res->quantity = $resource->quantity;
+			$res->unit = $resource->unit;
+			$res->beneficiary_id = $beneficiary_id;
+			$res->save();
+		 }
+		 return redirect()->back();		
+		}
+
+		function rejectApplication(Request $req){
+			$applicant = Application::find($req->id);
+			$applicant->status="rejected";
+			$applicant->save();
+			return redirect()->back();
+		}
+	
 }

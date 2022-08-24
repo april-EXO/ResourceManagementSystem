@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 19, 2022 at 05:59 PM
+-- Generation Time: Aug 24, 2022 at 05:27 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -46,7 +46,60 @@ CREATE TABLE IF NOT EXISTS `beneficiaries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `beneficiaries`
+--
+
+INSERT INTO `beneficiaries` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `user_id`, `created_at`, `updated_at`) VALUES
+(20, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', 'pusat CCC', 'Mondaty - Saturday', '11am to 11 pm', 13, '2022-08-24 09:18:19', '2022-08-24 09:18:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `beneficiary`
+--
+
+DROP TABLE IF EXISTS `beneficiary`;
+CREATE TABLE IF NOT EXISTS `beneficiary` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `regnum` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `postcode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contactperson` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contactnumber` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `page` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `moneyamount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `moneyother` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `goodsFoodGroceries` tinyint(1) NOT NULL,
+  `goodsFurnitureFixing` tinyint(1) NOT NULL,
+  `goodsElectricalItemsGadgets` tinyint(1) NOT NULL,
+  `goodsTranspotation` tinyint(1) NOT NULL,
+  `goodsEducationalMaterial` tinyint(1) NOT NULL,
+  `other1` tinyint(1) NOT NULL,
+  `otherGoods` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cleaning` tinyint(1) NOT NULL,
+  `moving` tinyint(1) NOT NULL,
+  `education` tinyint(1) NOT NULL,
+  `other2` tinyint(1) NOT NULL,
+  `otherServices` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `beneficiary`
+--
+
+INSERT INTO `beneficiary` (`id`, `name`, `regnum`, `state`, `postcode`, `location`, `contactperson`, `contactnumber`, `website`, `page`, `moneyamount`, `moneyother`, `goodsFoodGroceries`, `goodsFurnitureFixing`, `goodsElectricalItemsGadgets`, `goodsTranspotation`, `goodsEducationalMaterial`, `other1`, `otherGoods`, `cleaning`, `moving`, `education`, `other2`, `otherServices`, `message`, `created_at`, `updated_at`) VALUES
+(7, '1', '1', 'Melaka', '1', '1', '1', '1', '1', '1', 'other', '1', 0, 0, 1, 0, 0, 1, '1', 0, 1, 0, 1, '1', '11111', '2022-08-06 06:29:14', '2022-08-06 06:29:14'),
+(8, '2', '2', 'Sabah', '2', '2', '2', '2', '2', '2', 'other', '222', 1, 0, 0, 0, 0, 1, '222', 0, 0, 0, 1, '22222', '2222222', '2022-08-06 06:29:38', '2022-08-06 06:29:38');
 
 -- --------------------------------------------------------
 
@@ -74,7 +127,17 @@ CREATE TABLE IF NOT EXISTS `beneficiary_applications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `beneficiary_applications`
+--
+
+INSERT INTO `beneficiary_applications` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'pusat AAA', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 13, '2022-08-23 07:50:40', '2022-08-24 08:29:51'),
+(2, 'pusat BBB', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 13, '2022-08-23 07:50:40', '2022-08-24 08:30:30'),
+(3, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'success', 13, '2022-08-23 07:50:40', '2022-08-24 09:18:19'),
+(4, 'pusat DDD', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'rejected', 13, '2022-08-23 07:50:40', '2022-08-24 09:18:01');
 
 -- --------------------------------------------------------
 
@@ -279,13 +342,56 @@ DROP TABLE IF EXISTS `resources`;
 CREATE TABLE IF NOT EXISTS `resources` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `detail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quality` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `unit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `beneficiary_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `resources`
+--
+
+INSERT INTO `resources` (`id`, `detail`, `quantity`, `unit`, `beneficiary_id`, `created_at`, `updated_at`) VALUES
+(26, 'Oil', 50, 'Liter', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19'),
+(25, 'Noodles', 30, 'Pack', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19'),
+(24, 'Oil', 40, 'Liter', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19'),
+(23, 'Rice', 30, 'Kg', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resource_applications`
+--
+
+DROP TABLE IF EXISTS `resource_applications`;
+CREATE TABLE IF NOT EXISTS `resource_applications` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `detail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `unit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `beneficiary_applications_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `resource_applications`
+--
+
+INSERT INTO `resource_applications` (`id`, `detail`, `quantity`, `unit`, `beneficiary_applications_id`, `created_at`, `updated_at`) VALUES
+(1, 'Rice', '30', 'Kg', 1, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(2, 'Oil', '40', 'Liter', 1, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(3, 'Noodles', '30', 'Pack', 2, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(4, 'Oil', '50', 'Liter', 2, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(5, 'Rice', '30', 'Kg', 3, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(6, 'Oil', '40', 'Liter', 3, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(7, 'Noodles', '30', 'Pack', 3, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(8, 'Oil', '50', 'Liter', 3, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(9, 'Oil', '50', 'Liter', 4, '2022-08-23 07:50:40', '2022-08-23 07:50:40');
 
 -- --------------------------------------------------------
 
@@ -297,28 +403,10 @@ DROP TABLE IF EXISTS `resource_donations`;
 CREATE TABLE IF NOT EXISTS `resource_donations` (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `detail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quality` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `unit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `donation_records_id` int(11) NOT NULL,
   `resources_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `resourse_applications`
---
-
-DROP TABLE IF EXISTS `resourse_applications`;
-CREATE TABLE IF NOT EXISTS `resourse_applications` (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `detail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quality` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `unit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `beneficiary_applications_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -342,7 +430,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `role` enum('user','admin') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -350,8 +438,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
 (1, 'april', 'hsy.k10@gmail.com', NULL, '$2y$10$iLbT9PLrDTT5BYHoYQXjQe52v8lhlC41R31lAZZeV2Wfeer8Ud9/e', NULL, '2022-07-25 04:47:55', '2022-07-25 04:47:55', 'user'),
-(2, 'xinzhe', 'xinzhezhexin@gmail.com', NULL, '$2y$10$ClzowelckAEere3X5Z6Xx.GhUP6Q.1Qx.R4sxMauIGoP.mz0hFl7q', '9Pe7SyArHPx1s28yxak6ij7warZDNh9SIyMeaNatNsJMjMamftSgIfdCgNPM', '2022-07-25 05:06:29', '2022-07-25 05:06:29', 'admin'),
-(13, 'tester', 'tester@gmail.com', NULL, '$2y$10$fq73kQAEd/QEt2EiBx0oEONvt8wi3pBLBR0MDJCDmBlh7Ezkj5Qf2', NULL, '2022-08-19 07:54:48', '2022-08-19 07:54:48', 'user');
+(2, 'xinzhe', 'xinzhezhexin@gmail.com', NULL, '$2y$10$ClzowelckAEere3X5Z6Xx.GhUP6Q.1Qx.R4sxMauIGoP.mz0hFl7q', 'YxTdG5ydhZjrnNDA3GLYbVyQAhMxLhZTCbmYdzumYOCtGLPsvS4AhbeZEMTI', '2022-07-25 05:06:29', '2022-07-25 05:06:29', 'admin'),
+(13, 'tester', 'tester@gmail.com', NULL, '$2y$10$fq73kQAEd/QEt2EiBx0oEONvt8wi3pBLBR0MDJCDmBlh7Ezkj5Qf2', NULL, '2022-08-19 07:54:48', '2022-08-19 07:54:48', 'user'),
+(14, 'admin', 'admin@gmail.com', NULL, '$2y$10$WsJ3wTeQkVsuHd7J4hU5VOS4YSk04WcP64FkKSVylt25ih1sIvKRa', NULL, '2022-08-24 09:23:46', '2022-08-24 09:23:46', 'admin');
 
 -- --------------------------------------------------------
 
@@ -371,7 +460,7 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user_profiles`
@@ -379,7 +468,8 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
 
 INSERT INTO `user_profiles` (`id`, `gender`, `address`, `contact_num`, `birthday`, `age`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'female', NULL, NULL, NULL, NULL, 1, NULL, NULL),
-(3, NULL, NULL, NULL, NULL, 30, 13, '2022-08-19 07:54:48', '2022-08-19 07:54:48');
+(3, NULL, NULL, NULL, NULL, 30, 13, '2022-08-19 07:54:48', '2022-08-19 07:54:48'),
+(4, NULL, NULL, NULL, NULL, NULL, 14, '2022-08-24 09:23:46', '2022-08-24 09:23:46');
 
 -- --------------------------------------------------------
 
