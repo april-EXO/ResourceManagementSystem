@@ -1,12 +1,12 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+ 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
@@ -22,15 +22,15 @@
 
         </script>
     @elsecan('isUser')
-        {{-- <h1>Im am user logged in</h1> --}}
+       
     @else
-        {{-- <h1>Im guest</h1> --}}
+       
     @endcan
 
 
     @include('layouts.nav-bar-all')
 
-    <!-- Carousel Banner-->
+
     <div id="carouselMainPage" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselMainPage" data-bs-slide-to="0" class="active"
@@ -82,7 +82,7 @@
         </button>
     </div>
 
-    <!-- Be a Donor Section-->
+
     <div class="container">
         <h2>Be a Donor</h2>
         <div class="row g-3">
@@ -159,7 +159,7 @@
         </div>
     </div>
 
-    <!-- Be a Volunteer Section-->
+
     <div class="volunteer-contributor">
         <h2>Be a Part of Us</h2>
         <div class="volunteer">
@@ -174,7 +174,7 @@
         </div>
     </div>
 
-    <!-- Footer-->
+
     <div class="footer">
         <p>© 2022 YAST Group. All Rights Reserved.</p>
     </div>
@@ -184,4 +184,4 @@
     </script>
 </body>
 
-</html>
+</html> --}}

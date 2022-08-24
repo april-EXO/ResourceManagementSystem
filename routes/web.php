@@ -17,21 +17,22 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
-
+// Route::get('/', function () {
+// 	return view('welcome');
+// });
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//beneficiary profile edit place
+Route::get('/beneficiary-profile',[UserController::class, 'beneficiaryProfile']);
 
 //adminpage
-
-Route::get('/admin/pending', [RequestController::class, 'viewApplicationAdminPending']);
-Route::get('/admin/rejected', [RequestController::class, 'viewApplicationAdminRejected']);
-Route::get('/admin/success', [RequestController::class, 'viewApplicationAdminSuccess']);
-Route::post('/approveApplication', [RequestController::class, 'approveApplication']);
-Route::post('/rejectApplication', [RequestController::class, 'rejectApplication']);
+Route::get('/admin/pending', [RequestController::class, 'viewApplicationAdminPending'])->middleware('can:isAdmin');
+Route::get('/admin/rejected', [RequestController::class, 'viewApplicationAdminRejected'])->middleware('can:isAdmin');
+Route::get('/admin/success', [RequestController::class, 'viewApplicationAdminSuccess'])->middleware('can:isAdmin');
+Route::post('/approveApplication', [RequestController::class, 'approveApplication'])->middleware('can:isAdmin');
+Route::post('/rejectApplication', [RequestController::class, 'rejectApplication'])->middleware('can:isAdmin');
 
 //profile route
 Route::get('profile', [UserController::class, 'viewProfile']);

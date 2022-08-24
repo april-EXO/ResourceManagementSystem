@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 24, 2022 at 05:27 PM
+-- Generation Time: Aug 24, 2022 at 11:29 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -46,14 +46,14 @@ CREATE TABLE IF NOT EXISTS `beneficiaries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `beneficiaries`
 --
 
 INSERT INTO `beneficiaries` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `user_id`, `created_at`, `updated_at`) VALUES
-(20, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', 'pusat CCC', 'Mondaty - Saturday', '11am to 11 pm', 13, '2022-08-24 09:18:19', '2022-08-24 09:18:19');
+(24, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', 'pusat CCC', 'Mondaty - Saturday', '11am to 11 pm', 13, '2022-08-24 14:44:22', '2022-08-24 14:44:22');
 
 -- --------------------------------------------------------
 
@@ -134,10 +134,10 @@ CREATE TABLE IF NOT EXISTS `beneficiary_applications` (
 --
 
 INSERT INTO `beneficiary_applications` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'pusat AAA', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 13, '2022-08-23 07:50:40', '2022-08-24 08:29:51'),
-(2, 'pusat BBB', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 13, '2022-08-23 07:50:40', '2022-08-24 08:30:30'),
-(3, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'success', 13, '2022-08-23 07:50:40', '2022-08-24 09:18:19'),
-(4, 'pusat DDD', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'rejected', 13, '2022-08-23 07:50:40', '2022-08-24 09:18:01');
+(1, 'pusat AAA', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 2, '2022-08-23 07:50:40', '2022-08-24 08:29:51'),
+(2, 'pusat BBB', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'Xue En', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 15, '2022-08-23 07:50:40', '2022-08-24 08:30:30'),
+(3, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'success', 13, '2022-08-23 07:50:40', '2022-08-24 14:44:21'),
+(4, 'pusat DDD', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'April', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'rejected', 1, '2022-08-23 07:50:40', '2022-08-24 09:18:01');
 
 -- --------------------------------------------------------
 
@@ -348,17 +348,17 @@ CREATE TABLE IF NOT EXISTS `resources` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `resources`
 --
 
 INSERT INTO `resources` (`id`, `detail`, `quantity`, `unit`, `beneficiary_id`, `created_at`, `updated_at`) VALUES
-(26, 'Oil', 50, 'Liter', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19'),
-(25, 'Noodles', 30, 'Pack', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19'),
-(24, 'Oil', 40, 'Liter', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19'),
-(23, 'Rice', 30, 'Kg', 20, '2022-08-24 09:18:19', '2022-08-24 09:18:19');
+(42, 'Oil', 50, 'Liter', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22'),
+(41, 'Noodles', 30, 'Pack', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22'),
+(40, 'Oil', 40, 'Liter', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22'),
+(39, 'Rice', 30, 'Kg', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22');
 
 -- --------------------------------------------------------
 
@@ -429,18 +429,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `role` enum('user','admin') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
+  `isBeneficiary` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
-(1, 'april', 'hsy.k10@gmail.com', NULL, '$2y$10$iLbT9PLrDTT5BYHoYQXjQe52v8lhlC41R31lAZZeV2Wfeer8Ud9/e', NULL, '2022-07-25 04:47:55', '2022-07-25 04:47:55', 'user'),
-(2, 'xinzhe', 'xinzhezhexin@gmail.com', NULL, '$2y$10$ClzowelckAEere3X5Z6Xx.GhUP6Q.1Qx.R4sxMauIGoP.mz0hFl7q', 'YxTdG5ydhZjrnNDA3GLYbVyQAhMxLhZTCbmYdzumYOCtGLPsvS4AhbeZEMTI', '2022-07-25 05:06:29', '2022-07-25 05:06:29', 'admin'),
-(13, 'tester', 'tester@gmail.com', NULL, '$2y$10$fq73kQAEd/QEt2EiBx0oEONvt8wi3pBLBR0MDJCDmBlh7Ezkj5Qf2', NULL, '2022-08-19 07:54:48', '2022-08-19 07:54:48', 'user'),
-(14, 'admin', 'admin@gmail.com', NULL, '$2y$10$WsJ3wTeQkVsuHd7J4hU5VOS4YSk04WcP64FkKSVylt25ih1sIvKRa', NULL, '2022-08-24 09:23:46', '2022-08-24 09:23:46', 'admin');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `isBeneficiary`) VALUES
+(1, 'april', 'hsy.k10@gmail.com', NULL, '$2y$10$iLbT9PLrDTT5BYHoYQXjQe52v8lhlC41R31lAZZeV2Wfeer8Ud9/e', NULL, '2022-07-25 04:47:55', '2022-07-25 04:47:55', 'user', 0),
+(2, 'xinzhe', 'xinzhezhexin@gmail.com', NULL, '$2y$10$ClzowelckAEere3X5Z6Xx.GhUP6Q.1Qx.R4sxMauIGoP.mz0hFl7q', 'M8jpBx863RwNewx2uMC44O0lGM6i3MLHffkOhErjk9o2YDYoKCCqT22nNkw5', '2022-07-25 05:06:29', '2022-07-25 05:06:29', 'user', 0),
+(13, 'tester', 'tester@gmail.com', NULL, '$2y$10$fq73kQAEd/QEt2EiBx0oEONvt8wi3pBLBR0MDJCDmBlh7Ezkj5Qf2', NULL, '2022-08-19 07:54:48', '2022-08-24 14:44:21', 'user', 1),
+(14, 'admin', 'admin@gmail.com', NULL, '$2y$10$WsJ3wTeQkVsuHd7J4hU5VOS4YSk04WcP64FkKSVylt25ih1sIvKRa', NULL, '2022-08-24 09:23:46', '2022-08-24 09:23:46', 'admin', 0),
+(15, 'Xue En', 'xueen@gmail.com', NULL, '$2y$10$j7pw/7l9qmemKGMnwMgdqemYKwFX3pK.7gsNvXjyjr6SizsIs8fRK', NULL, '2022-08-24 15:22:34', '2022-08-24 15:22:34', 'user', 0);
 
 -- --------------------------------------------------------
 
@@ -460,7 +462,7 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user_profiles`
@@ -469,7 +471,8 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
 INSERT INTO `user_profiles` (`id`, `gender`, `address`, `contact_num`, `birthday`, `age`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'female', NULL, NULL, NULL, NULL, 1, NULL, NULL),
 (3, NULL, NULL, NULL, NULL, 30, 13, '2022-08-19 07:54:48', '2022-08-19 07:54:48'),
-(4, NULL, NULL, NULL, NULL, NULL, 14, '2022-08-24 09:23:46', '2022-08-24 09:23:46');
+(4, NULL, NULL, NULL, NULL, NULL, 14, '2022-08-24 09:23:46', '2022-08-24 09:23:46'),
+(5, NULL, NULL, NULL, NULL, NULL, 15, '2022-08-24 15:22:34', '2022-08-24 15:22:34');
 
 -- --------------------------------------------------------
 

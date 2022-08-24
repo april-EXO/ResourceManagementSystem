@@ -9,4 +9,8 @@ class Approved extends Model
 {
     use HasFactory;
 	protected $table = 'beneficiaries';
+
+    public function getResourcesRelation(){
+        return $this->hasMany(related: 'App\Models\Resources', foreignKey: 'beneficiary_id', localKey:'id');
+    }
 }

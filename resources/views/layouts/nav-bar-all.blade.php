@@ -11,10 +11,14 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
 					<li class="nav-item">
+                        @if(Auth::user()->isBeneficiary==false)
                         <a class="nav-link active" href="/beneficiary-application" aria-current="page" >Application</a>
+                        @else
+                        <a class="nav-link active" href="/beneficiary-profile" aria-current="page" >Beneficiary Profile</a>
+                        @endif
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://yastgroup.com.my/en/">About Us</a>
+                        <a class="nav-link active" href="https://yastgroup.com.my/en/">About Us</a>
                     </li>
                 </ul>
 

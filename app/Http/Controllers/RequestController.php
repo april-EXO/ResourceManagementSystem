@@ -8,6 +8,7 @@ use App\Models\Application;
 use App\Models\Approved;
 use App\Models\Resources;
 use App\Models\ResourcesApply;
+use App\Models\User;
 
 class RequestController extends Controller
 {
@@ -116,6 +117,11 @@ class RequestController extends Controller
 			$res->beneficiary_id = $beneficiary_id;
 			$res->save();
 		 }
+
+		 $user = User::find($ben->user_id);
+		 $user->isBeneficiary = 1;
+		 $user->save();
+		 
 		 return redirect()->back();		
 		}
 
