@@ -16,10 +16,10 @@
                 <h6>Donation ID: OD45345345435</h6>
                 <article class="card">
                     <div class="card-body row">
-                        <div class="col"> <strong>Donation Type:</strong> <br> Self Purchase </div>
-                        <div class="col"> <strong>Donation Method:</strong> <br> JNT, | <i class="fa fa-phone"></i> +01298675986 </div>
-                        <div class="col"> <strong>Status:</strong> <br> Arrived at our warehouse </div>
-                        <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
+                        <div class="col"> <strong>Donation Type:</strong> <br> {{$donationRecords[0]['type']}} </div>
+                        <div class="col"> <strong>Delivery Method:</strong> <br> {{$donationRecords[0]['method']}} </div>
+                        <div class="col"> <strong>Status:</strong> <br> {{$donationRecords[0]['status']}} </div>
+                        <div class="col"> <strong>Donation Details:</strong> <br> {{$donationRecords[0]['donation_detail']}} </div>
                     </div>
                 </article>
                 <div class="track">
@@ -29,30 +29,15 @@
                 </div>
                 <hr>
                 <ul class="row">
+                    @foreach ($donationRecords as $donationRecord)
                     <li class="col-md-4">
                         <figure class="itemside mb-3">
-                            <div class="aside"><img src="https://i.imgur.com/iDwDQ4o.png" class="img-sm border"></div>
                             <figcaption class="info align-self-center">
-                                <p class="title">Hup Seng Cream Crackers <br> 20 Unit</p> <span class="text-muted">RM 80 </span>
+                                <p class="title">{{$donationRecord->detail}} </p> <span class="text-muted">{{$donationRecord->quantity}} {{$donationRecord->unit}} </span>
                             </figcaption>
                         </figure>
                     </li>
-                    <li class="col-md-4">
-                        <figure class="itemside mb-3">
-                            <div class="aside"><img src="https://i.imgur.com/tVBy5Q0.png" class="img-sm border"></div>
-                            <figcaption class="info align-self-center">
-                                <p class="title">Rice <br> 5 KG</p> <span class="text-muted">RM 11.50 </span>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="col-md-4">
-                        <figure class="itemside mb-3">
-                            <div class="aside"><img src="https://i.imgur.com/Bd56jKH.png" class="img-sm border"></div>
-                            <figcaption class="info align-self-center">
-                                <p class="title">Detergent <br> 3 L</p> <span class="text-muted">RM 21.50 </span>
-                            </figcaption>
-                        </figure>
-                    </li>
+                    @endforeach
                 </ul>
                 <hr>
                 <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>

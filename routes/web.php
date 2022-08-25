@@ -3,6 +3,7 @@
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DonationRecordController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,6 +38,9 @@ Route::post('/rejectApplication', [RequestController::class, 'rejectApplication'
 //profile route
 Route::get('profile', [UserController::class, 'viewProfile']);
 
+//Dontation Tracking Page Route
+Route::get('tracking', [DonationRecordController::class, 'loadTrackingPage']);
+
 //donate
 Route::get('donate', function () {
 	return view('donate.main');
@@ -53,10 +57,6 @@ Route::get('donate/shop', function () {
 
 Route::get('/beneficiary-application', function () {
 	return view('beneficiary-application');
-});
-
-Route::get('tracking', function () {
-	return view('donationTracking');
 });
 
 Route::post('/beneficiary-application', [RequestController::class, 'addApplication']);
