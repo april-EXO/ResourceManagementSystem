@@ -3,7 +3,8 @@
 <head>
 
     @include('layouts.nav-bar-all')
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Resource Request</title>
     <style>
         td input[type="checkbox"] {
@@ -150,18 +151,18 @@
                     <tr>
                         <td></td>
                         <td> 1 </td>
-                        <td> <input type="text" name="item[]]" /> </td>
-                        <td> <input type="text" name="quantity[]]" /> </td>
-                        <td> <input type="text" name="unit[]" /> </td>
+                        <td> <input type="text" name="item[]" /> </td>
+                        <td> <input type="text" name="quantity[]"/> </td>
+                        <td> <input type="text" name="unit[]"/> </td>
                     </tr>
                 </table>
                 <div class="btn-group p-3" role="group">
                     <button type="button" onclick="addRow('dataTable')" class="btn btn-outline-primary mb-3">Add
-                        {{-- Row</button>
-                    <button type="button" onclick="deleteRow('dataTable')"
+                        Row</button>
+                    {{-- <button type="button" onclick="deleteRow('dataTable')"
                         class="btn btn-outline-danger mb-3">Delete Row</button> --}}
                 </div>
-                <input type="hidden" id="rc" class="form-control" name="rowCount" value="" />
+                <input type="hidden" id="rc" class="form-control" name="rowCount" value="3" />
 
 
             </div>
@@ -184,6 +185,7 @@
         var table = document.getElementById(tableID);
 
         var rowCount = table.rows.length;
+
         var row = table.insertRow(rowCount);
         var rowNum = rowCount - 1;
 
@@ -202,11 +204,15 @@
         element2.name = "item[]";
         cell3.appendChild(element2);
 
+
+
         var cell4 = row.insertCell(3);
         var element3 = document.createElement("input");
         element3.type = "text";
         element3.name = "quantity[]";
         cell4.appendChild(element3);
+
+        
 
         var cell5 = row.insertCell(4);
         var element4 = document.createElement("input");
@@ -215,8 +221,8 @@
         cell5.appendChild(element4);
 
         document.getElementById("rc").value = rowNum;
-
     }
+
 
     // function deleteRow(tableID) {
     //     try {
@@ -247,8 +253,15 @@
             e.preventDefault();
         }
     }
+
+	var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
 
 </html>
