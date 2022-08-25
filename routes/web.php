@@ -55,4 +55,8 @@ Route::get('/beneficiary-application', function () {
 	return view('beneficiary-application');
 });
 
+Route::get('tracking', function () {
+	return view('donationTracking');
+});
+
 Route::post('/beneficiary-application', [RequestController::class, 'addApplication']);

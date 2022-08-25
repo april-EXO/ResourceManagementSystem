@@ -17,16 +17,15 @@
                 <article class="card">
                     <div class="card-body row">
                         <div class="col"> <strong>Donation Type:</strong> <br> Self Purchase </div>
-                        <div class="col"> <strong>Shipping BY:</strong> <br> JNT, | <i class="fa fa-phone"></i> +01298675986 </div>
+                        <div class="col"> <strong>Donation Method:</strong> <br> JNT, | <i class="fa fa-phone"></i> +01298675986 </div>
                         <div class="col"> <strong>Status:</strong> <br> Arrived at our warehouse </div>
                         <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
                     </div>
                 </article>
                 <div class="track">
-                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Donation confirmed</span> </div>
-                    <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Arrived at our warehouse</span> </div>
-                    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> Distributed to beneficiaries </span> </div>
-                    <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Distributed to: </span> </div>
+                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Donation created</span> </div>
+                    <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Donation on its way to Beneficiary</span> </div>
+                    <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> Received by Beneficiary </span> </div>
                 </div>
                 <hr>
                 <ul class="row">
