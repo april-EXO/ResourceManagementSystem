@@ -14,7 +14,7 @@ class DonationRecordController extends Controller
         ->select(['donation_records.*', 'resource_donations.*'])
         ->get();
 
-        return $data;
-        //return view('donationTracking', ['donationRecords' => $data]);
+        //return $data;
+        return view('donationTracking', ['donationRecords' => $data]);
     }
 }
