@@ -39,7 +39,7 @@ Route::post('/rejectApplication', [RequestController::class, 'rejectApplication'
 Route::get('profile', [UserController::class, 'viewProfile']);
 
 //Dontation Tracking Page Route
-Route::get('tracking', [DonationRecordController::class, 'loadTrackingPage']);
+Route::get('tracking/{id}', [DonationRecordController::class, 'loadTrackingPage']);
 
 //donate
 Route::get('donate', function () {
