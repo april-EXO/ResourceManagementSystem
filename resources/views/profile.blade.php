@@ -99,7 +99,7 @@
                 <p class="card-text">{{$donationRecord['date']}}</p>
               </div>
               <div class="col align-self-end">
-                <a href="{{ route('tracking', $donationRecord['id']) }}" class="btn btn-primary" >Detail</a>
+                <a href="tracking/{{$donationRecord['id']}}" class="btn btn-primary" >Detail</a>
               </div>
             </div>
           </div>
