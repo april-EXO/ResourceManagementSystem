@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 26, 2022 at 11:55 AM
+-- Generation Time: Aug 26, 2022 at 04:25 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -53,7 +53,14 @@ CREATE TABLE IF NOT EXISTS `beneficiaries` (
 --
 
 INSERT INTO `beneficiaries` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `user_id`, `created_at`, `updated_at`) VALUES
-(24, 'pusat CCC', 'is a pusat ccc', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 13, '2022-08-24 14:44:22', '2022-08-26 03:29:56');
+(24, 'pusat CCC', 'is a pusat cccaaaaaaaaaaaasssssssssssssssssssssssssssssssssssssssssssssss sssssssssssssssssssssssssssssssssssssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 13, '2022-08-24 14:44:22', '2022-08-26 03:29:56'),
+(1, 'pusat A', 'is a pusat ccc', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 1, '2022-08-24 14:44:22', '2022-08-26 03:29:56'),
+(2, 'pusat B', 'is a pusat ccc', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 2, '2022-08-24 14:44:22', '2022-08-26 03:29:56'),
+(3, 'pusat C', 'is a pusat ccc', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 3, '2022-08-24 14:44:22', '2022-08-26 03:29:56'),
+(4, 'pusat D', 'is a pusat ccc', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 4, '2022-08-24 14:44:22', '2022-08-26 03:29:56'),
+(5, 'pusat E', 'is a pusat ccc', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 5, '2022-08-24 14:44:22', '2022-08-26 03:29:56'),
+(6, 'pusat F', 'is a pusat ccc', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 6, '2022-08-24 14:44:22', '2022-08-26 03:29:56'),
+(7, 'pusat G', 'is a pusat ccc', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 7, '2022-08-24 14:44:22', '2022-08-26 03:29:56');
 
 -- --------------------------------------------------------
 
@@ -134,13 +141,13 @@ CREATE TABLE IF NOT EXISTS `beneficiary_applications` (
 --
 
 INSERT INTO `beneficiary_applications` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'pusat AAA', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 2, '2022-08-23 07:50:40', '2022-08-24 08:29:51'),
-(2, 'pusat BBB', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'Xue En', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 15, '2022-08-23 07:50:40', '2022-08-24 08:30:30'),
-(3, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'success', 13, '2022-08-23 07:50:40', '2022-08-24 14:44:21'),
-(4, 'pusat DDD', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'April', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'rejected', 1, '2022-08-23 07:50:40', '2022-08-24 09:18:01'),
-(5, '1', '1', '1', 'Sabah', '1', '1', '1', '1', '1', '1661442607.jpg', '1', '1', 'pending', 13, '2022-08-25 07:50:07', '2022-08-25 07:50:07'),
-(6, 'tester', 'q', '2', 'Johor', '3', '3', '3', '3', '3', '1661442698.jpg', '3', '3', 'pending', 13, '2022-08-25 07:51:38', '2022-08-25 07:51:38'),
-(7, 'z', 'z', '123', 'KualaLumpur', 'z', 'z', 'z', 'z', 'z', '1661442937.jpg', 'z', 'z', 'pending', 13, '2022-08-25 07:55:37', '2022-08-25 07:55:37');
+(1, 'pusat AAA', 'Testing a a a a a', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 2, '2022-08-23 07:50:40', '2022-08-24 08:29:51'),
+(2, 'pusat BBB', 'Testing a a a a a', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'Xue En', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 15, '2022-08-23 07:50:40', '2022-08-24 08:30:30'),
+(3, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 'success', 13, '2022-08-23 07:50:40', '2022-08-24 14:44:21'),
+(4, 'pusat DDD', 'Testing a a a a a', '81300', 'Johor', 'No 111, jalan 1111, taman session 11111', 'April', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'rejected', 1, '2022-08-23 07:50:40', '2022-08-24 09:18:01'),
+(5, '1', '1', '1', 'Sabah', 'No 111, jalan 1111, taman session 11111', '1', '1', '1', '1', '1661442607.jpg', '1', '1', 'pending', 3, '2022-08-25 07:50:07', '2022-08-25 07:50:07'),
+(6, 'tester', 'q', '2', 'Johor', 'No 111, jalan 1111, taman session 11111', '3', '3', '3', '3', '1661442698.jpg', '3', '3', 'pending', 4, '2022-08-25 07:51:38', '2022-08-25 07:51:38'),
+(7, 'z', 'z', '123', 'KualaLumpur', 'No 111, jalan 1111, taman session 11111', 'z', 'z', 'z', 'z', '1661442937.jpg', 'z', 'z', 'pending', 5, '2022-08-25 07:55:37', '2022-08-25 07:55:37');
 
 -- --------------------------------------------------------
 
@@ -266,14 +273,15 @@ CREATE TABLE IF NOT EXISTS `donation_records` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `donation_records`
 --
 
 INSERT INTO `donation_records` (`id`, `type`, `date`, `time`, `method`, `donation_detail`, `comment`, `status`, `beneficiary_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Online Shopping', '2022-08-25', '18:46:53', 'Self Delivery', 'tracking number: #12345432234', 'nothing', 'pending', 123, 123, NULL, NULL);
+(1, 'Online Shopping', '2022-08-25', '18:46:53', 'Self Delivery', 'tracking number: #12345432234', 'nothing', 'pending', 24, 2, NULL, NULL),
+(2, 'Online Shopping', '2022-08-25', '18:46:53', 'Self Delivery', 'tracking number: #999345432234', 'nothing', 'pending', 24, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -461,7 +469,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `isBeneficiary`) VALUES
 (1, 'april', 'hsy.k10@gmail.com', NULL, '$2y$10$iLbT9PLrDTT5BYHoYQXjQe52v8lhlC41R31lAZZeV2Wfeer8Ud9/e', NULL, '2022-07-25 04:47:55', '2022-07-25 04:47:55', 'user', 0),
-(2, 'xinzhe', 'xinzhezhexin@gmail.com', NULL, '$2y$10$ClzowelckAEere3X5Z6Xx.GhUP6Q.1Qx.R4sxMauIGoP.mz0hFl7q', 'M8jpBx863RwNewx2uMC44O0lGM6i3MLHffkOhErjk9o2YDYoKCCqT22nNkw5', '2022-07-25 05:06:29', '2022-07-25 05:06:29', 'user', 0),
+(2, 'xinzhe', 'xinzhezhexin@gmail.com', NULL, '$2y$10$ClzowelckAEere3X5Z6Xx.GhUP6Q.1Qx.R4sxMauIGoP.mz0hFl7q', 'GOFbewQNzwgQha9PlMGwBlJvtzcsLl4aZv4deffiqHN5Qf9ygJal9jNFCaYm', '2022-07-25 05:06:29', '2022-07-25 05:06:29', 'user', 0),
 (13, 'tester', 'tester@gmail.com', NULL, '$2y$10$fq73kQAEd/QEt2EiBx0oEONvt8wi3pBLBR0MDJCDmBlh7Ezkj5Qf2', NULL, '2022-08-19 07:54:48', '2022-08-24 14:44:21', 'user', 1),
 (14, 'admin', 'admin@gmail.com', NULL, '$2y$10$WsJ3wTeQkVsuHd7J4hU5VOS4YSk04WcP64FkKSVylt25ih1sIvKRa', NULL, '2022-08-24 09:23:46', '2022-08-24 09:23:46', 'admin', 0),
 (15, 'Xue En', 'xueen@gmail.com', NULL, '$2y$10$j7pw/7l9qmemKGMnwMgdqemYKwFX3pK.7gsNvXjyjr6SizsIs8fRK', NULL, '2022-08-24 15:22:34', '2022-08-24 15:22:34', 'user', 0),

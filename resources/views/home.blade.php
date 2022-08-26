@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <title>Resource Management System</title>
 </head>
 
@@ -17,14 +18,8 @@
 
     @can('isAdmin')
         <script type="text/javascript">
-
             window.location.href = '/admin/pending';
-
         </script>
-    @elsecan('isUser')
-        {{-- <h1>Im am user logged in</h1> --}}
-    @else
-        {{-- <h1>Im guest</h1> --}}
     @endcan
 
 
@@ -46,9 +41,9 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Do a Good Deed, Give to Those in Need.</h5>
                     <p>Donate food to our welfare centre today!</p>
-                    <div class="slider-btn">
+                    {{-- <div class="slider-btn">
                         <button class="btn btn-1">Donate Now</button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="carousel-item">
@@ -56,9 +51,9 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Need Resource Support? We Can Help.</h5>
                     <p>Become a beneficiary to receive resources support.</p>
-                    <div class="slider-btn">
+                    {{-- <div class="slider-btn">
                         <button class="btn btn-2">More Info</button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="carousel-item">
@@ -66,9 +61,9 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Volunteer to Aid Us with Our Charitable Causes.</h5>
                     <p>Volunteer today to help us achieve more!</p>
-                    <div class="slider-btn">
+                    {{-- <div class="slider-btn">
                         <button class="btn btn-3">More Info</button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -85,78 +80,33 @@
     <!-- Be a Donor Section-->
     <div class="container">
         <h2>Be a Donor</h2>
+
         <div class="row g-3">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="http://www.geocities.ws/lcs/lcsing/orphanage_malaysia2.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Organization 1</h5>
-                        <p class="card-text">State: Negeri Sembilan</p>
-                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                            unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap into electronic typesetting, remaining
-                            essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                            containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </div>
-                    <div class="card-button">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <button type="button" class="btn btn-outline-dark">Donate</button>
-                        </a>
+            @for ($i = 0; $i < 3; $i++)
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="images/{{ $beneficiaries[$i]->photo }}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $beneficiaries[$i]->name }}</h5>
+                            <p class="card-text">{{ $beneficiaries[$i]->state }}</p>
+                            <p class="card-text">{{ $beneficiaries[$i]->description }}</p>
+                        </div>
+                        <div class="card-button">
+                            <a href="beneficiary/{{ $beneficiaries[$i]->id }}/detail">
+                                <button type="button" class="btn btn-outline-dark">detail</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="https://media2.malaymail.com/uploads/articles/2019/2019-04/mansid1504.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Organization 2</h5>
-                        <p class="card-text">State: Penang</p>
-                        <p class="card-text">Nunc sed blandit libero volutpat sed cras. Tortor dignissim convallis
-                            aenean et. Vel pretium lectus quam id leo in vitae. Purus in massa tempor nec feugiat nisl
-                            pretium fusce. Vel quam elementum pulvinar etiam non quam lacus suspendisse. Quis hendrerit
-                            dolor magna eget est lorem ipsum dolor. Vitae congue eu consequat ac felis donec et. Ac ut
-                            consequat semper viverra nam libero justo laoreet sit. Ut ornare lectus sit amet est
-                            placerat in egestas. Iaculis nunc sed augue lacus viverra. Velit aliquet sagittis id
-                            consectetur purus ut faucibus pulvinar. Viverra maecenas accumsan lacus vel facilisis
-                            volutpat est velit egestas.</p>
-                    </div>
-                    <div class="card-button">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <button type="button" class="btn btn-outline-dark">Donate</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                    <img src="https://assets.hmetro.com.my/images/articles/21hm62ra1_1526867754.jpg"
-                        class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Organization 3</h5>
-                        <p class="card-text">State: Selangor</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum.</p>
-                    </div>
-                    <div class="card-button">
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <button type="button" class="btn btn-outline-dark">Donate</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endfor
         </div>
+
         <div>
-            <a href="..." class="d-grid gap-2" style="text-decoration:none">
+            <a href="/viewAllBeneficiaries" class="d-grid gap-2" style="text-decoration:none">
                 <button type="button" class="btn btn-dark" style="padding:15px">View All >></button>
             </a>
         </div>
+
     </div>
 
     <!-- Become a Beneficiary -->
@@ -164,7 +114,7 @@
         <h2>Become a Beneficiary</h2>
         <div class="row g-3">
             <div class="col">
-                <img src="{{asset('images/beneficiaryleft.png')}}" class="beni-image">
+                <img src="{{ asset('images/beneficiaryleft.png') }}" class="beni-image">
             </div>
             <div class="beneficiary-info">
                 <h3>Need Resource Support?</h3>
@@ -172,23 +122,26 @@
                 <button type="button" class="btn btn-outline-light">More Info</button>
             </div>
             <div class="col">
-                <img src="{{asset('images/beneficiaryright.jpg')}}" class="beni-image">
+                <img src="{{ asset('images/beneficiaryright.jpg') }}" class="beni-image">
             </div>
         </div>
+    </div>
 
 
     <!-- Be a Volunteer Section-->
     <div class="volunteer-contributor">
         <h2>Be a Part of Us</h2>
-        <div class="volunteer">
-            <h3>Be a Volunteer</h3>
-            <p>Volunteer today to join us as we move forward with our charitable causes.</p>
-            <button type="button" class="btn btn-outline-light">More Info</button>
-        </div>
-        <div class="contributor">
-            <h3>Be a Contributor</h3>
-            <p>Register as a contributor, sponsor and aid us in gathering resources to assist those in need.</p>
-            <button type="button" class="btn btn-outline-dark">More Info</button>
+        <div class="row">
+            <div class="volunteer">
+                <h3>Be a Volunteer</h3>
+                <p>Volunteer today to join us as we move forward with our charitable causes.</p>
+                <button type="button" class="btn btn-outline-light">More Info</button>
+            </div>
+            <div class="contributor">
+                <h3>Be a Contributor</h3>
+                <p>Register as a contributor, sponsor and aid us in gathering resources to assist those in need.</p>
+                <button type="button" class="btn btn-outline-dark">More Info</button>
+            </div>
         </div>
     </div>
 

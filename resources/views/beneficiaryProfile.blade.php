@@ -1,7 +1,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <title>Resource Management System</title>
 </head>
 
@@ -27,7 +27,7 @@
             </div>
             <div class="col-6">
                 <div class="card">
-                    <div class="card-header text-center p-4" style="background-color:rgb(163, 182, 184)">
+                    <div class="card-header text-center p-4" style="background-color:#2d363e;color:white">
                         <h2> {{ $b['name'] }}</h2>
 
                     </div>
@@ -36,7 +36,7 @@
                             <div class="col-10">
                             </div>
                             <div class="col-2">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
                                     data-bs-target="#basicInfoEdit">
                                     edit
                                 </button>
@@ -65,13 +65,13 @@
             <div class="col-6">
 
                 <div class="card" style="height: 100% ">
-                    <div class="card-header" style="background-color:rgb(163, 182, 184)">
+                    <div class="card-header" style="background-color:#2d363e;color:white">
                         <div class="row">
                             <div class="col-10">
                                 <h4>Address Information</h4>
                             </div>
                             <div class="col-2">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
                                     data-bs-target="#addressEdit">
                                     edit
                                 </button>
@@ -104,13 +104,13 @@
             <div class="col-6">
 
                 <div class="card" style="height: 100%">
-                    <div class="card-header" style="background-color:rgb(163, 182, 184)">
+                    <div class="card-header" style="background-color:#2d363e;color:white">
                         <div class="row">
                             <div class="col-10">
                                 <h4>Visit Hour</h4>
                             </div>
                             <div class="col-2">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
                                     data-bs-target="#visitHourEdit">
                                     edit
                                 </button>
@@ -140,13 +140,13 @@
         </div>
 
         <div class="card mx-5 my-5">
-            <div class="card-header" style="background-color:rgb(163, 182, 184)">
+            <div class="card-header" style="background-color:#2d363e;color:white">
                 <div class="row">
                     <div class="col-11">
                         <h4>Resources Needed</h4>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
                             data-bs-target="#resourceEdit">
                             edit
                         </button>
@@ -380,6 +380,11 @@
             </div>
         </div>
     @endforeach
+
+    <!-- Footer-->
+    <div class="footer">
+        <p>© 2022 YAST Group. All Rights Reserved.</p>
+    </div>
 </body>
 
 

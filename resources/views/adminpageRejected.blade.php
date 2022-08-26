@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="col-1">
 
-                                    <img src="images/{{ $b['photo'] }}" alt="{{ $b['photo'] }}"
+                                    <img src="/images/{{ $b['photo'] }}" alt="{{ $b['photo'] }}"
                                         style="width:100px;height:100px">
 
                                 </div>

@@ -26,8 +26,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::user()->id;
+        //$user_id = Auth::user()->id;
         $beneficiaries = Approved::all();
         return view('home', ['beneficiaries'=>$beneficiaries]);
+    }
+
+    public function viewAllBeneficiaries()
+    {
+        //$user_id = Auth::user()->id;
+        $beneficiaries = Approved::all();
+        return view('allBeneficiaries', ['beneficiaries'=>$beneficiaries]);
+    }
+
+    public function loadBeneficiaryDetail($id)
+    {    
+           
+        $beneficiary=Approved::with( relations: 'getResourcesRelation') 
+        ->where('id',$id)
+        ->get();
+        return view('donate.main', ['beneficiary'=>$beneficiary]);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\UserController;
@@ -21,8 +22,9 @@ use Illuminate\Support\Facades\Auth;
 // Route::get('/', function () {
 // 	return view('welcome');
 // });
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/viewAllBeneficiaries', [HomeController::class, 'viewAllBeneficiaries']);
 Auth::routes();
 
 //beneficiary profile edit place
@@ -46,9 +48,7 @@ Route::get('profile', [UserController::class, 'viewProfile']);
 Route::get('tracking/{id}', [DonationRecordController::class, 'loadTrackingPage']);
 
 //donate
-Route::get('donate', function () {
-	return view('donate.main');
-});
+Route::get('/beneficiary/{id}/detail', [HomeController::class, 'loadBeneficiaryDetail']);
 
 Route::get('donate/self', function () {
 	return view('donate.self');
