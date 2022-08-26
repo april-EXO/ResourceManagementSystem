@@ -159,6 +159,24 @@
         </div>
     </div>
 
+    <!-- Become a Beneficiary -->
+    <div class="beneficiary">
+        <h2>Become a Beneficiary</h2>
+        <div class="row g-3">
+            <div class="col">
+                <img src="{{asset('images/beneficiaryleft.png')}}" class="beni-image">
+            </div>
+            <div class="beneficiary-info">
+                <h3>Need Resource Support?</h3>
+                <p>Register as a beneficiary on our website and receive help from the public.</p>
+                <button type="button" class="btn btn-outline-light">More Info</button>
+            </div>
+            <div class="col">
+                <img src="{{asset('images/beneficiaryright.jpg')}}" class="beni-image">
+            </div>
+        </div>
+
+
     <!-- Be a Volunteer Section-->
     <div class="volunteer-contributor">
         <h2>Be a Part of Us</h2>

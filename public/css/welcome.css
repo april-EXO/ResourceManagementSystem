@@ -113,3 +113,33 @@ h2{
     padding-right: 50px; 
     color:gray;
 }
+
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 33%;
+    height: 500px;
+}
+
+.beneficiary-info{
+    width: 33%;
+    float: left;
+    background-color: #212529;
+    color: white;
+    padding: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.beni-image{
+    filter: brightness(30%);
+}
+
