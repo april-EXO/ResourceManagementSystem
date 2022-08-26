@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User_Profile;
 use App\Models\Approved;
+use App\Models\Resources;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -25,5 +26,67 @@ class UserController extends Controller
         ->get();
         
         return view("beneficiaryProfile",[ 'beneficiary'=>$beneficiary ]);
+    }
+
+    function editResource(Request $req){
+
+        $ID=$req->id;
+        $details = $req->detail;	
+        $quantities = $req->quantity;
+        $units = $req->unit;
+        
+        foreach($ID as $i => $id){
+            $resource = Resources::find($id);
+            $resource->detail=$details[$i];
+            $resource->quantity=$quantities[$i];
+            $resource->unit=$units[$i];
+            $resource->save();
+        }
+
+        return redirect()->back();
+    }
+
+    function editBasicInfo(Request $req){
+
+        $id=$req->id;
+        $beneficiary=Approved::find($id);
+       
+        $beneficiary->name = $req->name;
+        $beneficiary->description = $req->description;
+        $beneficiary->website = $req->website;
+        $beneficiary->webpage = $req->webpage;
+        $beneficiary->contact_person = $req->contact_person;
+        $beneficiary->contact_num = $req->contact_num;
+           
+        $beneficiary->save();
+
+        return redirect()->back();
+    }
+
+    function editAddress(Request $req){
+
+        $id=$req->id;
+        $beneficiary=Approved::find($id);
+       
+        $beneficiary->location = $req->location;
+        $beneficiary->state = $req->state;
+        $beneficiary->postcode = $req->postcode;
+           
+        $beneficiary->save();
+
+        return redirect()->back();
+    }
+
+    function editVisitHour(Request $req){
+
+        $id=$req->id;
+        $beneficiary=Approved::find($id);
+       
+        $beneficiary->date = $req->date;
+        $beneficiary->time = $req->time;
+           
+        $beneficiary->save();
+
+        return redirect()->back();
     }
 }

@@ -45,7 +45,7 @@ class RequestController extends Controller
 
 
 			$items = $req->item;
-			$data = array_filter($items);
+			$data = array_filter($items);	
 			$quantities = $req->quantity;
 			$units = $req->unit;
 

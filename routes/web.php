@@ -26,6 +26,10 @@ Auth::routes();
 
 //beneficiary profile edit place
 Route::get('/beneficiary-profile',[UserController::class, 'beneficiaryProfile']);
+Route::post('/beneficiaryProfile/editBasicInfo', [UserController::class, 'editBasicInfo']);
+Route::post('/beneficiaryProfile/editAddress', [UserController::class, 'editAddress']);
+Route::post('/beneficiaryProfile/editVisitHour', [UserController::class, 'editVisitHour']);
+Route::post('/beneficiaryProfile/editResource', [UserController::class, 'editResource']);
 
 //adminpage
 Route::get('/admin/pending', [RequestController::class, 'viewApplicationAdminPending'])->middleware('can:isAdmin');

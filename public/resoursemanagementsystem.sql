@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 24, 2022 at 11:29 PM
+-- Generation Time: Aug 26, 2022 at 11:55 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `beneficiaries` (
 --
 
 INSERT INTO `beneficiaries` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `user_id`, `created_at`, `updated_at`) VALUES
-(24, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', 'pusat CCC', 'Mondaty - Saturday', '11am to 11 pm', 13, '2022-08-24 14:44:22', '2022-08-24 14:44:22');
+(24, 'pusat CCC', 'is a pusat ccc', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '1076605731', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 13, '2022-08-24 14:44:22', '2022-08-26 03:29:56');
 
 -- --------------------------------------------------------
 
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `beneficiary_applications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `beneficiary_applications`
@@ -137,7 +137,10 @@ INSERT INTO `beneficiary_applications` (`id`, `name`, `description`, `postcode`,
 (1, 'pusat AAA', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661270963.png', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 2, '2022-08-23 07:50:40', '2022-08-24 08:29:51'),
 (2, 'pusat BBB', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'Xue En', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'pending', 15, '2022-08-23 07:50:40', '2022-08-24 08:30:30'),
 (3, 'pusat CCC', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'success', 13, '2022-08-23 07:50:40', '2022-08-24 14:44:21'),
-(4, 'pusat DDD', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'April', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'rejected', 1, '2022-08-23 07:50:40', '2022-08-24 09:18:01');
+(4, 'pusat DDD', 'Testing a a a a a', '81300', 'Johor', 'Johor Bahru', 'April', '107660573', 'https://www.google.com/', 'FaceBook:Google', '1661269839.jpg', 'Mondaty - Saturday', '11am to 11 pm', 'rejected', 1, '2022-08-23 07:50:40', '2022-08-24 09:18:01'),
+(5, '1', '1', '1', 'Sabah', '1', '1', '1', '1', '1', '1661442607.jpg', '1', '1', 'pending', 13, '2022-08-25 07:50:07', '2022-08-25 07:50:07'),
+(6, 'tester', 'q', '2', 'Johor', '3', '3', '3', '3', '3', '1661442698.jpg', '3', '3', 'pending', 13, '2022-08-25 07:51:38', '2022-08-25 07:51:38'),
+(7, 'z', 'z', '123', 'KualaLumpur', 'z', 'z', 'z', 'z', 'z', '1661442937.jpg', 'z', 'z', 'pending', 13, '2022-08-25 07:55:37', '2022-08-25 07:55:37');
 
 -- --------------------------------------------------------
 
@@ -255,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `donation_records` (
   `date` date NOT NULL,
   `time` time NOT NULL,
   `method` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `detail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `donation_detail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `beneficiary_id` int(11) NOT NULL,
@@ -263,7 +266,14 @@ CREATE TABLE IF NOT EXISTS `donation_records` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `donation_records`
+--
+
+INSERT INTO `donation_records` (`id`, `type`, `date`, `time`, `method`, `donation_detail`, `comment`, `status`, `beneficiary_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Online Shopping', '2022-08-25', '18:46:53', 'Self Delivery', 'tracking number: #12345432234', 'nothing', 'pending', 123, 123, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -355,10 +365,10 @@ CREATE TABLE IF NOT EXISTS `resources` (
 --
 
 INSERT INTO `resources` (`id`, `detail`, `quantity`, `unit`, `beneficiary_id`, `created_at`, `updated_at`) VALUES
-(42, 'Oil', 50, 'Liter', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22'),
-(41, 'Noodles', 30, 'Pack', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22'),
-(40, 'Oil', 40, 'Liter', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22'),
-(39, 'Rice', 30, 'Kg', 24, '2022-08-24 14:44:22', '2022-08-24 14:44:22');
+(42, 'Oil', 53, 'Liter', 24, '2022-08-24 14:44:22', '2022-08-26 02:40:18'),
+(41, 'Noodles', 33, 'Pack', 24, '2022-08-24 14:44:22', '2022-08-25 09:56:26'),
+(40, 'Oil', 4, 'Liter', 24, '2022-08-24 14:44:22', '2022-08-25 09:56:26'),
+(39, 'Rice', 3, 'Kg', 24, '2022-08-24 14:44:22', '2022-08-25 09:56:26');
 
 -- --------------------------------------------------------
 
@@ -376,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `resource_applications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `resource_applications`
@@ -391,7 +401,8 @@ INSERT INTO `resource_applications` (`id`, `detail`, `quantity`, `unit`, `benefi
 (6, 'Oil', '40', 'Liter', 3, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
 (7, 'Noodles', '30', 'Pack', 3, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
 (8, 'Oil', '50', 'Liter', 3, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
-(9, 'Oil', '50', 'Liter', 4, '2022-08-23 07:50:40', '2022-08-23 07:50:40');
+(9, 'Oil', '50', 'Liter', 4, '2022-08-23 07:50:40', '2022-08-23 07:50:40'),
+(10, 'q', '1', 'a', 7, '2022-08-25 07:55:37', '2022-08-25 07:55:37');
 
 -- --------------------------------------------------------
 
@@ -410,7 +421,18 @@ CREATE TABLE IF NOT EXISTS `resource_donations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `resource_donations`
+--
+
+INSERT INTO `resource_donations` (`id`, `detail`, `quantity`, `unit`, `donation_records_id`, `resources_id`, `created_at`, `updated_at`) VALUES
+(1, 'rice', 20, 'kg', 1, 12, NULL, NULL),
+(2, 'water', 20, 'kg', 1, 12, NULL, NULL),
+(3, 'food', 20, 'kg', 2, 12, NULL, NULL),
+(4, 'food', 20, 'kg', 1, 12, NULL, NULL),
+(5, 'rice', 20, 'kg', 1, 12, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -431,7 +453,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` enum('user','admin') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
   `isBeneficiary` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -442,7 +464,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (2, 'xinzhe', 'xinzhezhexin@gmail.com', NULL, '$2y$10$ClzowelckAEere3X5Z6Xx.GhUP6Q.1Qx.R4sxMauIGoP.mz0hFl7q', 'M8jpBx863RwNewx2uMC44O0lGM6i3MLHffkOhErjk9o2YDYoKCCqT22nNkw5', '2022-07-25 05:06:29', '2022-07-25 05:06:29', 'user', 0),
 (13, 'tester', 'tester@gmail.com', NULL, '$2y$10$fq73kQAEd/QEt2EiBx0oEONvt8wi3pBLBR0MDJCDmBlh7Ezkj5Qf2', NULL, '2022-08-19 07:54:48', '2022-08-24 14:44:21', 'user', 1),
 (14, 'admin', 'admin@gmail.com', NULL, '$2y$10$WsJ3wTeQkVsuHd7J4hU5VOS4YSk04WcP64FkKSVylt25ih1sIvKRa', NULL, '2022-08-24 09:23:46', '2022-08-24 09:23:46', 'admin', 0),
-(15, 'Xue En', 'xueen@gmail.com', NULL, '$2y$10$j7pw/7l9qmemKGMnwMgdqemYKwFX3pK.7gsNvXjyjr6SizsIs8fRK', NULL, '2022-08-24 15:22:34', '2022-08-24 15:22:34', 'user', 0);
+(15, 'Xue En', 'xueen@gmail.com', NULL, '$2y$10$j7pw/7l9qmemKGMnwMgdqemYKwFX3pK.7gsNvXjyjr6SizsIs8fRK', NULL, '2022-08-24 15:22:34', '2022-08-24 15:22:34', 'user', 0),
+(16, 'xueen', 'xueen2000@1utar.my', NULL, '$2y$10$qvJGhbAbQRMF.tRUNYcJPeNKBXEOL6ME.i9dj6gBEPTwKoBucNsoq', NULL, '2022-08-25 00:19:33', '2022-08-25 00:19:33', 'user', 0);
 
 -- --------------------------------------------------------
 
@@ -462,7 +485,7 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user_profiles`
@@ -472,7 +495,8 @@ INSERT INTO `user_profiles` (`id`, `gender`, `address`, `contact_num`, `birthday
 (1, 'female', NULL, NULL, NULL, NULL, 1, NULL, NULL),
 (3, NULL, NULL, NULL, NULL, 30, 13, '2022-08-19 07:54:48', '2022-08-19 07:54:48'),
 (4, NULL, NULL, NULL, NULL, NULL, 14, '2022-08-24 09:23:46', '2022-08-24 09:23:46'),
-(5, NULL, NULL, NULL, NULL, NULL, 15, '2022-08-24 15:22:34', '2022-08-24 15:22:34');
+(5, NULL, NULL, NULL, NULL, NULL, 15, '2022-08-24 15:22:34', '2022-08-24 15:22:34'),
+(6, NULL, NULL, NULL, NULL, NULL, 16, '2022-08-25 00:19:33', '2022-08-25 00:19:33');
 
 -- --------------------------------------------------------
 
