@@ -44,6 +44,7 @@
             </div>
         </article>
     </div>
+	@include('layouts.footer')
 </body>
 
 </html>

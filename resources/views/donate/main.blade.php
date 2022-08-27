@@ -4,7 +4,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <title>Resource Management System</title>
+</head>
 
+<body>
 
     @foreach ($beneficiary as $b)
         <div class="row pt-5 px-5 pb-3">
@@ -139,7 +141,8 @@
                         <br>
                         <div class="text-left">
                             <h6 class="text-left">邮寄资料 Recipient Information</h6>
-                            <p class="text-left">{{$b['name']}}<br>{{$b['contact_num']}}<br>{{$b['location']}}</p>
+                            <p class="text-left">
+                                {{ $b['name'] }}<br>{{ $b['contact_num'] }}<br>{{ $b['location'] }}</p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -152,7 +155,7 @@
 
     @include('layouts.footer')
 
-
+</body>
 
 
 </head>
