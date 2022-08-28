@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DonationRecordController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Approved;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/', function () {
-// 	return view('welcome');
-// });
-Route::get('/', [HomeController::class, 'index']);
+//guest page
+Route::get('/', function () {
+	
+	$beneficiaries = Approved::all();
+	return view('welcome',['beneficiaries'=>$beneficiaries]);
+});
+
+//userpage
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/viewAllBeneficiaries', [HomeController::class, 'viewAllBeneficiaries']);
 Auth::routes();
