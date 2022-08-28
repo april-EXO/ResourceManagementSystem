@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\RequestController;
@@ -55,13 +56,11 @@ Route::get('tracking/{id}', [DonationRecordController::class, 'loadTrackingPage'
 //donate
 Route::get('/beneficiary/{id}/detail', [HomeController::class, 'loadBeneficiaryDetail']);
 
-Route::get('donate/self', function () {
-	return view('donate.self');
-});
+Route::get('/beneficiary/{id}/detail/self', [HomeController::class, 'loadBeneficiaryDetailSelf']);
+Route::POST('/beneficiary/{id}/detail/self', [DonationController::class, 'submitDonationSelf']);
 
-Route::get('donate/shop', function () {
-	return view('donate.shop');
-});
+Route::get('/beneficiary/{id}/detail/shop', [HomeController::class, 'loadBeneficiaryDetailShop']);
+Route::POST('/beneficiary/{id}/detail/shop', [DonationController::class, 'submitDonationShop']);
 
 
 Route::get('/beneficiary-application', function () {

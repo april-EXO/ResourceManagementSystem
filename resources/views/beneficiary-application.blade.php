@@ -34,14 +34,27 @@
             <input type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->id }}">
             <input type="hidden" class="form-control" name="beneficiary_id" value="{{ Auth::user()->id }}">
             <input type="hidden" class="form-control" name="status" value="pending">
+
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="name">
                 <label for="name">Individual/ Organization name 个人/组织/机构 名称 :</label>
             </div>
-            <div class="form-floating mb-3">
-                <textarea class="form-control" style="height: 100px" name="description"></textarea>
-                <label for="description">Description 简介 :</label>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" style="height: 100px" name="description"></textarea>
+                        <label for="description">Description 简介 :</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Cover Image 封面照片</label>
+                        <input class="form-control" type="file" id="photo" name="photo">
+                    </div>
+                </div>
             </div>
+
 
 
             <div class="row">
@@ -124,10 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mb-3">
-                <label for="photo" class="form-label">Cover Image 封面照片</label>
-                <input class="form-control" type="file" id="photo" name="photo">
-            </div>
+
 
             <div class="card">
                 <div class="card-body p-3">
@@ -152,8 +162,8 @@
                         <td></td>
                         <td> 1 </td>
                         <td> <input type="text" name="item[]" /> </td>
-                        <td> <input type="text" name="quantity[]"/> </td>
-                        <td> <input type="text" name="unit[]"/> </td>
+                        <td> <input type="number" name="quantity[]" /> </td>
+                        <td> <input type="text" name="unit[]" /> </td>
                     </tr>
                 </table>
                 <div class="btn-group p-3" role="group">
@@ -177,8 +187,8 @@
     </div>
     </div>
     </div>
-	
-	@include('layouts.footer')
+
+    @include('layouts.footer')
 </body>
 
 <script>
@@ -210,11 +220,11 @@
 
         var cell4 = row.insertCell(3);
         var element3 = document.createElement("input");
-        element3.type = "text";
+        element3.type = "number";
         element3.name = "quantity[]";
         cell4.appendChild(element3);
 
-        
+
 
         var cell5 = row.insertCell(4);
         var element4 = document.createElement("input");
@@ -256,10 +266,10 @@
         }
     }
 
-	var msg = '{{Session::get('alert')}}';
-    var exist = '{{Session::has('alert')}}';
-    if(exist){
-      alert(msg);
+    var msg = '{{ Session::get('alert') }}';
+    var exist = '{{ Session::has('alert') }}';
+    if (exist) {
+        alert(msg);
     }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

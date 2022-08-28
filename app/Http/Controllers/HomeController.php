@@ -47,4 +47,22 @@ class HomeController extends Controller
         ->get();
         return view('donate.main', ['beneficiary'=>$beneficiary]);
     }
+
+	public function loadBeneficiaryDetailSelf($id)
+    {    
+           
+        $beneficiary=Approved::with( relations: 'getResourcesRelation') 
+        ->where('id',$id)
+        ->get();
+        return view('donate.self', ['beneficiary'=>$beneficiary]);
+    }
+
+	public function loadBeneficiaryDetailShop($id)
+    {    
+           
+        $beneficiary=Approved::with( relations: 'getResourcesRelation') 
+        ->where('id',$id)
+        ->get();
+        return view('donate.shop', ['beneficiary'=>$beneficiary]);
+    }
 }

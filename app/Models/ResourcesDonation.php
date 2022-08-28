@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DonationRecord extends Model
+class ResourcesDonation extends Model
 {
-	use HasFactory;
-	protected $table = "donation_records";
+    use HasFactory;
+	protected $table="resource_donations";
 }

@@ -99,18 +99,18 @@
 
                 <div class="row">
                     <div class="col-1">No.</div>
-                    <div class="col-9">Resources</div>
-                    <div class="col-1">Quantity</div>
-                    <div class="col-1">Unit</div>
+                    <div class="col-7">Item</div>
+                    <div class="col-2">Quantity</div>
+                    <div class="col-2">Unit</div>
                 </div>
                 <hr>
 
                 @foreach ($b->getResourcesRelation as $key => $resource)
                     <div class="row">
                         <div class="col-1">{{ $key + 1 }}</div>
-                        <div class="col-9">{{ $resource->detail }}</div>
-                        <div class="col-1">{{ $resource->quantity }}</div>
-                        <div class="col-1">{{ $resource->unit }}</div>
+                        <div class="col-7">{{ $resource->detail }}</div>
+                        <div class="col-2">{{ $resource->quantity }}</div>
+                        <div class="col-2">{{ $resource->unit }}</div>
                     </div>
                 @endforeach
             </div>
@@ -132,10 +132,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-5">
-                        <a href="/donate/self" class="btn btn-outline-dark">手动寄出 Self-Delivery</a>
+                        <a href="/beneficiary/{{ $b['id'] }}/detail/self" class="btn btn-outline-dark">手动寄出 Self-Delivery</a>
                         <p class="mb-2 text-muted p-2">手动寄出物品并且填写寄件单号。<br>Send the resources to the address below and
                             fill in the tracking number.</p>
-                        <a href="/donate/shop" class="btn btn-outline-dark">网上购物 Shop Online</a>
+                        <a href="/beneficiary/{{ $b['id'] }}/detail/shop" class="btn btn-outline-dark">网上购物 Shop Online</a>
                         <p class="mb-2 text-muted p-2">在网上购物并且将以下资料设置为收件人。<br>Set the given information as order
                             recipient.</p>
                         <br>
