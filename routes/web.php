@@ -39,6 +39,10 @@ Route::post('/beneficiaryProfile/editBasicInfo', [UserController::class, 'editBa
 Route::post('/beneficiaryProfile/editAddress', [UserController::class, 'editAddress']);
 Route::post('/beneficiaryProfile/editVisitHour', [UserController::class, 'editVisitHour']);
 Route::post('/beneficiaryProfile/editResource', [UserController::class, 'editResource']);
+Route::get('/donation-received',[DonationRecordController::class,'loadDonationReceivedPage']);
+Route::post('/donation/receivedFailed', [DonationRecordController::class, 'receivedFailed']);
+Route::post('/donation/receivedSuccess', [DonationRecordController::class, 'receivedSuccess']);
+Route::get('donation-history',[DonationRecordController::class,'loadDonationHistoryPage']);
 
 //adminpage
 Route::get('/admin/pending', [RequestController::class, 'viewApplicationAdminPending'])->middleware('can:isAdmin');
