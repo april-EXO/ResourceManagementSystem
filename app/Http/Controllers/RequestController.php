@@ -40,31 +40,33 @@ class RequestController extends Controller
 
 		$lastRecord = Application::where('name', $req->name)->latest()->first();
 
-		$num_rows = $req->rowCount;
-		for ($i = 1; $i <= $num_rows; $i++) {
+		// $num_rows = $req->rowCount;
+		// for ($i = 1; $i <= $num_rows; $i++) {
 
 
-			$items = $req->item;
-			$data = array_filter($items);	
-			$quantities = $req->quantity;
-			$units = $req->unit;
+		$items = $req->item;
+		// $data = array_filter($items);	
+		$quantities = $req->quantity;
+		$units = $req->unit;
 
 
 
-			foreach ($data as $i => $item) {
-				if ( !empty ( $item ) && !empty ( $quantities[$i] )&& !empty ( $units[$i] ))  {
-					$res = new ResourcesApply;
-					$res->detail = $item;
-					$res->quantity = $quantities[$i];
-					$res->unit = $units[$i];
-					$res->beneficiary_applications_id = $lastRecord->id;
-					$res->save();
-				}
+		foreach ($items as $i => $item) {
+			if (!empty($item) && !empty($quantities[$i]) && !empty($units[$i])) {
+				$res = new ResourcesApply;
+				$res->detail = $item;
+				$res->quantity = $quantities[$i];
+				$res->unit = $units[$i];
+				$res->beneficiary_applications_id = $lastRecord->id;
+				$res->save();
 			}
-
-			// return redirect("/beneficiary-application");
-			return redirect()->back() ->with('alert', 'Application Sent!');
 		}
+
+		// return redirect("/beneficiary-application");
+		// return redirect("/")->back() ->with('alert', 'Application Sent!');
+		//succes 
+		return redirect('/');
+		// }
 	}
 
 	function viewApplicationAdminPending()

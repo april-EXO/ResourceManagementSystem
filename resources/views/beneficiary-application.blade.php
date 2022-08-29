@@ -36,21 +36,21 @@
             <input type="hidden" class="form-control" name="status" value="pending">
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="name" required>
                 <label for="name">Individual/ Organization name 个人/组织/机构 名称 :</label>
             </div>
 
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" style="height: 100px" name="description"></textarea>
+                        <textarea class="form-control" style="height: 100px" name="description" required></textarea>
                         <label for="description">Description 简介 :</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="mb-3">
                         <label for="photo" class="form-label">Cover Image 封面照片</label>
-                        <input class="form-control" type="file" id="photo" name="photo">
+                        <input class="form-control" type="file" id="photo" name="photo" required>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="state" name="state" aria-label="state">
+                        <select class="form-select" id="state" name="state" aria-label="state" required>
                             <option selected disabled></option>
                             <option value="Johor">Johor</option>
                             <option value="Kedah">Kedah</option>
@@ -84,26 +84,26 @@
 
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="number" id="postcode" name="postcode" class="form-control">
+                        <input type="number" id="postcode" name="postcode" class="form-control" required>
                         <label for="postcode">Postcode 邮区编号 :</label>
                     </div>
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" id="location" name="location" class="form-control">
+                <input type="text" id="location" name="location" class="form-control" required>
                 <label for="location">Location 地区 : (eg: JB, Sepang, Butterworth, etc.)</label>
             </div>
 
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" id="contact_person" name="contact_person" class="form-control">
+                        <input type="text" id="contact_person" name="contact_person" class="form-control" required>
                         <label for="contact_person">Contact Person 联络人 :</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="phone" id="contact_num" name="contact_num" class="form-control">
+                        <input type="phone" id="contact_num" name="contact_num" class="form-control" required>
                         <label for="contact_num">Contact Number 联络号码 :</label>
                     </div>
                 </div>
@@ -112,13 +112,13 @@
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" id="website" name="website" class="form-control">
+                        <input type="text" id="website" name="website" class="form-control" required>
                         <label for="website">Website 网站 :</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" id="webpage" name="webpage" class="form-control">
+                        <input type="text" id="webpage" name="webpage" class="form-control" required>
                         <label for="webpage">Social media page 社交媒体链接 : (eg. FB, Instagram. etc.)</label>
                     </div>
                 </div>
@@ -126,13 +126,13 @@
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" id="date" name="date" class="form-control">
+                        <input type="text" id="date" name="date" class="form-control" required>
                         <label for="date">Operation day 营业天 :</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" id="time" name="time" class="form-control">
+                        <input type="text" id="time" name="time" class="form-control" required>
                         <label for="time">Operation time 营业时间 :</label>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                         <td></td>
                         <td> 1 </td>
                         <td> <input type="text" name="item[]" /> </td>
-                        <td> <input type="number" name="quantity[]" /> </td>
+                        <td> <input type="number" name="quantity[]" min="1" /> </td>
                         <td> <input type="text" name="unit[]" /> </td>
                     </tr>
                 </table>
@@ -222,6 +222,7 @@
         var element3 = document.createElement("input");
         element3.type = "number";
         element3.name = "quantity[]";
+        element3.min = 1;
         cell4.appendChild(element3);
 
 

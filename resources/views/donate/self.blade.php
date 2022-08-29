@@ -56,31 +56,37 @@
 <body>
 
     <div class="p-5">
-        <form action="/beneficiary/{{ $b['id'] }}/detail/self" method="POST" class="formContainer needs-validation" novalidate enctype="multipart/form-data">
+        <form action="/beneficiary/{{ $b['id'] }}/detail/self" method="POST" class="formContainer"
+            enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
             <input type="hidden" name="beneficiary_id" value="{{ $b['id'] }}">
             <input type="hidden" name="type" value="self">
             <input type="hidden" name="status" value="pending">
+            <input type="hidden" name="date" value="nil">
+            <input type="hidden" name="time" value="nil">
 
             <div class="card mb-3">
                 <div class="card-body text-center">
                     <h6 class="card-title">捐献详情 Donation Details</h6>
                 </div>
             </div>
-            <div class="form-floating mb-3">
-                <select class="form-select" id="delivermethod" name="method" required aria-label="delivermethod">
-                    <option selected disabled></option>
-                    <option value="transportation">私人交通送货 Deliver by own transportation</option>
-                    <option value="courier">邮寄 Send by courier</option>
-                    <option value="other">其他</option>
-                </select>
-                <label for="delivermethod">派送方式 Delivery method:</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" required name="donation_detail">
-                <label for="deliverdetail">派送详情 Delivery detail: （Deliver date/Tracking number and courier name/ other
-                    remark) </label>
+            <div class="form-group">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="delivermethod" name="method" required aria-label="delivermethod">
+                        <option selected disabled></option>
+                        <option value="transportation">私人交通送货 Deliver by own transportation</option>
+                        <option value="courier">邮寄 Send by courier</option>
+                        <option value="other">其他</option>
+                    </select>
+                    <label for="delivermethod">派送方式 Delivery method:</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" required name="donation_detail">
+                    <label for="deliverdetail">派送详情 Delivery detail: （Deliver date/Tracking number and courier name/
+                        other
+                        remark) </label>
+                </div>
             </div>
             <div class="row">
                 <div class="col">
@@ -102,19 +108,22 @@
                             <hr>
 
                             @foreach ($b->getResourcesRelation as $key => $resource)
-                                <div class="row">
-                                    <div class="col-1">{{ $key + 1 }}</div>
-                                    <div class="col-7">{{ $resource->detail }}</div>
-                                    <div class="col-2">
-                                        <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="q[]">
+                                @if ($resource->quantity > 0)
+                                    <div class="row">
+                                        <div class="col-1">{{ $key + 1 }}</div>
+                                        <div class="col-7">{{ $resource->detail }}</div>
+                                        <div class="col-2">
+                                            <div class="input-group mb-3">
+                                                <input type="number" class="form-control" name="q[]"
+                                                    min="1">
+                                            </div>
                                         </div>
+                                        <div class="col-2">{{ $resource->unit }}</div>
+                                        <input type="hidden" name="resd[]" value="{{ $resource->detail }}">
+                                        <input type="hidden" name="u[]" value="{{ $resource->unit }}">
+                                        <input type="hidden" name="rid[]" value="{{ $resource->id }}">
                                     </div>
-                                    <div class="col-2">{{ $resource->unit }}</div>
-                                    <input type="hidden" name="resd[]" value="{{ $resource->detail }}">
-                                    <input type="hidden" name="u[]" value="{{ $resource->unit }}">
-                                    <input type="hidden" name="rid[]" value="{{ $resource->id }}">
-                                </div>
+                                @endif
                             @endforeach
                             <br>
 
@@ -132,9 +141,15 @@
                                     </tr>
                                     <tr>
                                         <td class="col-1">1</td>
-                                        <td class="col-7"><input type="item" class="form-control" name="item[]"></td>
-                                        <td class="col-2"><input type="number" class="form-control" name="quantity[]"></td>
-                                        <td class="col-2"><input type="text" class="form-control" name="unit[]"></td>
+                                        <td class="col-7"><input type="item" class="form-control"
+                                                name="item[]">
+                                        </td>
+                                        <td class="col-2"><input type="number" class="form-control"
+                                                name="quantity[]" min="1">
+                                        </td>
+                                        <td class="col-2"><input type="text" class="form-control"
+                                                name="unit[]">
+                                        </td>
                                     </tr>
                                 </table>
 
@@ -197,6 +212,7 @@
         element3.type = "text";
         element3.name = "quantity[]";
         element3.classList.add("form-control");
+        element3.min = 1;
         cell4.appendChild(element3);
 
 
@@ -221,6 +237,10 @@
     if (exist) {
         alert(msg);
     }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
 
 </html>

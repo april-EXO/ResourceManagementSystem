@@ -19,6 +19,8 @@ class DonationController extends Controller
 		$rec = new DonationRecord;
 		$rec->type = $req->type;
 		$rec->method = $req->method;
+		$rec->date = $req->date;
+		$rec->time = $req->time;
 		$rec->donation_detail = $req->donation_detail;
 		$rec->comment = $req->comment;
 		$rec->status = $req->status;
@@ -33,33 +35,33 @@ class DonationController extends Controller
 		$u = $req->u;
 		$rid = $req->rid;
 
-		if($resd!=NULL){
-		foreach ($resd as $f => $item) {
-			if (!empty($q[$f]) && ($q[$f]) != 0 && !empty($resd[$f]) && !empty($u[$f])) {
-				$res = new ResourcesDonation;
-				$res->detail = $resd[$f];
-				$res->quantity = $q[$f];
-				$res->unit = $u[$f];
-				$res->donation_records_id = $lastRecord->id;
-				$res->resources_id = $rid[$f];
-				$res->save();
+		if ($resd != NULL) {
+			foreach ($resd as $f => $item) {
+				if (!empty($q[$f]) && ($q[$f]) != 0 && ($q[$f]) >= 0 && !empty($resd[$f]) && !empty($u[$f])) {
+					$res = new ResourcesDonation;
+					$res->detail = $resd[$f];
+					$res->quantity = $q[$f];
+					$res->unit = $u[$f];
+					$res->donation_records_id = $lastRecord->id;
+					$res->resources_id = $rid[$f];
+					$res->save();
+				}
 			}
 		}
-	}
 
 		$items = $req->item;
 		$quantities = $req->quantity;
 		$units = $req->unit;
 
 		foreach ($items as $i => $item) {
-			if (!empty($item) && !empty($quantities[$i]) && !empty($units[$i])) {
+			if (!empty($item) && !empty($quantities[$i]) && ($quantities[$i]) >= 0&& !empty($units[$i])) {
 				$r = new ResourcesDonation;
 				$r->detail = $item;
 				$r->quantity = $quantities[$i];
 				$r->unit = $units[$i];
 				$r->donation_records_id = $lastRecord->id;
 				$r->save();
-			}	
+			}
 		}
 		return redirect("/");
 	}
@@ -72,6 +74,7 @@ class DonationController extends Controller
 		$rec->date = $req->date;
 		$rec->time = $req->time;
 		$rec->method = $req->method;
+		$rec->donation_detail = $req->donation_detail;
 		$rec->comment = $req->comment;
 		$rec->status = $req->status;
 		$rec->beneficiary_id = $req->beneficiary_id;
@@ -82,29 +85,29 @@ class DonationController extends Controller
 
 		$resd = $req->resd;
 		$q = $req->q;
-		$filterQuantity = array_filter($q);
 		$u = $req->u;
 		$rid = $req->rid;
 
-		foreach ($filterQuantity as $f => $fq) {
-			if (!empty($fq) && ($fq) != 0 && !empty($resd[$f]) && !empty($u[$f])) {
-				$res = new ResourcesDonation;
-				$res->detail = $resd[$f];
-				$res->quantity = $fq;
-				$res->unit = $u[$f];
-				$res->donation_records_id = $lastRecord->id;
-				$res->resources_id = $rid[$f];
-				$res->save();
+		if ($resd != NULL) {
+			foreach ($resd as $f => $item) {
+				if (!empty($q[$f]) && ($q[$f]) != 0 && ($q[$f]) >= 0 && !empty($resd[$f]) && !empty($u[$f])) {
+					$res = new ResourcesDonation;
+					$res->detail = $resd[$f];
+					$res->quantity = $q[$f];
+					$res->unit = $u[$f];
+					$res->donation_records_id = $lastRecord->id;
+					$res->resources_id = $rid[$f];
+					$res->save();
+				}
 			}
 		}
 
 		$items = $req->item;
-		$data = array_filter($items);
 		$quantities = $req->quantity;
 		$units = $req->unit;
 
-		foreach ($data as $i => $item) {
-			if (!empty($item) && !empty($quantities[$i]) && !empty($units[$i])) {
+		foreach ($items as $i => $item) {
+			if (!empty($item) && !empty($quantities[$i]) && ($quantities[$i]) >= 0&& !empty($units[$i])) {
 				$r = new ResourcesDonation;
 				$r->detail = $item;
 				$r->quantity = $quantities[$i];
