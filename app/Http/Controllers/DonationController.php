@@ -30,24 +30,24 @@ class DonationController extends Controller
 
 		$resd = $req->resd;
 		$q = $req->q;
-		$filterQuantity = array_filter($q);
 		$u = $req->u;
 		$rid = $req->rid;
 
-		foreach ($filterQuantity as $f => $fq) {
-			if (!empty($fq) && ($fq) != 0 && !empty($resd[$f]) && !empty($u[$f])) {
+		if($resd!=NULL){
+		foreach ($resd as $f => $item) {
+			if (!empty($q[$f]) && ($q[$f]) != 0 && !empty($resd[$f]) && !empty($u[$f])) {
 				$res = new ResourcesDonation;
 				$res->detail = $resd[$f];
-				$res->quantity = $fq;
+				$res->quantity = $q[$f];
 				$res->unit = $u[$f];
 				$res->donation_records_id = $lastRecord->id;
 				$res->resources_id = $rid[$f];
 				$res->save();
 			}
 		}
+	}
 
 		$items = $req->item;
-		$data = array_filter($items);
 		$quantities = $req->quantity;
 		$units = $req->unit;
 
