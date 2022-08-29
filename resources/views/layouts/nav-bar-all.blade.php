@@ -15,7 +15,7 @@
                 @if (Auth::check())
                     <li class="nav-item">
                         @if (Auth::user()->isBeneficiary == false)
-                            <a class="nav-link active" href="/beneficiary-application"
+                            <a class="nav-link active" href="/applicationSubmittedVerify"
                                 aria-current="page">Application</a>
                         @else
                             <a class="nav-link active" href="/beneficiary-profile" aria-current="page">Beneficiary

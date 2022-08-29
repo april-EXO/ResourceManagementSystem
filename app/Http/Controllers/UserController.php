@@ -7,6 +7,7 @@ use App\Models\User_Profile;
 use App\Models\DonationRecord;
 use App\Models\Approved;
 use App\Models\Resources;
+use App\Models\Application;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -23,6 +24,20 @@ class UserController extends Controller
 
        // return $donationRecord;
         return view("profile",[ 'userProfile'=>$userProfile , 'donationRecords'=>$donationRecord]);
+    }
+
+    function checkApplicantExistance(){
+        $user_id = Auth::user()->id;
+        $applicant=Application::where('user_id',$user_id)
+        ->get();
+        return view("applicationSubmittedVerify",[ 'applicant'=>$applicant]);
+    }
+
+    function showAppyForm(){
+        $user_id = Auth::user()->id;
+        $applicant=Application::where('user_id',$user_id)
+        ->get();
+        return view("beneficiary-application",[ 'applicant'=>$applicant]);
     }
 
     function beneficiaryProfile(){

@@ -9,11 +9,14 @@ use App\Models\Approved;
 use App\Models\Resources;
 use App\Models\ResourcesApply;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class RequestController extends Controller
 {
 	function addApplication(Request $req)
 	{
+		
 		$ben = new Application;
 		$ben->name = $req->name;
 		$ben->description = $req->description;
@@ -65,8 +68,18 @@ class RequestController extends Controller
 		// return redirect("/beneficiary-application");
 		// return redirect("/")->back() ->with('alert', 'Application Sent!');
 		//succes 
-		return redirect('/');
-		// }
+		
+		$user_id=Auth::user()->id;
+		$oldrecord=Application::where('user_id',$user_id)
+		->get();
+		
+		$count = count($oldrecord);
+		
+		if($count>1){
+			$oldrecord=Application::where('user_id',$user_id)->oldest()->first()->delete();
+		}
+		
+		return redirect('/applicationSubmittedVerify');
 	}
 
 	function viewApplicationAdminPending()

@@ -67,8 +67,9 @@ Route::get('/beneficiary/{id}/detail/shop', [HomeController::class, 'loadBenefic
 Route::POST('/beneficiary/{id}/detail/shop', [DonationController::class, 'submitDonationShop']);
 
 
-Route::get('/beneficiary-application', function () {
-	return view('beneficiary-application');
-});
-
+// Route::get('/beneficiary-application', function () {
+// 	return view('beneficiary-application');
+// });
+Route::get('/applicationSubmittedVerify', [UserController::class, 'checkApplicantExistance']);
+Route::get('/beneficiary-application', [UserController::class, 'showAppyForm']);
 Route::post('/beneficiary-application', [RequestController::class, 'addApplication']);
