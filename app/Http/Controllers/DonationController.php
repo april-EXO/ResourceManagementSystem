@@ -51,7 +51,7 @@ class DonationController extends Controller
 		$quantities = $req->quantity;
 		$units = $req->unit;
 
-		foreach ($data as $i => $item) {
+		foreach ($items as $i => $item) {
 			if (!empty($item) && !empty($quantities[$i]) && !empty($units[$i])) {
 				$r = new ResourcesDonation;
 				$r->detail = $item;
@@ -59,7 +59,7 @@ class DonationController extends Controller
 				$r->unit = $units[$i];
 				$r->donation_records_id = $lastRecord->id;
 				$r->save();
-			}
+			}	
 		}
 		return redirect("/");
 	}
