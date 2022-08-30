@@ -52,13 +52,13 @@ h2{
 }
 
 .card{
-    height: 700px;
+    height: 600px;
 }
 
 .card-img-top{
     min-width: auto;
     max-width: auto;
-    height: 40%;
+    height: 50%;
 }
 
 .card-body{

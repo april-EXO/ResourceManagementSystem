@@ -25,7 +25,8 @@ use App\Models\Approved;
 Route::get('/', function () {
 	
 	$beneficiaries = Approved::all();
-	return view('welcome',['beneficiaries'=>$beneficiaries]);
+	$count=count($beneficiaries);
+	return view('welcome',['beneficiaries'=>$beneficiaries,'count'=>$count]);
 });
 
 //userpage

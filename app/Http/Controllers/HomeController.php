@@ -27,14 +27,13 @@ class HomeController extends Controller
      
     public function index()
     {
-        //$user_id = Auth::user()->id;
         $beneficiaries = Approved::all();
-        return view('home', ['beneficiaries'=>$beneficiaries]);
+        $count = count($beneficiaries);
+        return view('home', ['beneficiaries'=>$beneficiaries,'count'=>$count]);
     }
 
     public function viewAllBeneficiaries()
     {
-        //$user_id = Auth::user()->id;
         $beneficiaries = Approved::all();
         return view('allBeneficiaries', ['beneficiaries'=>$beneficiaries]);
     }

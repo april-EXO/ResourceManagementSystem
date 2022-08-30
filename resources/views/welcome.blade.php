@@ -41,19 +41,13 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Do a Good Deed, Give to Those in Need.</h5>
                     <p>Donate food to our welfare centre today!</p>
-                    {{-- <div class="slider-btn">
-                        <button class="btn btn-1">Donate Now</button>
-                    </div> --}}
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('images/Beneficiary.jpg') }}" class="d-block w-100" alt="Second Slide Image">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Need Resource Support? We Can Help.</h5>
-                    <p>Become a beneficiary to receive resources support.</p>
-                    {{-- <div class="slider-btn">
-                        <button class="btn btn-2">More Info</button>
-                    </div> --}}
+                    <p>Become a beneficiary to receive resources support.</p> 
                 </div>
             </div>
             <div class="carousel-item">
@@ -61,9 +55,6 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Volunteer to Aid Us with Our Charitable Causes.</h5>
                     <p>Volunteer today to help us achieve more!</p>
-                    {{-- <div class="slider-btn">
-                        <button class="btn btn-3">More Info</button>
-                    </div> --}}
                 </div>
             </div>
         </div>
@@ -82,23 +73,44 @@
         <h2>Be a Donor</h2>
 
         <div class="row g-3">
-            @for ($i = 0; $i < 3; $i++)
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="images/{{ $beneficiaries[$i]->photo }}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $beneficiaries[$i]->name }}</h5>
-                            <p class="card-text">{{ $beneficiaries[$i]->state }}</p>
-                            <p class="card-text">{{ $beneficiaries[$i]->description }}</p>
-                        </div>
-                        <div class="card-button">
-                            <a href="beneficiary/{{ $beneficiaries[$i]->id }}/detail">
-                                <button type="button" class="btn btn-outline-dark">detail</button>
-                            </a>
+
+            @if ($count < 6)
+                @for ($i = 0; $i < $count; $i++)
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="images/{{ $beneficiaries[$i]->photo }}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $beneficiaries[$i]->name }}</h5>
+                                <p class="card-text">{{ $beneficiaries[$i]->state }}</p>
+                                <p class="card-text">{{ $beneficiaries[$i]->description }}</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="beneficiary/{{ $beneficiaries[$i]->id }}/detail">
+                                    <button type="button" class="btn btn-outline-dark">detail</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endfor
+                @endfor
+            @else
+                @for ($i = 0; $i < 6; $i++)
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="images/{{ $beneficiaries[$i]->photo }}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $beneficiaries[$i]->name }}</h5>
+                                <p class="card-text">{{ $beneficiaries[$i]->state }}</p>
+                                <p class="card-text">{{ $beneficiaries[$i]->description }}</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="beneficiary/{{ $beneficiaries[$i]->id }}/detail">
+                                    <button type="button" class="btn btn-outline-dark">detail</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endfor
+            @endif
         </div>
 
         <div>
@@ -119,28 +131,9 @@
             <div class="beneficiary-info">
                 <h3>Need Resource Support?</h3>
                 <p>Register as a beneficiary on our website and receive help from the public.</p>
-                <button type="button" class="btn btn-outline-light">More Info</button>
             </div>
             <div class="col">
                 <img src="{{ asset('images/beneficiaryright.jpg') }}" class="beni-image">
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Be a Volunteer Section-->
-    <div class="volunteer-contributor">
-        <h2>Be a Part of Us</h2>
-        <div class="row">
-            <div class="volunteer">
-                <h3>Be a Volunteer</h3>
-                <p>Volunteer today to join us as we move forward with our charitable causes.</p>
-                <button type="button" class="btn btn-outline-light">More Info</button>
-            </div>
-            <div class="contributor">
-                <h3>Be a Contributor</h3>
-                <p>Register as a contributor, sponsor and aid us in gathering resources to assist those in need.</p>
-                <button type="button" class="btn btn-outline-dark">More Info</button>
             </div>
         </div>
     </div>
