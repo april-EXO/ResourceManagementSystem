@@ -48,9 +48,11 @@
                         <div class="col"> <strong>From:</strong> <br>
                             <h4>{{ Auth::user()->name }}</h4>
                             <p>{{ $userProfile[0]['contact_num'] }}</p>
+                            <p>{{ $userProfile[0]['address'] }}</p>
                         </div>
                         <div class="col"> <strong>To:</strong> <br>
                             <h4>{{$donationRecording[0]['description']}}</h4>
+                            <p>{{$donationRecording[0]['contact_num']}}</p>
                             <p>{{$donationRecording[0]['location']}}</p>
                         </div>
                     </div>

@@ -110,4 +110,17 @@ class UserController extends Controller
 
         return redirect()->back();
     }
+
+    public function update(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $student = User_Profile::where('user_id', $user_id) -> firstOrFail();
+        $student->gender = $request->input('gender');
+        $student->age = $request->input('age');
+        $student->address = $request->input('address');
+        $student->birthday = $request->input('bday');
+        $student->contact_num = $request->input('phone');
+        $student->update();
+        return redirect()->back();
+    }
 }
