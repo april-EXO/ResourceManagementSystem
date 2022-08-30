@@ -25,6 +25,12 @@
 
     @include('layouts.nav-bar-all')
 
+    @if (session()->get('donation-submitted'))
+        <script>
+                alert('{{Session::get('donation-submitted')}}');
+        </script>
+    @endif
+
     <!-- Carousel Banner-->
     <div id="carouselMainPage" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -101,9 +107,7 @@
                         </div>
                     </div>
                 @endfor
-
             @else
-
                 @for ($i = 0; $i < 6; $i++)
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
