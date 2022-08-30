@@ -15,7 +15,7 @@
 
     <ul class="nav nav-pills nav-fill mx-5 mt-5">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/beneficiary-profile">Info Edit</a>
+            <a class="nav-link active" aria-current="page" href="/beneficiary-profile">Update Information</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/donation-received">Donation Received</a>
@@ -43,7 +43,7 @@
                             <div class="col-2">
                                 <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
                                     data-bs-target="#basicInfoEdit">
-                                    edit
+                                    Edit
                                 </button>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="col-2">
                                 <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
                                     data-bs-target="#addressEdit">
-                                    edit
+                                    Edit
                                 </button>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                             <div class="col-2">
                                 <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
                                     data-bs-target="#visitHourEdit">
-                                    edit
+                                    Edit
                                 </button>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                     <div class="col-1">
                         <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
                             data-bs-target="#resourceEdit">
-                            edit
+                            Edit
                         </button>
 
                     </div>
@@ -171,11 +171,11 @@
                 @endforeach
 
                 <div class="row mt-5">
-                    <div class="col-11">
+                    <div class="col-10">
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
                         <button class="btn btn-dark" type="button" data-bs-toggle="modal"
-                            data-bs-target="#addResource">add</button>
+                            data-bs-target="#addResource">Add new resource</button>
                     </div>
                 </div>
 

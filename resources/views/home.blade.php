@@ -85,7 +85,7 @@
 
     <!-- Be a Donor Section-->
     <div class="container">
-        <h2>Be a Donor</h2>
+        <h2>Start Your Donate Today</h2>
         <div class="row g-3">
 
             @if ($count < 6)
@@ -101,7 +101,7 @@
                             </div>
                             <div class="card-button">
                                 <a href="beneficiary/{{ $beneficiaries[$i]->id }}/detail">
-                                    <button type="button" class="btn btn-outline-dark">detail</button>
+                                    <button type="button" class="btn btn-outline-dark  mb-3">Donate Now</button>
                                 </a>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="card-button">
                                 <a href="beneficiary/{{ $beneficiaries[$i]->id }}/detail">
-                                    <button type="button" class="btn btn-outline-dark">detail</button>
+                                    <button type="button" class="btn btn-outline-dark mb-3">Donate Now</button>
                                 </a>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
 
             @endif
         </div>
-
+		<br><br>
         <div>
             <a href="/viewAllBeneficiaries" class="d-grid gap-2" style="text-decoration:none">
                 <button type="button" class="btn btn-dark" style="padding:15px">View All >></button>
