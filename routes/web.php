@@ -76,3 +76,5 @@ Route::POST('/beneficiary/{id}/detail/shop', [DonationController::class, 'submit
 Route::get('/applicationSubmittedVerify', [UserController::class, 'checkApplicantExistance']);
 Route::get('/beneficiary-application', [UserController::class, 'showAppyForm']);
 Route::post('/beneficiary-application', [RequestController::class, 'addApplication']);
+
+Route::put('/update-profile', [UserController::class, 'update']);
