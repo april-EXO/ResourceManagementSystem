@@ -48,6 +48,24 @@ class UserController extends Controller
         
         return view("beneficiaryProfile",[ 'beneficiary'=>$beneficiary ]);
     }
+    
+    function deleteResource($id){
+        $resource = Resources::find($id);
+        $resource->delete();
+        return redirect()->back();
+    }
+
+    function addNewResource(Request $req){
+        $beneficiary = Approved::find($req->id);
+        $resource = new Resources;
+        $resource->detail = $req->item;
+        $resource->quantity = $req->quantity;
+        $resource->unit = $req->unit;
+        $resource->beneficiary_id = $beneficiary->id;
+        $resource->save();
+        
+        return redirect()->back();
+    }
 
     function editResource(Request $req){
 

@@ -35,6 +35,8 @@ Auth::routes();
 
 //beneficiary profile edit place
 Route::get('/beneficiary-profile',[UserController::class, 'beneficiaryProfile']);
+Route::get('/deleteResource/{id}',[UserController::class, 'deleteResource']);
+Route::post('/addNewResource', [UserController::class, 'addNewResource']);
 Route::post('/beneficiaryProfile/editBasicInfo', [UserController::class, 'editBasicInfo']);
 Route::post('/beneficiaryProfile/editAddress', [UserController::class, 'editAddress']);
 Route::post('/beneficiaryProfile/editVisitHour', [UserController::class, 'editVisitHour']);
