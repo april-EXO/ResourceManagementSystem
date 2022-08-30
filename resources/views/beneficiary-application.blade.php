@@ -91,7 +91,7 @@
             </div>
             <div class="form-floating mb-3">
                 <input type="text" id="location" name="location" class="form-control" required>
-                <label for="location">Location 地区 : (eg: JB, Sepang, Butterworth, etc.)</label>
+                <label for="location">Address 地址 :</label>
             </div>
 
             <div class="row">
@@ -161,9 +161,9 @@
                     <tr>
                         <td></td>
                         <td> 1 </td>
-                        <td> <input type="text" name="item[]" /> </td>
-                        <td> <input type="number" name="quantity[]" min="1" /> </td>
-                        <td> <input type="text" name="unit[]" /> </td>
+                        <td> <input type="text" name="item[]" required/> </td>
+                        <td> <input type="number" name="quantity[]" min="1" required/> </td>
+                        <td> <input type="text" name="unit[]" required/> </td>
                     </tr>
                 </table>
                 <div class="btn-group p-3" role="group">
