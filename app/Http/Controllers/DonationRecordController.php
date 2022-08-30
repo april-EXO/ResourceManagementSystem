@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DonationRecord;
+use App\Models\User_Profile;
 use App\Models\Approved;
 use App\Models\ResourcesDonation;
 use App\Models\Resources;
@@ -13,13 +14,20 @@ class DonationRecordController extends Controller
 {
     function loadTrackingPage( $id )
     {
+        $user_id = Auth::user()->id;
          $data= DonationRecord::join('resource_donations' , 'resource_donations.donation_records_id', '=', 'donation_records.id' )
          ->where('donation_records.id', $id)
         ->select(['donation_records.*', 'resource_donations.*'])
         ->get();
+        $donationRecord=DonationRecord::join('beneficiaries', 'beneficiaries.id', '=', 'donation_records.beneficiary_id')
+        ->where('donation_records.user_id', $user_id)
+        ->select('beneficiaries.*', 'donation_records.*')
+        ->get();
+        $userProfile=User_Profile::where('user_id',$user_id)
+        ->get();
 
         //return $data;
-        return view('donationTracking', ['donationRecords' => $data]);
+        return view('donationTracking', ['donationRecords' => $data , 'userProfile' => $userProfile , 'donationRecording' => $donationRecord]);
     }
 
     function loadDonationReceivedPage(){
