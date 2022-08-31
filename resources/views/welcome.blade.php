@@ -37,21 +37,21 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('images/Old-folks-home.jpg') }}" class="d-block w-100" alt="First Slide Image">
+                <img src="{{ asset('images/homepageImages/Old-folks-home.jpg') }}" class="d-block w-100" alt="First Slide Image">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Do a Good Deed, Give to Those in Need.</h5>
                     <p>Donate food to our welfare centre today!</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/Beneficiary.jpg') }}" class="d-block w-100" alt="Second Slide Image">
+                <img src="{{ asset('images/homepageImages/Beneficiary.jpg') }}" class="d-block w-100" alt="Second Slide Image">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Need Resource Support? We Can Help.</h5>
                     <p>Become a beneficiary to receive resources support.</p> 
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/Volunteer.jpg') }}" class="d-block w-100" alt="Third Slide Image">
+                <img src="{{ asset('images/homepageImages/Volunteer.jpg') }}" class="d-block w-100" alt="Third Slide Image">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Volunteer to Aid Us with Our Charitable Causes.</h5>
                     <p>Volunteer today to help us achieve more!</p>
@@ -126,14 +126,14 @@
         <h2>Become a Beneficiary</h2>
         <div class="row g-3">
             <div class="col">
-                <img src="{{ asset('images/beneficiaryleft.png') }}" class="beni-image">
+                <img src="{{ asset('images/homePageImages/beneficiaryleft.png') }}" class="beni-image">
             </div>
             <div class="beneficiary-info">
                 <h3>Need Resource Support?</h3>
                 <p>Register as a beneficiary on our website and receive help from the public.</p>
             </div>
             <div class="col">
-                <img src="{{ asset('images/beneficiaryright.jpg') }}" class="beni-image">
+                <img src="{{ asset('images/homepageImages/beneficiaryright.jpg') }}" class="beni-image">
             </div>
         </div>
     </div>

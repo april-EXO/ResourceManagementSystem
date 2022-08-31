@@ -39,10 +39,11 @@
         </div>
     </div>
 
-     <!-- Footer-->
-     <div class="footer">
-        <p>© 2022 YAST Group. All Rights Reserved.</p>
+     <!-- Footer-->         
+     <div style="margin-top: 450px">
+        @include('layouts.footer')
     </div>
+
 
 </body>
 
