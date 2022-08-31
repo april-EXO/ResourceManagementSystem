@@ -19,7 +19,7 @@ class UserController extends Controller
         ->get();
         $donationRecord=DonationRecord::join('beneficiaries', 'beneficiaries.id', '=', 'donation_records.beneficiary_id')
         ->where('donation_records.user_id', $user_id)
-        ->select('beneficiaries.description', 'donation_records.*')
+        ->select('beneficiaries.description','beneficiaries.name', 'donation_records.*')
         ->get();
 
        // return $donationRecord;

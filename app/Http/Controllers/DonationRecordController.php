@@ -9,6 +9,8 @@ use App\Models\Approved;
 use App\Models\ResourcesDonation;
 use App\Models\Resources;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use PDF;
 
 class DonationRecordController extends Controller
 {
@@ -90,5 +92,18 @@ class DonationRecordController extends Controller
         $dr->save();
           
         return redirect()->back();
+    }
+
+    public function download(Request $req){
+        $donationRecord=DonationRecord::find($req->id);
+        $resources=ResourcesDonation::where('donation_records_id',$donationRecord->id)
+        ->get();
+
+        $user=User::find($donationRecord->user_id);
+
+        $beneficiary=Approved::find($donationRecord->beneficiary_id);
+        
+        $pdf = PDF::loadView('invoice.receipt',['donationRecord'=>$donationRecord,'resources'=>$resources,'user'=>$user,'beneficiary'=>$beneficiary]);
+        return $pdf->download('invoice.pdf');
     }
 }

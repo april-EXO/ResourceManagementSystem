@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="card-body p-4">
-                <button class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#modal">Edit
+                <button class="btn btn-outline-dark float-end" data-bs-toggle="modal" data-bs-target="#modal">Edit
                     Profile</button><br>
                 <h3 class="fw-normal mb-1">About</h3> <br>
                 <div class="p-4 mb-4" style="background-color: #f8f9fa;">
@@ -111,19 +111,19 @@
 
                                 <div class="form-group mb-3">
                                     <label for="">Gender</label><br>
-                                    <input type="radio" id="male" name="gender" value="Male" checked>
+                                    <input type="radio" id="male" name="gender" value="Male">
                                     <label for="html">Male</label>
                                     <input type="radio" id="female" name="gender" value="Female">
                                     <label for="css">Female</label>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Age</label>
-                                    <input type="text" name="age" value="{{ $userProfile[0]['age'] }}"
+                                    <input type="number" name="age" value="{{ $userProfile[0]['age'] }}"
                                         class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Contact Number</label>
-                                    <input type="text" name="phone" value="{{ $userProfile[0]['contact_num'] }}"
+                                    <input type="number" name="phone" value="{{ $userProfile[0]['contact_num'] }}"
                                         class="form-control">
                                 </div>
                                 <div class="form-group mb-3">
@@ -175,19 +175,28 @@
                                 {{ $key + 1 }}
                             </div>
                             <div class="col">
-                                {{-- 帮我放beneficiary name --}}
+                                {{ $donationRecord['name'] }}
                             </div>
                             <div class="col">
                                 {{ $donationRecord['method'] }}
                             </div>
                             <div class="col">
-                                {{ $donationRecord['status'] }}
+
+                                @if ($donationRecord['status'] == 'pending')
+                                    <span
+                                        style="font-weight:bold;color: chocolate">{{ $donationRecord['status'] }}</span>
+                                @elseif($donationRecord['status'] == 'rejected')
+                                    <span style="font-weight:bold;color:red">{{ $donationRecord['status'] }}</span>
+                                @else
+                                    <span style="font-weight:bold;color: green">{{ $donationRecord['status'] }}</span>
+                                @endif
+
                             </div>
                             <div class="col">
                                 {{ $donationRecord['created_at'] }}
                             </div>
                             <div class="col align-self-end">
-                                <a href="tracking/{{ $donationRecord['id'] }}" class="btn btn-primary">Detail</a>
+                                <a href="tracking/{{ $donationRecord['id'] }}" class="btn btn-dark">Detail</a>
                             </div>
                         </div>
                         <hr>

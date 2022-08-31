@@ -59,6 +59,7 @@ Route::get('profile', [UserController::class, 'viewProfile']);
 
 //Dontation Tracking Page Route
 Route::get('tracking/{id}', [DonationRecordController::class, 'loadTrackingPage']);
+Route::post('/download', [DonationRecordController::class, 'download']);
 
 //donate
 Route::get('/beneficiary/{id}/detail', [HomeController::class, 'loadBeneficiaryDetail']);
