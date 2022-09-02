@@ -87,7 +87,6 @@
 
 
             @foreach ($application as $i => $b)
-                @if ($b['status'] == 'rejected')
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="row">
@@ -133,7 +132,6 @@
                             </div>
                         </div>
                     </div>
-                @endif
             @endforeach
 
             
