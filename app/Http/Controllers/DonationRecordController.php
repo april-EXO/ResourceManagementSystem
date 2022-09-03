@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use PDF;
 
+
 class DonationRecordController extends Controller
 {
     function loadTrackingPage( $id )
