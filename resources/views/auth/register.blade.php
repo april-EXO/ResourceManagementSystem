@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container" style="margin-top: 7%">
-    <h1 style="text-align: center" class="fontstyle mb-4"><strong>SIGN UP</strong></h1>
+    <h1 style="text-align: center; font-family: Lucida Console;" class="fontstyle mb-4"><strong>SIGN UP</strong></h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="background-color: rgba(193, 227, 235, 0.3)">
@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 text-center">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
