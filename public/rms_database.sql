@@ -54,7 +54,6 @@ CREATE TABLE IF NOT EXISTS `beneficiaries` (
 
 INSERT INTO `beneficiaries` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `user_id`, `created_at`, `updated_at`) VALUES
 (26, 'STRONG DESIRE HOME', 'An Orphanage was built in 2013 in Johor Bahru area. We have 100+ children\'s below 12 years old. We hope our society spreads some love to our children to have a warm house in STRONG DESIRE HOME.', '81300', 'Johor', '1495 jalan seksyen 1/5 Taman Bandar Barat, 81300 Johor Bahru, Johor', 'NG XIN ZHE', '107660573', 'https://www.google.com/', 'https://www.facebook.com/', '1662098946.jpg', 'Mondaty - Saturday', '10AM-10PM', 17, '2022-09-01 22:10:57', '2022-09-01 22:10:57'),
-(27, 'Pusat B', 'Non Profit Orphanage in need for Quarantine Resources.', '45678', 'Sabah', '123, Jalan Cikus, Taman Durian, Sandakan, Sabah.', 'Teh Rong Jia', '012-3456789', 'https://rumahhope.com/', 'https://www.facebook.com/rumahhope', '1661938760.png', 'Mon-Sun', '10am-4pm', 23, '2022-09-01 22:15:56', '2022-09-01 22:15:56'),
 (28, 'Pusat A', 'In need for food resources support', '56000', 'Johor', '12, Psrn Sungai Johor, Taman Sri King, Skudai, Johor Bahru.', 'Teh Jia Rong', '012-34567654', 'none', 'https://www.facebook.com/tehjiarong', '1661938359.jpg', 'Mon-Sun', '24hrs', 22, '2022-09-01 22:15:58', '2022-09-01 22:15:58'),
 (29, 'Pusat C', 'Need Covid-19 Resources', '23456', 'Perak', '1028, Jalan Seksyen 1/1, Malim Nawar, Kampar, Perak.', 'Rong Jia Teh', '012-46578456', 'https://myknc.com.my/?gclid=Cj0KCQjwjbyYBhCdARIsAArC6LICqFvPhRd7hfQODDbR2fSl4oYaRiqXF_L4ZeIZh8-W5m6ABL_80BYaAkF6EALw_wcB', 'https://www.facebook.com/rumahhope', '1661939075.jpg', 'Tue-Sun', '10am-4pm', 24, '2022-09-01 22:16:01', '2022-09-01 22:16:01'),
 (30, 'Pusat D', 'Need kitchen resources', '14000', 'Penang', '123, Jalan Cikus, Taman Durian, Bukit Mertajam, Penang.', 'Lim Xue En', '012-3456789', 'https://myknc.com.my/?gclid=Cj0KCQjwjbyYBhCdARIsAArC6LICqFvPhRd7hfQODDbR2fSl4oYaRiqXF_L4ZeIZh8-W5m6ABL_80BYaAkF6EALw_wcB', 'https://www.facebook.com/', '1661942646.jpg', 'Tue-Sun', '24hrs', 25, '2022-09-01 22:16:03', '2022-09-01 22:16:03'),
@@ -434,3 +433,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
