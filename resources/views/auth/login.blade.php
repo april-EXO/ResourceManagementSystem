@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container" style="margin-top: 7%">
-        <h1 style="text-align: center" class="fontstyle mb-4"><strong>LOGIN</strong></h1>
+        <h1 style="text-align: center; font-family:Lucida Console;" class="fontstyle mb-4"><strong>LOGIN</strong></h1>
         <div class="row justify-content-center">
 
             <div class="col-md-8">
