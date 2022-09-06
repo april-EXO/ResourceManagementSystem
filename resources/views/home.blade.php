@@ -89,8 +89,8 @@
 
                 @for ($i = 0; $i < $count; $i++)
                     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="images/{{ $beneficiaries[$i]->photo }}" class="card-img-top">
+                        <div class="card">                       
+                            <img src="images/{{ $beneficiaries[$i]->photo }}" class="card-img-top">                        
                             <div class="card-body">
                                 <h5 class="card-title">{{ $beneficiaries[$i]->name }}</h5>
                                 <p class="card-text">{{ $beneficiaries[$i]->state }}</p>
