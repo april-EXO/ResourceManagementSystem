@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 02, 2022 at 06:24 AM
+-- Generation Time: Sep 06, 2022 at 11:22 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `beneficiaries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `beneficiaries`
@@ -91,14 +91,13 @@ CREATE TABLE IF NOT EXISTS `beneficiary_applications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `beneficiary_applications`
 --
 
 INSERT INTO `beneficiary_applications` (`id`, `name`, `description`, `postcode`, `state`, `location`, `contact_person`, `contact_num`, `website`, `webpage`, `photo`, `date`, `time`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(27, 'Pusat B', 'Non Profit Orphanage in need for Quarantine Resources.', '45678', 'Sabah', '123, Jalan Cikus, Taman Durian, Sandakan, Sabah.', 'Teh Rong Jia', '012-3456789', 'https://rumahhope.com/', 'https://www.facebook.com/rumahhope', '1661938760.png', 'Mon-Sun', '10am-4pm', 'success', 23, '2022-08-31 01:39:20', '2022-09-01 22:15:56'),
 (26, 'Pusat A', 'In need for food resources support', '56000', 'Johor', '12, Psrn Sungai Johor, Taman Sri King, Skudai, Johor Bahru.', 'Teh Jia Rong', '012-34567654', 'none', 'https://www.facebook.com/tehjiarong', '1661938359.jpg', 'Mon-Sun', '24hrs', 'success', 22, '2022-08-31 01:32:39', '2022-09-01 22:15:58'),
 (28, 'Pusat C', 'Need Covid-19 Resources', '23456', 'Perak', '1028, Jalan Seksyen 1/1, Malim Nawar, Kampar, Perak.', 'Rong Jia Teh', '012-46578456', 'https://myknc.com.my/?gclid=Cj0KCQjwjbyYBhCdARIsAArC6LICqFvPhRd7hfQODDbR2fSl4oYaRiqXF_L4ZeIZh8-W5m6ABL_80BYaAkF6EALw_wcB', 'https://www.facebook.com/rumahhope', '1661939075.jpg', 'Tue-Sun', '10am-4pm', 'success', 24, '2022-08-31 01:44:35', '2022-09-01 22:16:01'),
 (29, 'Pusat D', 'Need kitchen resources', '14000', 'Penang', '123, Jalan Cikus, Taman Durian, Bukit Mertajam, Penang.', 'Lim Xue En', '012-3456789', 'https://myknc.com.my/?gclid=Cj0KCQjwjbyYBhCdARIsAArC6LICqFvPhRd7hfQODDbR2fSl4oYaRiqXF_L4ZeIZh8-W5m6ABL_80BYaAkF6EALw_wcB', 'https://www.facebook.com/', '1661942646.jpg', 'Tue-Sun', '24hrs', 'success', 25, '2022-08-31 02:44:06', '2022-09-01 22:16:03'),
@@ -136,7 +135,16 @@ CREATE TABLE IF NOT EXISTS `donation_records` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `donation_records`
+--
+
+INSERT INTO `donation_records` (`id`, `type`, `date`, `time`, `method`, `donation_detail`, `comment`, `status`, `beneficiary_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(53, 'self', 'nil', 'nil', 'courier', 'tracking number:  #NGT012418JT212', 'Parcel Company: J&T', 'success', 27, 19, '2022-09-06 01:21:03', '2022-09-06 01:35:15'),
+(54, 'self', 'nil', 'nil', 'transportation', 'Deliver Date: 6 September 2022', 'Will come on Evening after 5pm.', 'pending', 26, 19, '2022-09-06 01:23:55', '2022-09-06 01:23:55'),
+(55, 'self', 'nil', 'nil', 'courier', 'tracking number:  #NGT012418JT212', NULL, 'pending', 26, 20, '2022-09-06 01:39:16', '2022-09-06 01:39:16');
 
 -- --------------------------------------------------------
 
@@ -201,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `resources` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `resources`
@@ -209,9 +217,6 @@ CREATE TABLE IF NOT EXISTS `resources` (
 
 INSERT INTO `resources` (`id`, `detail`, `quantity`, `unit`, `beneficiary_id`, `created_at`, `updated_at`) VALUES
 (45, 'Year 2 English Text Book', 50, 'piece', 26, '2022-09-01 22:10:57', '2022-09-01 22:10:57'),
-(46, 'Mask', 1000, 'unit', 27, '2022-09-01 22:15:56', '2022-09-01 22:15:56'),
-(47, 'Sanitizer', 100, 'litre', 27, '2022-09-01 22:15:56', '2022-09-01 22:15:56'),
-(48, 'Covid-19 Test Kits', 200, 'unit', 27, '2022-09-01 22:15:56', '2022-09-01 22:15:56'),
 (49, 'Rice', 50, 'kg', 28, '2022-09-01 22:15:58', '2022-09-01 22:15:58'),
 (50, 'Cooking Oil', 25, 'litres', 28, '2022-09-01 22:15:58', '2022-09-01 22:15:58'),
 (51, 'Salt', 3, 'kg', 28, '2022-09-01 22:15:58', '2022-09-01 22:15:58'),
@@ -253,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `resource_applications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `resource_applications`
@@ -268,9 +273,6 @@ INSERT INTO `resource_applications` (`id`, `detail`, `quantity`, `unit`, `benefi
 (21, 'Cooking Oil', '25', 'litres', 26, '2022-08-31 01:32:39', '2022-08-31 01:32:39'),
 (22, 'Salt', '3', 'kg', 26, '2022-08-31 01:32:39', '2022-08-31 01:32:39'),
 (23, 'Masks', '100', 'unit', 26, '2022-08-31 01:32:39', '2022-08-31 01:32:39'),
-(24, 'Mask', '1000', 'unit', 27, '2022-08-31 01:39:20', '2022-08-31 01:39:20'),
-(25, 'Sanitizer', '100', 'litre', 27, '2022-08-31 01:39:20', '2022-08-31 01:39:20'),
-(26, 'Covid-19 Test Kits', '200', 'unit', 27, '2022-08-31 01:39:20', '2022-08-31 01:39:20'),
 (27, 'Masks', '1000', 'unit', 28, '2022-08-31 01:44:35', '2022-08-31 01:44:35'),
 (28, 'Test Kit', '500', 'unit', 28, '2022-08-31 01:44:35', '2022-08-31 01:44:35'),
 (29, 'Rice', '100', 'kg', 29, '2022-08-31 02:44:06', '2022-08-31 02:44:06'),
@@ -321,7 +323,17 @@ CREATE TABLE IF NOT EXISTS `resource_donations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `resource_donations`
+--
+
+INSERT INTO `resource_donations` (`id`, `detail`, `quantity`, `unit`, `donation_records_id`, `resources_id`, `created_at`, `updated_at`) VALUES
+(21, 'Mask', 50, 'unit', 53, 46, '2022-09-06 01:21:04', '2022-09-06 01:21:04'),
+(22, 'Oil', 20, 'litre', 53, NULL, '2022-09-06 01:21:04', '2022-09-06 01:21:04'),
+(23, 'Year 2 English Text Book', 20, 'piece', 54, 45, '2022-09-06 01:23:55', '2022-09-06 01:23:55'),
+(24, 'child cloth s size', 40, 'piece', 55, NULL, '2022-09-06 01:39:16', '2022-09-06 01:39:16');
 
 -- --------------------------------------------------------
 
@@ -353,7 +365,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (18, 'admin', 'admin@gmail.com', NULL, '$2y$10$OeLgxntMRuwfkDqJuFPbDOFJ1aQZUi1Ib5vlv3eJ7GhaQOKsuk7cW', NULL, '2022-08-30 23:49:16', '2022-08-30 23:49:16', 'admin', 0),
 (19, 'April Yee', 'hsy.k10@gmail.com', NULL, '$2y$10$3iAsY/46VXn80vAqpyqz.eMQu8jgDI76IXkWFsjzeenfbNqSWfbOi', NULL, '2022-08-30 23:51:30', '2022-08-30 23:51:30', 'user', 0),
 (20, 'Lim Xue En', 'xueen2000@1utar.my', NULL, '$2y$10$pNiTF31aCaRtL0adMbM.Xu/xgkaqjukkB.cQAIkty3gD4Vv2T7Kte', NULL, '2022-08-30 23:52:53', '2022-08-30 23:52:53', 'user', 0),
-(21, 'tester', 'tester@gmail.com', NULL, '$2y$10$Q/RLg0zguwDMqlc0ZD3IWuZ5AD8NW5h6zHrueg71iLYvPgs2QA6qC', NULL, '2022-08-30 23:58:55', '2022-08-30 23:58:55', 'user', 0),
+(21, 'tester', 'tester@gmail.com', NULL, '$2y$10$Q/RLg0zguwDMqlc0ZD3IWuZ5AD8NW5h6zHrueg71iLYvPgs2QA6qC', NULL, '2022-08-30 23:58:55', '2022-09-06 03:03:43', 'user', 0),
 (22, 'Teh Jia Rong', 'tjr@gmail.com', NULL, '$2y$10$GygSMAjw/bziTa6dg6xgCeSOZkxf/RajCZCqUY3QkFABF8mV4.PGm', NULL, '2022-08-31 01:28:39', '2022-09-01 22:15:58', 'user', 1),
 (23, 'Teh Rong Jia', 'trj123@gmail.com', NULL, '$2y$10$qRXXEVuDJQJC7E4U0g.i0eEBhTGD4JokYtUyGxOmHa3lHHXAD5brm', NULL, '2022-08-31 01:33:38', '2022-09-01 22:15:56', 'user', 1),
 (24, 'Rong Jia Teh', 'rjt@gmail.com', NULL, '$2y$10$k73Tzgg9kGnveMW/7pctZOk9wmwljf.gYQBRfYihFelShruWJbRBm', NULL, '2022-08-31 01:39:59', '2022-09-01 22:16:01', 'user', 1),
@@ -398,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
 INSERT INTO `user_profiles` (`id`, `gender`, `address`, `contact_num`, `birthday`, `age`, `user_id`, `created_at`, `updated_at`) VALUES
 (7, 'Male', 'No 17, Jalan Wira 17, Taman Tan Jira, Johor Bahru, Johor, 81300', '0107660573', '2000-08-22', 22, 17, '2022-08-30 23:29:15', '2022-08-30 23:35:09'),
 (8, NULL, NULL, NULL, NULL, NULL, 18, '2022-08-30 23:49:16', '2022-08-30 23:49:16'),
-(9, NULL, NULL, NULL, NULL, NULL, 19, '2022-08-30 23:51:30', '2022-08-30 23:51:30'),
+(9, 'Female', 'No 17, Jalan Wira 17, Taman Tan Jira, Johor Bahru, Johor, 81300', '0106656333', '2000-04-30', 22, 19, '2022-08-30 23:51:30', '2022-09-06 01:18:56'),
 (10, NULL, NULL, NULL, NULL, NULL, 20, '2022-08-30 23:52:53', '2022-08-30 23:52:53'),
 (11, NULL, NULL, NULL, NULL, NULL, 21, '2022-08-30 23:58:55', '2022-08-30 23:58:55'),
 (12, NULL, NULL, NULL, NULL, NULL, 22, '2022-08-31 01:28:39', '2022-08-31 01:28:39'),
