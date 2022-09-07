@@ -59,6 +59,7 @@ Route::get('profile', [UserController::class, 'viewProfile']);
 
 //Dontation Tracking Page Route
 Route::get('tracking/{id}', [DonationRecordController::class, 'loadTrackingPage']);
+Route::post('/download', [DonationRecordController::class, 'download']);
 
 //donate
 Route::get('/beneficiary/{id}/detail', [HomeController::class, 'loadBeneficiaryDetail']);
@@ -76,3 +77,5 @@ Route::POST('/beneficiary/{id}/detail/shop', [DonationController::class, 'submit
 Route::get('/applicationSubmittedVerify', [UserController::class, 'checkApplicantExistance']);
 Route::get('/beneficiary-application', [UserController::class, 'showAppyForm']);
 Route::post('/beneficiary-application', [RequestController::class, 'addApplication']);
+
+Route::put('/update-profile', [UserController::class, 'update']);

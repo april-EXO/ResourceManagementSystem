@@ -84,19 +84,25 @@ class RequestController extends Controller
 
 	function viewApplicationAdminPending()
 	{
-		$data = Application::with(relations: 'getResourcesApplyRelation')->get();
+		$data = Application::with(relations: 'getResourcesApplyRelation')
+		->where('status','pending')
+		->get();
 		return view('/adminpagePending', ['application' => $data]);
 	}
 
 	function viewApplicationAdminRejected()
 	{
-		$data = Application::with(relations: 'getResourcesApplyRelation')->get();
+		$data = Application::with(relations: 'getResourcesApplyRelation')
+		->where('status','rejected')
+		->get();
 		return view('/adminpageRejected', ['application' => $data]);
 	}
 
 	function viewApplicationAdminSuccess()
 	{
-		$data = Application::with(relations: 'getResourcesApplyRelation')->get();
+		$data = Application::with(relations: 'getResourcesApplyRelation')
+		->where('status','success')
+		->get();
 		return view('/adminpageSuccess', ['application' => $data]);
 	}
 
@@ -113,7 +119,7 @@ class RequestController extends Controller
 		$ben->contact_num = $applicant->contact_num;
 		$ben->website = $applicant->website;
 		$ben->webpage = $applicant->webpage;
-		$ben->photo = $applicant->name;
+		$ben->photo = $applicant->photo;
 		$ben->date = $applicant->date;
 		$ben->time = $applicant->time;
 		$ben->user_id = $applicant->user_id;

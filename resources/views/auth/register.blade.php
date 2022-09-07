@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 7%">
+    <h1 style="text-align: center; font-family: Lucida Console;" class="fontstyle mb-4"><strong>SIGN UP</strong></h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="background-color: rgba(193, 227, 235, 0.3)">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -62,7 +63,7 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 text-center">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
@@ -75,3 +76,16 @@
     </div>
 </div>
 @endsection
+
+<style>
+    body {
+        background-image: linear-gradient(rgba(55, 51, 51, 0.527), rgba(0, 0, 0, 0.0)), url("/images/homepageImages/loginImage.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .fontstyle {
+        font-family: 'Trocchi', serif;
+    }
+</style>
+

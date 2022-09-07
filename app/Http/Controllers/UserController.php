@@ -19,7 +19,7 @@ class UserController extends Controller
         ->get();
         $donationRecord=DonationRecord::join('beneficiaries', 'beneficiaries.id', '=', 'donation_records.beneficiary_id')
         ->where('donation_records.user_id', $user_id)
-        ->select('beneficiaries.description', 'donation_records.*')
+        ->select('beneficiaries.description','beneficiaries.name', 'donation_records.*')
         ->get();
 
        // return $donationRecord;
@@ -126,6 +126,19 @@ class UserController extends Controller
            
         $beneficiary->save();
 
+        return redirect()->back();
+    }
+
+    public function update(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $student = User_Profile::where('user_id', $user_id) -> firstOrFail();
+        $student->gender = $request->input('gender');
+        $student->age = $request->input('age');
+        $student->address = $request->input('address');
+        $student->birthday = $request->input('bday');
+        $student->contact_num = $request->input('phone');
+        $student->update();
         return redirect()->back();
     }
 }
