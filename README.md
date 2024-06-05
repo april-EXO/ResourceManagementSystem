@@ -1,5 +1,4 @@
 
-```markdown
 # Resource Management System
 
 ## Objective of the Project
@@ -80,11 +79,7 @@ A simple demo video is available [here](https://drive.google.com/file/d/1yNO6kqn
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-For any questions or inquiries, please contact [Your Name] at [your.email@example.com].
-```
+For any questions or inquiries, please contact April at hsy.k10@gmail.com .
+
